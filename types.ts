@@ -7,6 +7,10 @@ export interface Department {
     en: string;
     ar: string;
   };
+  description?: {
+    en: string;
+    ar: string;
+  };
   icon: string;
 }
 
