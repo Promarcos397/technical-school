@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cloudflare
+.wrangler
+
+# Dev-only files
+process_images.py
+prompt.md
+whatsapp-message.md
