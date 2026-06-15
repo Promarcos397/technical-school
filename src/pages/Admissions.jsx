@@ -2,17 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, User, Phone, Mail, BookOpen, MapPin, AlertCircle, CheckCircle2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-
-const programsList = [
-    'قسم الكهرباء العامة',
-    'قسم ميكانيكا السيارات',
-    'قسم ميكانيكا الإنتاج',
-    'قسم هندسة التبريد',
-    'قسم الهندسة المعمارية',
-    'قسم الهندسة الصحية',
-    'قسم الحاسوب',
-    'قسم التصنيع الغذائي'
-];
+import { useTranslation } from 'react-i18next';
 
 const Admissions = () => {
     const formRef = useRef();
@@ -20,6 +10,18 @@ const Admissions = () => {
     const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
     const [countryCode, setCountryCode] = useState('+249');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const { t } = useTranslation();
+
+    const programsList = [
+        t('programs.electricityTitle'),
+        t('programs.autoMechanicsTitle'),
+        t('programs.productionMechanicsTitle'),
+        t('programs.hvacTitle'),
+        t('programs.architectureTitle'),
+        t('programs.plumbingTitle'),
+        t('programs.computerTitle'),
+        t('programs.foodProcessingTitle')
+    ];
 
     const toEnglishDigits = (str) => {
         const arabicNumbers = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
@@ -62,11 +64,11 @@ const Admissions = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="mb-16 text-center md:text-right"
+                    className="mb-16 text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">القبول والتسجيل</h1>
-                    <p className="text-xl text-stone-600 max-w-3xl font-medium leading-relaxed">
-                        بوابتك نحو مستقبل مهني واعد. املأ استمارة التسجيل المبدئي أدناه وسيقوم فريق القبول بالتواصل معك لاستكمال باقي الإجراءات والمستندات.
+                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">{t('admissions.title')}</h1>
+                    <p className="text-xl text-stone-600 max-w-3xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
+                        {t('admissions.description')}
                     </p>
                 </motion.div>
 
@@ -79,11 +81,11 @@ const Admissions = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="lg:col-span-4 flex flex-col space-y-8"
                     >
-                        <div className="bg-coal text-paper p-8 rounded-3xl shadow-xl relative overflow-hidden border border-stone-800">
+                        <div className="bg-coal text-paper p-8 rounded-3xl shadow-xl relative overflow-hidden border border-stone-800 text-start">
                             {/* Decorative Grid Lines */}
                             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
-                            <h3 className="text-2xl font-bold mb-6 text-white relative z-10">معلومات الاتصال</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-white relative z-10">{t('admissions.contactInfo')}</h3>
 
                             <div className="space-y-6 relative z-10">
                                 <div className="flex items-start gap-4">
@@ -91,10 +93,9 @@ const Admissions = () => {
                                         <MapPin className="w-6 h-6 text-emerald-custom" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">الموقع</h4>
-                                        <p className="text-sm text-stone-400 leading-relaxed">
-                                            الولاية الشمالية - محلية القولد<br />
-                                            قرية شبتوت - شارع شريان الشمال الكيلو 419
+                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.location')}</h4>
+                                        <p className="text-sm text-stone-400 leading-relaxed whitespace-pre-line">
+                                            {t('admissions.locationDesc')}
                                         </p>
                                     </div>
                                 </div>
@@ -104,7 +105,7 @@ const Admissions = () => {
                                         <Phone className="w-6 h-6 text-emerald-custom" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">للاستفسار</h4>
+                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.inquiries')}</h4>
                                         <a href="tel:+33616458399" className="text-sm text-stone-400 hover:text-emerald-custom hover:underline transition-all block" dir="ltr">+33 616458399</a>
                                     </div>
                                 </div>
@@ -114,7 +115,7 @@ const Admissions = () => {
                                         <Mail className="w-6 h-6 text-emerald-custom" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">البريد الإلكتروني</h4>
+                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.email')}</h4>
                                         <a href="mailto:tongilabhassan@gmail.com" className="text-sm text-stone-400 hover:text-emerald-custom hover:underline transition-all block">tongilabhassan@gmail.com</a>
                                     </div>
                                 </div>
@@ -126,7 +127,7 @@ const Admissions = () => {
                             <img
                                 src="/images/mascot-addmission.png"
                                 alt="Mascot Welcome"
-                                className="w-64 h-auto drop-shadow-2xl opacity-90"
+                                className="w-64 h-auto drop-shadow-2xl opacity-90 rtl:scale-x-100 ltr:-scale-x-100"
                                 onError={(e) => { e.target.style.display = 'none'; }}
                             />
                         </div>
@@ -137,32 +138,32 @@ const Admissions = () => {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="lg:col-span-8 bg-white/70 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-stone-200/50 relative"
+                        className="lg:col-span-8 bg-white/70 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-stone-200/50 relative text-start"
                     >
-                        <h2 className="text-3xl font-black text-coal mb-8">استمارة التسجيل المبدئي</h2>
+                        <h2 className="text-3xl font-black text-coal mb-8">{t('admissions.formTitle')}</h2>
 
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Name Input */}
                                 <div className="space-y-2">
-                                    <label htmlFor="user_name" className="block text-sm font-bold text-coal">الاسم الرباعي <span className="text-red-500">*</span></label>
+                                    <label htmlFor="user_name" className="block text-sm font-bold text-coal">{t('admissions.fullName')} <span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <input
                                             type="text"
                                             id="user_name"
                                             name="user_name"
                                             required
-                                            placeholder="أدخل اسمك الكامل"
-                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
+                                            placeholder={t('admissions.fullNamePlaceholder')}
+                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 rtl:pl-12 rtl:pr-4 ltr:pr-12 ltr:pl-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
                                         />
-                                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+                                        <User className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
                                 </div>
 
                                 {/* Phone Input */}
                                 <div className="space-y-2">
-                                    <label htmlFor="user_phone_display" className="block text-sm font-bold text-coal">رقم الهاتف <span className="text-red-500">*</span></label>
+                                    <label htmlFor="user_phone_display" className="block text-sm font-bold text-coal">{t('admissions.phone')} <span className="text-red-500">*</span></label>
                                     <div className="flex" dir="ltr">
                                         {/* Country Code Form */}
                                         <div className="relative z-10">
@@ -189,7 +190,7 @@ const Admissions = () => {
                                                 required
                                                 value={phoneNumber}
                                                 onChange={(e) => setPhoneNumber(toEnglishDigits(e.target.value).replace(/\D/g, ''))}
-                                                placeholder="112 345 6789"
+                                                placeholder={t('admissions.phonePlaceholder')}
                                                 className="w-full h-full bg-paper border border-stone-300 rounded-r-xl py-4 px-4 pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all tracking-wider relative z-0 focus:z-20 text-left"
                                             />
                                             <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 z-10" />
@@ -203,48 +204,49 @@ const Admissions = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Email Input */}
                                 <div className="space-y-2">
-                                    <label htmlFor="user_email" className="block text-sm font-bold text-coal">البريد الإلكتروني (اختياري)</label>
+                                    <label htmlFor="user_email" className="block text-sm font-bold text-coal">{t('admissions.emailLabel')}</label>
                                     <div className="relative">
                                         <input
                                             type="email"
                                             id="user_email"
                                             name="user_email"
                                             dir="ltr"
-                                            placeholder="example@domain.com"
-                                            className="w-full text-right bg-paper border border-stone-300 rounded-xl py-4 px-4 pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
+                                            placeholder={t('admissions.emailPlaceholder')}
+                                            className="w-full text-left bg-paper border border-stone-300 rounded-xl py-4 px-4 ltr:pr-12 rtl:pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
                                         />
-                                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+                                        <Mail className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
                                 </div>
 
                                 {/* Program Selection */}
                                 <div className="space-y-2">
-                                    <label htmlFor="selected_program" className="block text-sm font-bold text-coal">البرنامج المطلوب <span className="text-red-500">*</span></label>
+                                    <label htmlFor="selected_program" className="block text-sm font-bold text-coal">{t('admissions.programLabel')} <span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <select
                                             id="selected_program"
                                             name="selected_program"
                                             required
-                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
+                                            defaultValue=""
+                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all rtl:pr-4 ltr:pl-4"
                                         >
-                                            <option value="" disabled selected>اختر التخصص...</option>
+                                            <option value="" disabled>{t('admissions.programSelect')}</option>
                                             {programsList.map((prog, idx) => (
                                                 <option key={idx} value={prog}>{prog}</option>
                                             ))}
                                         </select>
-                                        <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 pointer-events-none" />
+                                        <BookOpen className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 pointer-events-none" />
                                     </div>
                                 </div>
                             </div>
 
                             {/* Message / Additional Info */}
                             <div className="space-y-2">
-                                <label htmlFor="message" className="block text-sm font-bold text-coal">ملاحظات إضافية أو استفسارات</label>
+                                <label htmlFor="message" className="block text-sm font-bold text-coal">{t('admissions.notesLabel')}</label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     rows="4"
-                                    placeholder="اكتب رسالتك هنا..."
+                                    placeholder={t('admissions.notesPlaceholder')}
                                     className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all resize-none"
                                 ></textarea>
                             </div>
@@ -259,12 +261,12 @@ const Admissions = () => {
                                 {isSubmitting ? (
                                     <>
                                         <span className="w-5 h-5 border-2 border-stone-500 border-t-transparent rounded-full animate-spin"></span>
-                                        جاري الإرسال...
+                                        {t('admissions.submitting')}
                                     </>
                                 ) : (
                                     <>
-                                        إرسال الطلب
-                                        <Send className="w-5 h-5 rtl:-scale-x-100" />
+                                        {t('admissions.submitBtn')}
+                                        <Send className="w-5 h-5 rtl:-scale-x-100 ltr:scale-x-100" />
                                     </>
                                 )}
                             </button>
@@ -276,12 +278,12 @@ const Admissions = () => {
                                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                                         animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
                                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                                        className="bg-emerald-50 text-emerald-800 p-4 rounded-xl flex items-start gap-3 border border-emerald-200"
+                                        className="bg-emerald-50 text-emerald-800 p-4 rounded-xl flex items-start gap-3 border border-emerald-200 text-start"
                                     >
                                         <CheckCircle2 className="w-6 h-6 flex-shrink-0 text-emerald-600" />
                                         <div>
-                                            <p className="font-bold">تم إرسال طلبك بنجاح!</p>
-                                            <p className="text-sm mt-1 opacity-90">شُكراً لك. سيقوم فريق الإدارة بمراجعة بياناتك والتواصل معك قريباً.</p>
+                                            <p className="font-bold">{t('admissions.successTitle')}</p>
+                                            <p className="text-sm mt-1 opacity-90">{t('admissions.successDesc')}</p>
                                         </div>
                                     </motion.div>
                                 )}
@@ -291,12 +293,12 @@ const Admissions = () => {
                                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                                         animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
                                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                                        className="bg-red-50 text-red-800 p-4 rounded-xl flex items-start gap-3 border border-red-200"
+                                        className="bg-red-50 text-red-800 p-4 rounded-xl flex items-start gap-3 border border-red-200 text-start"
                                     >
                                         <AlertCircle className="w-6 h-6 flex-shrink-0 text-red-600" />
                                         <div>
-                                            <p className="font-bold">عذراً، حدث خطأ أثناء الإرسال.</p>
-                                            <p className="text-sm mt-1 opacity-90">يرجى التأكد من اتصالك بالإنترنت والمحاولة مرة أخرى، أو التواصل معنا مباشرة عبر الهاتف.</p>
+                                            <p className="font-bold">{t('admissions.errorTitle')}</p>
+                                            <p className="text-sm mt-1 opacity-90">{t('admissions.errorDesc')}</p>
                                         </div>
                                     </motion.div>
                                 )}
@@ -311,3 +313,4 @@ const Admissions = () => {
 };
 
 export default Admissions;
+

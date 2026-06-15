@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const CountUp = ({ end, duration = 2, delay = 0 }) => {
     const [count, setCount] = useState(0);
@@ -47,13 +48,14 @@ const CountUp = ({ end, duration = 2, delay = 0 }) => {
 };
 
 const About = () => {
+    const { t } = useTranslation();
     return (
         <section id="about" className="py-20 md:py-32 bg-paper relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                     {/* Narrative (Left side in RTL, so Col span 7) */}
-                    <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-right">
+                    <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-start">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +63,7 @@ const About = () => {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="inline-block border-b-2 border-emerald-custom pb-2 mb-2 md:mb-4"
                         >
-                            <span className="text-teal-800 font-bold tracking-widest uppercase text-xs md:text-sm">عن المبادرة</span>
+                            <span className="text-teal-800 font-bold tracking-widest uppercase text-xs md:text-sm">{t('about.subtitle')}</span>
                         </motion.div>
 
                         <motion.h2
@@ -71,8 +73,8 @@ const About = () => {
                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-coal leading-tight"
                         >
-                            نحن لا نبني مجرد جدران، <br className="hidden sm:block" />
-                            <span className="text-teal-900 block mt-2 sm:mt-0 sm:inline">بل نؤسس لجيل من العمالة الماهرة.</span>
+                            {t('about.title1')} <br className="hidden sm:block" />
+                            <span className="text-teal-900 block mt-2 sm:mt-0 sm:inline">{t('about.title2')}</span>
                         </motion.h2>
 
                         <motion.p
@@ -82,7 +84,7 @@ const About = () => {
                             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                             className="text-base sm:text-lg md:text-xl text-stone-600 leading-relaxed md:leading-loose font-medium mx-auto lg:mx-0 max-w-2xl"
                         >
-                            بمبادرة كريمة من رجل البر والإحسان أديب إبراهيم يوسف الهاجري، نؤسس نقلة نوعية وجذرية في التعليم الفني. يقع المشروع على مساحة 69,000 متر مربع بقرية شبتوت (محلية القولد، الولاية الشمالية)، ليكون مرجعاً متكاملاً ومركزاً حيوياً لتدريب وتخريج كوادر مهنية تلبي احتياجات سوق العمل والمشاريع التنموية.
+                            {t('about.desc')}
                         </motion.p>
                     </div>
 
@@ -97,18 +99,18 @@ const About = () => {
                         >
                             <div className="flex justify-center items-baseline sm:items-center gap-3 md:gap-4 mb-4 md:mb-6 leading-none" dir="ltr">
                                 <span className="text-6xl sm:text-8xl md:text-9xl font-black text-coal drop-shadow-sm">
-                                    <CountUp end={90} duration={2} />
+                                    <CountUp end={90} duration={1} />
                                 </span>
                                 <span className="text-3xl sm:text-4xl text-stone-300 font-light translate-y-[-10px] sm:translate-y-0">vs</span>
                                 <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-emerald-custom drop-shadow-md">
-                                    <CountUp end={2} duration={2} delay={1} />
+                                    <CountUp end={2} duration={1} delay={0.5} />
                                 </span>
                             </div>
 
                             <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-stone-300 to-transparent mx-auto mb-4 md:mb-6"></div>
 
                             <p className="text-stone-500 font-semibold text-base sm:text-lg md:text-xl max-w-[250px] sm:max-w-xs mx-auto leading-relaxed">
-                                تسعون مدرسة أكاديمية في الولاية الشمالية، مقابل مدرستين فنيتين فقط.
+                                {t('about.stats')}
                             </p>
                         </motion.div>
 

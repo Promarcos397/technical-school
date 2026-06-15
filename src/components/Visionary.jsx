@@ -1,33 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import DepthMapImage from './DepthMapImage';
+import { visionaries, councilMembers } from '../data/peopleData';
 
 const Visionary = () => {
-    const visionaries = [
-        {
-            id: 'adib',
-            name: 'أديب إبراهيم الهاجري',
-            title: 'صاحب المبادرة',
-            image: '/images/adib-portrait.png',
-            bio: [
-                'خريج أمريكا.',
-                'بدأت حياتي المهنية مع الوالد، رحمه الله عليه، مسيرة استمرت حتى التخرج.',
-                'عملت لمدة 8 سنوات بالخطوط الجوية الكويتية، خبرة ساهمت في صقل الرؤية الاستراتيجية التي تقود اليوم هذه المبادرة التنموية.'
-            ]
-        },
-        {
-            id: 'hassan',
-            name: 'حسن محمد حمد تنجلاب (حسن بردو)',
-            title: 'المنسق الطوعي للمشروع',
-            image: '/images/hassan-portrait.png',
-            bio: [
-                'مواليد 1957. التحق بمكتب اتصال شركة رينو الفرنسية بالخرطوم عام 1977م.',
-                'افتتح شركته الخاصة بالاستيراد والتصدير عام 1983م وعمل في مجال قطع الغيار، الدواجن، والأدوية البيطرية.',
-                'عام 1993م أسس شركة في مجال خدمات الطيران والتخليص الجمركي.',
-                'بين 2011م و 2019م نشط في العمل الطوعي، قائماً بإجراءات تصديق المدرسة ومتابعة الموقع وتأهيل المشروع الزراعي التعاوني بمسقط رأسه بقرية شبتوت بحري بمحلية القولد.'
-            ]
-        }
-    ];
+    const { t, i18n } = useTranslation();
+    
+    const getProp = (obj, propBase) => {
+        const lang = i18n.language || 'ar';
+        if (lang.startsWith('fr') && obj[`${propBase}Fr`]) return obj[`${propBase}Fr`];
+        if (lang.startsWith('en') && obj[`${propBase}En`]) return obj[`${propBase}En`];
+        return obj[`${propBase}Ar`];
+    };
 
     return (
         <section id="visionary" className="py-24 bg-teal-950 text-paper relative overflow-hidden">
@@ -35,8 +20,8 @@ const Visionary = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">قادة المبادرة والتأسيس</h2>
-                    <p className="text-xl text-teal-200/80 font-medium">رجال كرسوا خبراتهم وحياتهم لخدمة المجتمع وبناء الأجيال.</p>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">{t('visionary.title')}</h2>
+                    <p className="text-xl text-teal-200/80 font-medium">{t('visionary.subtitle')}</p>
                 </div>
 
                 <div className="space-y-32">
@@ -77,16 +62,16 @@ const Visionary = () => {
                                 <div className={`lg:col-span-7 space-y-6 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                                     <div className="inline-block border-b-2 border-emerald-custom pb-2 mb-2">
                                         <span className="text-teal-400 font-bold tracking-widest uppercase text-sm">
-                                            {person.title}
+                                            {getProp(person, 'title')}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-                                        {person.name}
+                                    <h3 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+                                        {getProp(person, 'name')}
                                     </h3>
-
-                                    <div className="space-y-4 text-lg md:text-xl text-teal-100/90 leading-loose border-r-4 border-emerald-custom/40 pr-6 ps-2">
-                                        {person.bio.map((paragraph, pIdx) => (
+                                    
+                                    <div className="space-y-4 text-teal-100/80 leading-relaxed text-lg">
+                                        {getProp(person, 'bio')?.map((paragraph, pIdx) => (
                                             <p key={pIdx}>{paragraph}</p>
                                         ))}
                                     </div>
@@ -94,6 +79,24 @@ const Visionary = () => {
                             </motion.div>
                         );
                     })}
+                </div>
+
+                {/* Contributors & Council Section */}
+                <div className="mt-32 pt-16 border-t border-teal-800/30">
+                    <div className="text-center mb-12">
+                        <h3 className="text-3xl font-bold text-white mb-4">{t('visionary.council')}</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-teal-100/80 text-lg">
+                        {councilMembers.map((member, idx) => (
+                            <div key={idx} className="flex items-center gap-3">
+                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-custom/20 flex items-center justify-center text-emerald-400 text-xs">
+                                    ✅
+                                </div>
+                                <span>{getProp(member, 'name')} ({getProp(member, 'title')})</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

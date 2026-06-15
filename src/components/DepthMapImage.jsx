@@ -141,8 +141,8 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
         const render = () => {
             animationFrameId = requestAnimationFrame(render);
 
-            // Lerp current mouse towards target mouse (0.05 is smoothing speed)
-            currentMouse.lerp(targetMouse, 0.05);
+            // Lerp current mouse towards target mouse (0.15 is smoothing speed)
+            currentMouse.lerp(targetMouse, 0.15);
             material.uniforms.uMouse.value.copy(currentMouse);
 
             renderer.render(scene, camera);

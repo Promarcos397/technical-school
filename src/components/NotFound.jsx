@@ -21,7 +21,7 @@ const NotFound = () => {
                 >
                     <img
                         src="/images/charecter-404.png"
-                        alt="شخصية ميكانيكية"
+                        alt={t('notFound.imageAlt')}
                         className="w-64 h-auto drop-shadow-2xl"
                     />
                 </motion.div>
@@ -29,7 +29,7 @@ const NotFound = () => {
                 <h1 className="text-5xl md:text-6xl font-black text-coal mb-6">404</h1>
 
                 <p className="text-xl md:text-2xl font-bold text-teal-900 mb-10 leading-relaxed">
-                    عذراً، يبدو أن هناك عطلاً فنياً في هذا المسار.
+                    {t('notFound.desc')}
                 </p>
 
                 <Link to="/">
@@ -38,7 +38,7 @@ const NotFound = () => {
                         whileTap={{ scale: 0.95 }}
                         className="bg-emerald-custom text-white px-8 py-4 rounded-xl font-bold text-lg md:text-xl shadow-lg shadow-emerald-custom/30 transition-shadow hover:shadow-2xl hover:shadow-emerald-custom/50"
                     >
-                        العودة إلى المخطط الرئيسي
+                        {t('notFound.backHome')}
                     </motion.button>
                 </Link>
             </motion.div>

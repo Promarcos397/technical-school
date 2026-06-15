@@ -97,7 +97,7 @@ const Loader = ({ onLoadingComplete }) => {
                                 transition={{ delay: 0.4, duration: 0.6 }}
                                 className="text-2xl md:text-3xl font-black text-coal font-arabic tracking-tight"
                             >
-                                مدرسة أديب الهاجري الفنية
+                                {t('loader.schoolName')}
                             </motion.h1>
                             <motion.p
                                 initial={{ y: 20, opacity: 0 }}
@@ -105,7 +105,7 @@ const Loader = ({ onLoadingComplete }) => {
                                 transition={{ delay: 0.6, duration: 0.6 }}
                                 className="text-sm md:text-base text-stone-500 font-medium mt-2 tracking-wide font-arabic"
                             >
-                                نبني المستقبل بأيدٍ ماهرة
+                                {t('loader.slogan')}
                             </motion.p>
                         </div>
                     </motion.div>

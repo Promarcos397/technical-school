@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
     const containerRef = useRef(null);
+    const { t } = useTranslation();
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"]
@@ -50,7 +52,7 @@ const Hero = () => {
                 {/* Left Side (RTL) - Typography & Story */}
                 <motion.div
                     style={{ y: yText, opacity: opacityText }}
-                    className="lg:w-1/2 flex flex-col justify-center text-center lg:text-right order-2 lg:order-1 items-center lg:items-start"
+                    className="lg:w-1/2 flex flex-col justify-center text-center lg:text-start order-2 lg:order-1 items-center lg:items-start"
                 >
                     {/* Kinematic Typography Container */}
                     <motion.div
@@ -66,14 +68,11 @@ const Hero = () => {
                     >
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-teal-950 leading-[1.1] tracking-tight mb-6 flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4">
                             <motion.span variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } } }}>
-                                مدرسة
-                            </motion.span>
-                            <motion.span variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } } }}>
-                                أديب الهاجري
+                                {t('hero.school')}
                             </motion.span>
                             <br className="hidden lg:block" />
                             <motion.span variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } } }} className="text-emerald-custom font-bold">
-                                الفنية
+                                {t('hero.technical')}
                             </motion.span>
                         </h1>
                     </motion.div>
@@ -86,8 +85,8 @@ const Hero = () => {
                     >
                         {/* Decorative quote line - hidden on mobile for central alignment, visible on md+ */}
                         <div className="hidden lg:block absolute right-0 top-2 bottom-2 w-1 bg-emerald-custom/30 rounded-full"></div>
-                        <p className="text-lg md:text-xl lg:text-2xl text-coal/70 font-medium leading-relaxed lg:pr-6 text-center lg:text-right">
-                            صرح تعليمي يمثل نقلة نوعية للتعليم الفني بالبلاد. مسجلة بوزارة التربية والتعليم لتخريج أيدي عاملة ماهرة تلبي احتياجات المشاريع التنموية.
+                        <p className="text-lg md:text-xl lg:text-2xl text-coal/70 font-medium leading-relaxed lg:pr-6 text-center lg:text-start">
+                            {t('hero.desc')}
                         </p>
                     </motion.div>
 
@@ -118,7 +117,7 @@ const Hero = () => {
                             }}
                             className="group inline-flex items-center justify-center gap-3 bg-teal-950 text-paper px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all hover:bg-emerald-custom hover:shadow-[0_8px_30px_rgba(16,185,129,0.3)]"
                         >
-                            <span className="translate-x-0 lg:group-hover:-translate-x-1 transition-transform">استكشف المبادرة</span>
+                            <span className="translate-x-0 lg:group-hover:-translate-x-1 transition-transform">{t('hero.explore')}</span>
                             <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
                                     <path d="M5 12h14M12 5l7 7-7 7" />

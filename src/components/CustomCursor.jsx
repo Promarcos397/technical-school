@@ -49,7 +49,7 @@ const CustomCursor = () => {
                     scale: isHovering ? 2.5 : 1,
                     opacity: isHovering ? 0.5 : 1
                 }}
-                transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
+                transition={{ type: "tween", ease: "backOut", duration: 0.05 }}
             />
             <motion.div
                 className="fixed top-0 left-0 w-10 h-10 border border-teal-900/30 rounded-full pointer-events-none z-[99] transform -translate-x-1/2 -translate-y-1/2"
@@ -60,7 +60,7 @@ const CustomCursor = () => {
                     backgroundColor: isHovering ? 'rgba(16, 185, 129, 0.1)' : 'transparent',
                     borderColor: isHovering ? 'rgba(16, 185, 129, 0.5)' : 'rgba(10, 37, 39, 0.3)'
                 }}
-                transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
+                transition={{ type: "tween", ease: "easeOut", duration: 0.1 }}
             />
         </>
     );

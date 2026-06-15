@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Visionary from './components/Visionary';
@@ -31,6 +32,10 @@ const MainLayout = () => (
 function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+  const { i18n } = useTranslation();
+  
+  const currentLang = i18n.language || 'ar';
+  const isRtl = currentLang.startsWith('ar');
 
   useEffect(() => {
     // Only show loader on the initial visit or full page reload
@@ -45,8 +50,8 @@ function AppContent() {
     <>
       {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
 
-      <div className={`min-h-screen flex flex-col relative text-right transition-opacity duration-700 ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir="rtl">
-        {!isLoading && <CustomCursor />}
+      <div className={`min-h-screen flex flex-col relative transition-opacity duration-700 ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
+        {/* !isLoading && <CustomCursor /> */}
         <ScrollToTop />
         <Navbar />
         <Routes>

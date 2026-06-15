@@ -1,76 +1,78 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Wrench, Settings, Snowflake, Wheat, Ruler, Droplets, Monitor } from 'lucide-react';
-
-const departmentsData = [
-    {
-        id: 1,
-        title: 'الكهرباء العامة',
-        subtitle: 'التمديدات والأنظمة الكهربائية',
-        icon: Zap,
-        image: '/images/electrical-bg.jpeg', // Fallbacks if these don't exist yet
-        color: 'from-amber-500/80 to-amber-900/90'
-    },
-    {
-        id: 2,
-        title: 'ميكانيكا السيارات',
-        subtitle: 'صيانة وتشخيص أعطال السيارات',
-        icon: Wrench,
-        image: '/images/auto-bg.jpeg',
-        color: 'from-slate-500/80 to-slate-900/90'
-    },
-    {
-        id: 3,
-        title: 'ميكانيكا الإنتاج',
-        subtitle: 'تشغيل المعادن والمخارط',
-        icon: Settings,
-        image: '/images/production-bg.jpeg',
-        color: 'from-teal-600/80 to-teal-900/90'
-    },
-    {
-        id: 4,
-        title: 'هندسة التبريد والتكييف',
-        subtitle: 'تركيب وصيانة التكييف والتبريد',
-        icon: Snowflake,
-        image: '/images/hvac-bg.png',
-        color: 'from-cyan-500/80 to-cyan-900/90'
-    },
-    {
-        id: 5,
-        title: 'الهندسة المعمارية',
-        subtitle: 'التصميم والرسم الهندسي',
-        icon: Ruler,
-        image: '/images/school-blueprint.png',
-        color: 'from-blue-600/80 to-blue-900/90'
-    },
-    {
-        id: 6,
-        title: 'الهندسة الصحية',
-        subtitle: 'تمديدات المياه والصرف الصحي',
-        icon: Droplets,
-        image: 'public/images/sanitary-bg.png', 
-        color: 'from-sky-500/80 to-sky-900/90'
-    },
-    {
-        id: 7,
-        title: 'الحاسوب',
-        subtitle: 'تقنية المعلومات وعلوم الشبكات',
-        icon: Monitor,
-        image: '/images/computer-bg.png', 
-        color: 'from-indigo-500/80 to-indigo-900/90'
-    },
-    {
-        id: 8,
-        title: 'التصنيع الغذائي',
-        subtitle: 'تغليف التمور وحفظ المنتجات الزراعية',
-        icon: Wheat,
-        image: '/images/food-bg.png',
-        color: 'from-emerald-500/80 to-emerald-900/90'
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 const Departments = () => {
+    const { t } = useTranslation();
     const [hoveredIndex, setHoveredIndex] = useState(2); // Default open is Production Mechanics
+
+    const departmentsData = [
+        {
+            id: 1,
+            title: t('programs.electricityTitle', 'الكهرباء العامة'),
+            subtitle: t('programs.electricitySubtitle', 'التمديدات والأنظمة الكهربائية'),
+            icon: Zap,
+            image: '/images/electrical-bg.jpeg',
+            color: 'from-amber-500/80 to-amber-900/90'
+        },
+        {
+            id: 2,
+            title: t('programs.autoMechanicsTitle', 'ميكانيكا السيارات'),
+            subtitle: t('programs.autoMechanicsSubtitle', 'صيانة وتشخيص أعطال السيارات'),
+            icon: Wrench,
+            image: '/images/auto-bg.jpeg',
+            color: 'from-slate-500/80 to-slate-900/90'
+        },
+        {
+            id: 3,
+            title: t('programs.productionMechanicsTitle', 'ميكانيكا الإنتاج'),
+            subtitle: t('programs.productionMechanicsSubtitle', 'تشغيل المعادن والمخارط'),
+            icon: Settings,
+            image: '/images/production-bg.jpeg',
+            color: 'from-teal-600/80 to-teal-900/90'
+        },
+        {
+            id: 4,
+            title: t('programs.hvacTitle', 'هندسة التبريد والتكييف'),
+            subtitle: t('programs.hvacSubtitle', 'تركيب وصيانة التكييف والتبريد'),
+            icon: Snowflake,
+            image: '/images/hvac-bg.png',
+            color: 'from-cyan-500/80 to-cyan-900/90'
+        },
+        {
+            id: 5,
+            title: t('programs.architectureTitle', 'الهندسة المعمارية'),
+            subtitle: t('programs.architectureSubtitle', 'التصميم والرسم الهندسي'),
+            icon: Ruler,
+            image: '/images/school-blueprint.png',
+            color: 'from-blue-600/80 to-blue-900/90'
+        },
+        {
+            id: 6,
+            title: t('programs.plumbingTitle', 'الهندسة الصحية'),
+            subtitle: t('programs.plumbingSubtitle', 'تمديدات المياه والصرف الصحي'),
+            icon: Droplets,
+            image: 'public/images/sanitary-bg.png', 
+            color: 'from-sky-500/80 to-sky-900/90'
+        },
+        {
+            id: 7,
+            title: t('programs.computerTitle', 'الحاسوب'),
+            subtitle: t('programs.computerSubtitle', 'تقنية المعلومات وعلوم الشبكات'),
+            icon: Monitor,
+            image: '/images/computer-bg.png', 
+            color: 'from-indigo-500/80 to-indigo-900/90'
+        },
+        {
+            id: 8,
+            title: t('programs.foodProcessingTitle', 'التصنيع الغذائي'),
+            subtitle: t('programs.foodProcessingSubtitle', 'تغليف التمور وحفظ المنتجات الزراعية'),
+            icon: Wheat,
+            image: '/images/food-bg.png',
+            color: 'from-emerald-500/80 to-emerald-900/90'
+        },
+    ];
 
     return (
         <section id="departments" className="py-24 md:py-32 bg-coal relative overflow-hidden">
@@ -92,10 +94,10 @@ const Departments = () => {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-paper mb-6 tracking-tight">
-                            الأقسام الفنية
+                            {t('departments.title', 'الأقسام الفنية')}
                         </h2>
                         <p className="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto font-medium leading-relaxed">
-                            مسارات مهنية رفيعة المستوى، صُممت لتلبي احتياجات سوق العمل بأعلى معايير الجودة الهندسية والميكانيكية.
+                            {t('departments.description', 'مسارات مهنية رفيعة المستوى، صُممت لتلبي احتياجات سوق العمل بأعلى معايير الجودة الهندسية والميكانيكية.')}
                         </p>
                     </motion.div>
                 </div>
@@ -116,8 +118,8 @@ const Departments = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{
-                                    layout: { type: "spring", stiffness: 200, damping: 25 },
-                                    opacity: { duration: 0.8, delay: index * 0.1 }
+                                    layout: { type: "spring", stiffness: 300, damping: 25 },
+                                    opacity: { duration: 0.4, delay: index * 0.05 }
                                 }}
                                 className={`relative rounded-3xl overflow-hidden cursor-pointer group flex-shrink-0 lg:flex-shrink
                                     ${isActive ? 'flex-[4] lg:flex-[5] shadow-2xl shadow-black/50' : 'flex-[1] lg:flex-[1] hover:bg-stone-800'}
@@ -129,7 +131,7 @@ const Departments = () => {
                                     <img
                                         src={dept.image}
                                         alt={dept.title}
-                                        className={`w-full h-full object-cover transition-transform duration-1000 ease-out mix-blend-screen
+                                        className={`w-full h-full object-cover transition-transform duration-500 ease-out mix-blend-screen
                                             ${isActive ? 'scale-105 opacity-80' : 'scale-100 opacity-30 group-hover:opacity-50 grayscale'}
                                         `}
                                         onError={(e) => {
@@ -145,10 +147,10 @@ const Departments = () => {
                                 {/* Content Container */}
                                 <div className="absolute inset-0 z-10 p-6 lg:p-8 flex flex-col justify-end">
                                     <div className="flex items-center gap-4 mb-2 lg:mb-4">
-                                        <div className={`p-3 rounded-2xl backdrop-blur-md border transition-all duration-500
+                                        <div className={`p-3 rounded-2xl backdrop-blur-md border transition-all duration-300
                                             ${isActive ? 'bg-white/10 border-white/20' : 'bg-black/20 border-white/5'}
                                         `}>
-                                            <Icon className={`w-6 h-6 lg:w-8 lg:h-8 transition-colors duration-500
+                                            <Icon className={`w-6 h-6 lg:w-8 lg:h-8 transition-colors duration-300
                                                 ${isActive ? 'text-paper' : 'text-stone-500'}
                                             `} />
                                         </div>
@@ -178,16 +180,16 @@ const Departments = () => {
                                                 transition={{ duration: 0.3 }}
                                                 className="overflow-hidden"
                                             >
-                                                <p className="text-stone-300 font-medium text-base lg:text-lg leading-relaxed mt-2 lg:mt-0 pr-16 lg:pr-20">
+                                                <p className="text-stone-300 font-medium text-base lg:text-lg leading-relaxed mt-2 lg:mt-0 pr-16 lg:pr-20 rtl:pr-16 rtl:lg:pr-20 ltr:pl-16 ltr:lg:pl-20 ltr:pr-0">
                                                     {dept.subtitle}
                                                 </p>
 
                                                 <div className="mt-6 flex items-center gap-2 text-paper text-sm font-bold tracking-widest uppercase cursor-pointer group/btn w-fit">
                                                     <span className="relative">
-                                                        اكتشف المسار
+                                                        {t('departments.explore', 'اكتشف المسار')}
                                                         <span className="absolute -bottom-1 left-0 w-0 h-px bg-paper transition-all duration-300 group-hover/btn:w-full"></span>
                                                     </span>
-                                                    <span className="transform -translate-x-2 transition-transform duration-300 group-hover/btn:translate-x-0">←</span>
+                                                    <span className="transform rtl:-translate-x-2 ltr:translate-x-2 transition-transform duration-300 rtl:group-hover/btn:translate-x-0 ltr:group-hover/btn:translate-x-0 rtl:scale-x-100 ltr:-scale-x-100">←</span>
                                                 </div>
                                             </motion.div>
                                         )}

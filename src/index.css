@@ -24,10 +24,10 @@
 /* Hide default cursor on devices that support hover (desktop) */
 @media (pointer: fine) {
 
-  body,
+  /* body,
   a,
   button,
   [role="button"] {
     cursor: none !important;
-  }
+  } */
 }

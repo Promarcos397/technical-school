@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const News = () => {
+    const { t } = useTranslation();
+
     // Ensure page starts at the top
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -14,14 +17,15 @@ const News = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="text-start text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">الأخبار والفعاليات</h1>
-                    <p className="text-xl text-stone-600 max-w-2xl font-medium leading-relaxed">
-                        تابع أحدث المستجدات، الإنجازات الطلابية، والفعاليات التقنية في مدرسة أديب الهاجري.
+                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">{t('news.title')}</h1>
+                    <p className="text-xl text-stone-600 max-w-2xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
+                        {t('news.description')}
                     </p>
                 </motion.div>
 
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-start">
                     {/* News Article 1 - Funding Call */}
                     <motion.article
                         initial={{ opacity: 0, y: 20 }}
@@ -30,14 +34,14 @@ const News = () => {
                         className="bg-white rounded-3xl p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="bg-orange-100 text-orange-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">تحديثات المشروع</span>
-                            <span className="text-stone-400 text-sm">التطوير مستمر</span>
+                            <span className="bg-orange-100 text-orange-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article1Tag')}</span>
+                            <span className="text-stone-400 text-sm">{t('news.article1Status')}</span>
                         </div>
-                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">حملة المساهمة واستكمال تجهيزات الورش الفنية</h2>
+                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">{t('news.article1Title')}</h2>
                         <p className="text-stone-600 leading-relaxed font-medium mb-6 text-lg">
-                            التكلفة المالية الكلية للإنشاءات المذكورة تتجاوز واحد مليون دولار أمريكي. وما نرجوه من جميع الجادين سواء الجهات الحكومية أو المنظمات الخيرية والأفراد المساهمة الفاعلة والمتبني الكامل لتذليل العقبات.
+                            {t('news.article1P1')}
                             <br /><br />
-                            نأمل تضافر الجهود لتأثيث المدرسة بالأصول المنقولة والمعدات اللازمة للورش بأقسامها المختلفة ليتحقق حلم الأجيال.
+                            {t('news.article1P2')}
                         </p>
                     </motion.article>
 
@@ -49,13 +53,13 @@ const News = () => {
                         className="bg-white rounded-3xl p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="bg-emerald-100 text-emerald-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">المجتمع المحلي</span>
+                            <span className="bg-emerald-100 text-emerald-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article2Tag')}</span>
                         </div>
-                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">نبذة عن قرية شبتوت</h2>
+                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">{t('news.article2Title')}</h2>
                         <p className="text-stone-600 leading-relaxed font-medium text-lg">
-                            مقر المدرسة هو قرية شبتوت بالولاية الشمالية وتبعد حوالي 90 كيلومتر جنوب دنقلا عاصمة الولاية، وعشرة كيلومترات من مدينة القولد.
+                            {t('news.article2P1')}
                             <br /><br />
-                            هذا المشروع يخدم مجتمع محلي متعطش للتدريب المهني وللثورة التعليمية التي ستساهم بشكل مباشر في رفع مستوى المعيشة ومحاربة البطالة من خلال اكتساب مهارات تقنية وحرفية.
+                            {t('news.article2P2')}
                         </p>
                     </motion.article>
 
@@ -74,15 +78,15 @@ const News = () => {
                             <img
                                 src="/images/mascot-news.png"
                                 alt="Mascot News"
-                                className="relative z-10 w-full h-full object-contain drop-shadow-lg"
+                                className="relative z-10 w-full h-full object-contain drop-shadow-lg rtl:scale-x-100 ltr:-scale-x-100"
                                 onError={(e) => {
                                     e.target.src = '/images/charecter-404.png';
                                 }}
                             />
                         </motion.div>
-                        <h3 className="text-2xl font-bold text-teal-950 mb-3">نعمل باستمرار لصناعة الأخبار!</h3>
+                        <h3 className="text-2xl font-bold text-teal-950 mb-3">{t('news.moreNewsTitle')}</h3>
                         <p className="text-stone-500 max-w-sm">
-                            تابعنا قريباً لتلقي أحدث التحديثات حول الفعاليات، الإنجازات الطلابية، وتطورات البناء خطوة بخطوة.
+                            {t('news.moreNewsDesc')}
                         </p>
                     </motion.div>
                 </div>
