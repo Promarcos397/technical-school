@@ -38,19 +38,31 @@ function AppContent() {
   const isRtl = currentLang.startsWith('ar');
 
   useEffect(() => {
-    // Only show loader on the initial visit or full page reload
-    // For navigation between pages, we don't need the full 4-second loading screen
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
+    // SIMULATING REAL NETWORK LOADING
+    // In the future, you will replace the timeout below with your actual 
+    // fetch() requests, database calls, or asset preloading.
+    const loadInitialData = async () => {
+      try {
+        // Example of future real network call:
+        // await fetch('https://your-api.endpoint/data'); 
+        
+        // Simulating a 1.5 second network delay so you can see the spinner
+        await new Promise(resolve => setTimeout(resolve, 1500)); 
+      } finally {
+        // Once data is downloaded (or timer finishes), tell the loader to disappear
+        setIsLoading(false);
+      }
+    };
+
+    loadInitialData();
+  }, []); // Empty dependency array ensures this only runs on the initial site load
 
   return (
     <>
-      {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
+      {/* Loader spins endlessly until isLoading is flipped to false */}
+      {isLoading && <Loader />}
 
-      <div className={`min-h-screen flex flex-col relative transition-opacity duration-700 ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
+      <div className={`min-h-screen flex flex-col relative transition-opacity duration-700 ease-in-out ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
         {/* !isLoading && <CustomCursor /> */}
         <ScrollToTop />
         <Navbar />

@@ -1,34 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
-const Loader = ({ onLoadingComplete }) => {
-    const [progress, setProgress] = useState(0);
-
-    useEffect(() => {
-        // Simple progress simulation
-        const interval = setInterval(() => {
-            setProgress(prev => {
-                const next = prev + Math.floor(Math.random() * 15) + 5;
-                if (next >= 100) {
-                    clearInterval(interval);
-                    setTimeout(() => onLoadingComplete(), 600); // Wait a bit after 100%
-                    return 100;
-                }
-                return next;
-            });
-        }, 300);
-
-        // Fallback timeout in case loading takes too long
-        const timeout = setTimeout(() => {
-            setProgress(100);
-            setTimeout(() => onLoadingComplete(), 600);
-        }, 4000);
-
-        return () => {
-            clearInterval(interval);
-            clearTimeout(timeout);
-        };
-    }, [onLoadingComplete]);
+const Loader = () => {
+    const { t } = useTranslation();
 
     return (
         <AnimatePresence>
@@ -38,12 +13,12 @@ const Loader = ({ onLoadingComplete }) => {
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
             >
-                {/* Background decorative elements */}
+                {/* Background decorative elements - Static */}
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sand-200/50 rounded-full blur-3xl mix-blend-multiply opacity-50 pointer-events-none"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-stone-200/50 rounded-full blur-3xl mix-blend-multiply opacity-50 pointer-events-none"></div>
 
                 <div className="relative z-10 flex flex-col items-center">
-                    {/* Logo Section */}
+                    {/* Logo & Spinner Section */}
                     <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
@@ -51,32 +26,38 @@ const Loader = ({ onLoadingComplete }) => {
                         className="mb-12 flex flex-col items-center"
                     >
                         <div className="w-24 h-24 mb-6 relative">
-                            {/* Inner Circle outline */}
-                            <motion.div
-                                className="absolute inset-0 rounded-full border-4 border-stone-200"
-                            ></motion.div>
-
-                            {/* Animated progress circle */}
+                            {/* Creative Orbital Spinner */}
                             <motion.svg
-                                className="absolute inset-0 w-full h-full -rotate-90"
+                                className="absolute inset-0 w-full h-full"
                                 viewBox="0 0 100 100"
+                                animate={{ rotate: 360 }}
+                                transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
                             >
-                                <motion.circle
+                                {/* Faint background track */}
+                                <circle
                                     cx="50"
                                     cy="50"
                                     r="46"
                                     fill="none"
                                     stroke="currentColor"
-                                    strokeWidth="4"
+                                    strokeWidth="3"
+                                    className="text-teal-900/10"
+                                />
+                                {/* Rotating sweeping tail */}
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="46"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
                                     className="text-teal-900"
-                                    strokeDasharray="289.026"
-                                    initial={{ strokeDashoffset: 289.026 }}
-                                    animate={{ strokeDashoffset: 289.026 - (289.026 * progress) / 100 }}
-                                    transition={{ ease: "linear", duration: 0.3 }}
+                                    strokeDasharray="90 289.026"
                                 />
                             </motion.svg>
 
-                            {/* Logo Image */}
+                            {/* Logo Image - Static, no pulsing */}
                             <div className="absolute inset-[6px] bg-white rounded-full flex items-center justify-center p-4 shadow-sm border border-stone-100 overflow-hidden z-10">
                                 <motion.img
                                     src="/images/logo.png"
@@ -109,22 +90,6 @@ const Loader = ({ onLoadingComplete }) => {
                             </motion.p>
                         </div>
                     </motion.div>
-
-                    {/* Progress Percentage */}
-                    <div className="h-6 overflow-hidden flex items-center justify-center">
-                        <AnimatePresence mode="popLayout">
-                            <motion.span
-                                key={progress}
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: -20, opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="text-teal-950 font-bold font-mono text-lg"
-                            >
-                                {progress}%
-                            </motion.span>
-                        </AnimatePresence>
-                    </div>
                 </div>
             </motion.div>
         </AnimatePresence>

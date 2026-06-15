@@ -315,7 +315,7 @@ const Navbar = () => {
             {/* Mobile Bottom Tab Navigation */}
             <nav className="lg:hidden fixed bottom-4 w-[82%] max-w-[400px] left-1/2 -translate-x-1/2 z-50 pointer-events-auto" dir={i18n.language?.startsWith('ar') ? 'rtl' : 'ltr'}>
                 {/* The Glass Bubble Background — same properties as desktop pill */}
-                <div className="absolute inset-0 z-0 pointer-events-none rounded-full overflow-hidden bg-white/10 backdrop-blur-[4px] backdrop-brightness-75 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]">
+                <div className="absolute inset-0 z-0 pointer-events-none rounded-full overflow-hidden bg-white/10 backdrop-blur-[7px] backdrop-brightness-75 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]">
                     <div className="absolute inset-0 rounded-full border-[0.5px] border-white/20 mix-blend-overlay" />
                     <div className="absolute inset-0 rounded-full opacity-40 shadow-[inset_0_3px_6px_rgba(255,255,255,0.8),inset_0_-3px_8px_rgba(0,0,0,0.1)]" />
                     <div className="absolute inset-x-2 top-0 h-[25%] rounded-full bg-gradient-to-b from-white/20 to-transparent blur-[0.5px]" />
