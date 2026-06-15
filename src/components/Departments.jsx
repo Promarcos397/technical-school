@@ -53,7 +53,7 @@ const Departments = () => {
             title: t('programs.plumbingTitle', 'الهندسة الصحية'),
             subtitle: t('programs.plumbingSubtitle', 'تمديدات المياه والصرف الصحي'),
             icon: Droplets,
-            image: 'public/images/sanitary-bg.png', 
+            image: '/images/sanitary-bg.png', 
             color: 'from-sky-500/80 to-sky-900/90'
         },
         {
