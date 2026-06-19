@@ -133,6 +133,7 @@
     "phase1Desc": "Un bâtiment établi sur un rez-de-chaussée et deux étages d'une superficie de 750 mètres carrés. Le rez-de-chaussée et le premier étage ont été achevés, comprenant 6 salles de conférence, 4 laboratoires et des bureaux administratifs.",
     "phase1Status": "Phase Active - Nécessite un Financement",
     "phase2Badge": "Phase 2 - Mise en Œuvre en Cours",
+    "phase2ActiveBadge": "Phase Active",
     "phase2Title": "Ateliers Pratiques (Toit à Pignon)",
     "phase2Desc": "Construction de 2 ateliers à pignon de 40×15 mètres chacun. Chaque atelier comprend : une salle de formation pratique, une salle d'étude théorique, un bureau pour professeur et un magasin d'équipement.",
     "phase3Badge": "Phase 3 - Vision Future",

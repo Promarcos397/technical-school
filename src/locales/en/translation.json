@@ -133,6 +133,7 @@
     "phase1Desc": "A building established on a ground floor and two upper floors with an area of 750 square meters. The ground and first floors have been completed, containing 6 lecture halls, 4 laboratories, and administrative offices.",
     "phase1Status": "Active Phase - Requires Funding",
     "phase2Badge": "Phase 2 - Ongoing Implementation",
+    "phase2ActiveBadge": "Active Phase",
     "phase2Title": "Practical Workshops (Gable Roof)",
     "phase2Desc": "Construction of 2 gable workshops, 40×15 meters each. Each workshop includes: a practical training hall, a theoretical study room, a teacher's office, and an equipment store.",
     "phase3Badge": "Phase 3 - Future Vision",
