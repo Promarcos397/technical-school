@@ -20,7 +20,7 @@
   },
   "visionary": {
     "title": "Visionnaires",
-    "subtitle": "Dirigeants de l'Initiative",
+    "subtitle": "Architectes de la Vision",
     "council": "Membres du Conseil Éducatif"
   },
   "missingFacilities": {
@@ -38,6 +38,11 @@
       "Théâtre",
       "Espaces verts / aménagements paysagers"
     ]
+  },
+  "departments": {
+    "title": "Départements Techniques",
+    "description": "Filières professionnelles de haut niveau, conçues pour répondre aux besoins du marché du travail selon les plus hauts standards de qualité en ingénierie et mécanique.",
+    "explore": "Explorer la filière"
   },
   "programs": {
     "title": "Programmes Académiques",
@@ -118,7 +123,7 @@
     "location": "Emplacement",
     "mapTitle": "Carte de l'école",
     "contactTitle": "Contact",
-    "coordinator": "Coordinateur Volontaire : Hassan Mohammed Hamad Tanjallab",
+    "coordinator": "Coordinateur Bénévole : Hassan Mohammed Hamad Tongelab",
     "quickInquiry": "Demande Rapide",
     "successMessage": "Envoyé avec succès !",
     "errorMessage": "Erreur survenue, réessayez.",

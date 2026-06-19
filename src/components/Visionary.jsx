@@ -48,7 +48,7 @@ const Visionary = () => {
                                             <DepthMapImage
                                                 imageSrc={person.image}
                                                 depthSrc={person.image.replace('.png', '').replace('-prortrait', '-depth').replace('-portrait', '-depth') + '.png'}
-                                                alt={person.name}
+                                                alt={getProp(person, 'name')}
                                                 className="w-full h-full object-cover z-10"
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center text-teal-800/50 -z-10 font-bold text-xl text-center px-6 leading-relaxed">

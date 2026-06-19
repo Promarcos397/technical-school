@@ -20,7 +20,7 @@
   },
   "visionary": {
     "title": "Visionaries",
-    "subtitle": "Leading the Initiative",
+    "subtitle": "Architects of the Vision",
     "council": "Educational Council Members"
   },
   "missingFacilities": {
@@ -38,6 +38,11 @@
       "Theater",
       "Green areas / landscaped grounds"
     ]
+  },
+  "departments": {
+    "title": "Technical Departments",
+    "description": "High-level professional tracks, designed to meet the demands of the labor market with the highest engineering and technical quality standards.",
+    "explore": "Explore Track"
   },
   "programs": {
     "title": "Academic Programs",
@@ -118,7 +123,7 @@
     "location": "Location",
     "mapTitle": "School Location Map",
     "contactTitle": "Contact",
-    "coordinator": "Voluntary Coordinator: Hassan Mohammed Hamad Tanjallab",
+    "coordinator": "Voluntary Coordinator: Hassan Mohammed Hamad Tongelab",
     "quickInquiry": "Quick Inquiry",
     "successMessage": "Sent successfully!",
     "errorMessage": "Error occurred, try again.",
