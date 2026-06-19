@@ -46,8 +46,23 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
             className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center bg-paper pt-28 md:pt-32 pb-16 md:pb-24"
         >
+            {/* Full-bleed ambient background pulled from the school render */}
+            <motion.div
+                style={{ y: yImage }}
+                className="absolute inset-0 -z-10 scale-110"
+            >
+                <img
+                    src="/images/school-3d-render.jpeg"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-cover object-center opacity-[0.07]"
+                />
+            </motion.div>
+            {/* Vignette so edges fade back to paper */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-paper/60 via-transparent to-paper/80 pointer-events-none" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-paper/80 via-transparent to-paper/80 pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 relative z-10">
 
                 {/* Left Side (RTL) - Typography & Story */}
                 <motion.div
@@ -135,7 +150,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.5, ease: [0.25, 1, 0.5, 1] }}
-                        className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] aspect-[3/4]"
+                        className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[520px] aspect-[3/4]"
                     >
                         {/* The Arch Frame */}
                         <div

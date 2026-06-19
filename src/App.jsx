@@ -21,9 +21,9 @@ const MainLayout = () => (
   <>
     <main className="flex-grow">
       <Hero />
-      <Visionary />
       <About />
       <Departments />
+      <Visionary />
       <Progress />
     </main>
   </>
