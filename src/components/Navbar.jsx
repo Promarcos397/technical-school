@@ -321,7 +321,7 @@ const Navbar = () => {
                     <div className="absolute inset-x-2 top-0 h-[25%] rounded-full bg-gradient-to-b from-white/20 to-transparent blur-[0.5px]" />
                 </div>
 
-                <div className="relative z-10 flex items-center justify-between p-1">
+                <div className="relative z-10 flex items-center justify-between p-1.5">
                     {navLinks.map((link) => {
                         const isActive = location.pathname === link.href;
                         let IconComponent = Home;
@@ -333,7 +333,7 @@ const Navbar = () => {
                             <Link
                                 key={link.id}
                                 to={link.href}
-                                className={`relative flex flex-col items-center justify-center flex-1 py-1.5 transition-all z-10 ${isActive ? 'text-teal-950' : 'text-white/70 hover:text-teal-950'}`}
+                                className={`relative flex flex-col items-center justify-center flex-1 py-2 transition-all z-10 ${isActive ? 'text-teal-950' : 'text-white/70 hover:text-teal-950'}`}
                             >
                                 {isActive && (
                                     <motion.div 
