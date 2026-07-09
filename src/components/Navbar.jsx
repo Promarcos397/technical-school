@@ -99,12 +99,9 @@ const Navbar = () => {
             {/* Mobile Bottom Tab Navigation */}
             <nav className="lg:hidden fixed bottom-4 w-[82%] max-w-[400px] left-1/2 -translate-x-1/2 z-50 pointer-events-auto" dir={i18n.language?.startsWith('ar') ? 'rtl' : 'ltr'}>
                 {/* The Glass Bubble Background — same properties as desktop pill */}
-                <div className="absolute inset-0 z-0 pointer-events-none rounded-full overflow-hidden bg-white/10 backdrop-blur-[7px] backdrop-brightness-75 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]">
-                    <div className="absolute inset-0 rounded-full border-[0.5px] border-white/20 mix-blend-overlay" />
-                    <div className="absolute inset-0 rounded-full opacity-40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]" />
-                </div>
+                <div className="absolute inset-0 z-0 pointer-events-none rounded-full bg-white/10 backdrop-blur-[7px] backdrop-brightness-90 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]" />
 
-                <div className="relative z-10 flex items-center justify-between p-1.5">
+                <div className="relative z-10 flex items-center justify-between p-2">
                     {navLinks.map((link) => {
                         const isActive = location.pathname === link.href;
                         let IconComponent = Home;
@@ -116,7 +113,7 @@ const Navbar = () => {
                             <Link
                                 key={link.id}
                                 to={link.href}
-                                className={`relative flex flex-col items-center justify-center flex-1 py-2 transition-all z-10 ${isActive ? 'text-coal' : 'text-white/70 hover:text-coal'}`}
+                                className={`relative flex flex-col items-center justify-center flex-1 py-3 transition-all z-10 ${isActive ? 'text-coal' : 'text-white/70 hover:text-coal'}`}
                             >
                                 {isActive && (
                                     <motion.div

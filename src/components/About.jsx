@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import SectionHeader from './SectionHeader';
 
 const CountUp = ({ end, duration = 2, delay = 0 }) => {
     const [count, setCount] = useState(0);
@@ -50,33 +51,17 @@ const CountUp = ({ end, duration = 2, delay = 0 }) => {
 const About = () => {
     const { t } = useTranslation();
     return (
-        <section id="about" className="py-20 md:py-32 bg-paper relative overflow-hidden">
+        <section id="about" className="py-20 md:py-28 bg-paper relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <SectionHeader
+                    index={1}
+                    eyebrow={t('about.subtitle')}
+                    title={<>{t('about.title1')} {t('about.title2')}</>}
+                />
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                     {/* Narrative (Left side in RTL, so Col span 7) */}
                     <div className="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-start">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="inline-block border-b-2 border-gold-sun pb-2 mb-2 md:mb-4"
-                        >
-                            <span className="text-coal font-bold tracking-widest uppercase text-xs md:text-sm">{t('about.subtitle')}</span>
-                        </motion.div>
-
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-coal leading-tight"
-                        >
-                            {t('about.title1')} <br className="hidden sm:block" />
-                            <span className="text-coal block mt-2 sm:mt-0 sm:inline">{t('about.title2')}</span>
-                        </motion.h2>
-
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

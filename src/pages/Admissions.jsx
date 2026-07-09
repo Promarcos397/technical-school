@@ -55,9 +55,7 @@ const Admissions = () => {
     return (
         <section className="pt-32 pb-24 min-h-screen bg-paper relative overflow-hidden">
             {/* Background noise/accents */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold-sun/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-ink-800/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
-
+                        
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <motion.div

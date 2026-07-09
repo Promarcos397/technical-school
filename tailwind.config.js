@@ -18,7 +18,7 @@ export default {
         },
         // Calmer honey gold, derived from the logo sun
         gold: {
-          sun: '#E2C144',
+          sun: '#E9D26D',
           deep: '#8F6B12',
         },
         // Warm olive-charcoal darks, straight from the logo marks

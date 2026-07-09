@@ -170,7 +170,6 @@ const Programs = () => {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="mt-20 bg-gold-sun/10 border border-gold-sun/30 rounded-lg p-8 md:p-12 relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-gold-sun/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8 text-start">
                         <div className="w-16 h-16 bg-gold-sun rounded-lg flex items-center justify-center flex-shrink-0">
                             <Wheat className="w-8 h-8 text-white" />

@@ -2,6 +2,7 @@ import { Check } from 'lucide-react';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import SectionHeader from './SectionHeader';
 import DepthMapImage from './DepthMapImage';
 import { visionaries, councilMembers } from '../data/peopleData';
 
@@ -16,14 +17,15 @@ const Visionary = () => {
     };
 
     return (
-        <section id="visionary" className="py-24 bg-ink-900 text-paper relative overflow-hidden">
-            <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.4) 0%, transparent 40%)' }}></div>
+        <section id="visionary" className="py-20 md:py-28 bg-ink-900 text-paper relative overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">{t('visionary.title')}</h2>
-                    <p className="text-xl text-stone-300/90 font-medium">{t('visionary.subtitle')}</p>
-                </div>
+                <SectionHeader
+                    index={3}
+                    dark
+                    title={t('visionary.title')}
+                    subtitle={t('visionary.subtitle')}
+                />
 
                 <div className="space-y-32">
                     {visionaries.map((person, index) => {
@@ -41,7 +43,7 @@ const Visionary = () => {
                             >
                                 {/* Portrait Area */}
                                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <div className="relative p-2 bg-gradient-to-tr from-gold-sun/40 to-ink-800/20 rounded-lg">
+                                    <div className="relative p-2 bg-gradient-to-tr from-gold-sun/25 to-ink-800/20 rounded-lg">
                                         <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
 
                                         <div className="rounded-md overflow-hidden relative z-10 border border-ink-700/50 aspect-square flex items-center justify-center bg-coal">
@@ -91,7 +93,7 @@ const Visionary = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-stone-200/80 text-lg">
                         {councilMembers.map((member, idx) => (
                             <div key={idx} className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/20 flex items-center justify-center text-gold-sun">
+                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/10 flex items-center justify-center text-gold-sun">
                                     <Check size={12} strokeWidth={3} />
                                 </div>
                                 <span>{getProp(member, 'name')} ({getProp(member, 'title')})</span>

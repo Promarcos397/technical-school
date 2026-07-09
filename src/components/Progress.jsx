@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import SectionHeader from './SectionHeader';
 
 const ProgressSlider = ({ image1, image2 }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -41,13 +42,14 @@ const ProgressSlider = ({ image1, image2 }) => {
 const Progress = () => {
     const { t } = useTranslation();
     return (
-        <section id="progress" className="py-24 bg-paper/50 relative">
+        <section id="progress" className="py-20 md:py-28 bg-paper/50 relative">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-coal mb-6">{t('progress.title')}</h2>
-                    <p className="text-xl text-stone-500 font-medium">{t('progress.subtitle')}</p>
-                </div>
+                <SectionHeader
+                    index={4}
+                    title={t('progress.title')}
+                    subtitle={t('progress.subtitle')}
+                />
 
                 <div className="space-y-24 md:space-y-32">
 
@@ -83,7 +85,7 @@ const Progress = () => {
                                 {/* Status chip: one calm "live" cue — a small pulsing dot, nothing else moves */}
                                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 text-gold-deep px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-sun opacity-70"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-sun opacity-60"></span>
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-deep"></span>
                                     </span>
                                     {t('progress.phase2ActiveBadge')}
@@ -91,7 +93,7 @@ const Progress = () => {
                             </div>
                         </div>
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-2">
-                            <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/15 px-3 py-1 rounded-full">{t('progress.phase2Badge')}</span>
+                            <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/10 px-3 py-1 rounded-full">{t('progress.phase2Badge')}</span>
                             <h3 className="text-2xl md:text-3xl font-bold text-coal">{t('progress.phase2Title')}</h3>
                             <p className="text-base md:text-lg text-stone-600 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
                                 {t('progress.phase2Desc')}

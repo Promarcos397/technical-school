@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Wrench, Settings, Snowflake, Wheat, Ruler, Droplets, Monitor } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import SectionHeader from './SectionHeader';
 
 const Departments = () => {
     const { t } = useTranslation();
@@ -86,21 +87,12 @@ const Departments = () => {
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
-                <div className="text-center mb-16 md:mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-paper mb-6 tracking-tight">
-                            {t('departments.title', 'الأقسام الفنية')}
-                        </h2>
-                        <p className="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto font-medium leading-relaxed">
-                            {t('departments.description', 'مسارات مهنية رفيعة المستوى، صُممت لتلبي احتياجات سوق العمل بأعلى معايير الجودة الهندسية والميكانيكية.')}
-                        </p>
-                    </motion.div>
-                </div>
+                <SectionHeader
+                    index={2}
+                    dark
+                    title={t('departments.title', 'الأقسام الفنية')}
+                    subtitle={t('departments.description', 'مسارات مهنية رفيعة المستوى، صُممت لتلبي احتياجات سوق العمل بأعلى معايير الجودة الهندسية والميكانيكية.')}
+                />
 
                 {/* The Expanding Gallery */}
                 <div className="flex flex-col lg:flex-row h-[800px] lg:h-[600px] gap-2 lg:gap-4 w-full">
