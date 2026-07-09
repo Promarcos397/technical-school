@@ -8,7 +8,7 @@ const ProgressSlider = ({ image1, image2 }) => {
 
     return (
         <div
-            className="relative w-full h-80 rounded-2xl overflow-hidden cursor-ew-resize group shadow-lg"
+            className="relative w-full h-80 rounded-lg overflow-hidden cursor-ew-resize group shadow-lg"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -77,11 +77,15 @@ const Progress = () => {
                         viewport={{ once: true, margin: "-100px" }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:flex-row-reverse text-center lg:text-start"
                     >
-                        <div className="order-1 lg:order-1 relative group rounded-2xl p-1 bg-gradient-to-br from-amber-400 to-orange-600 animate-pulse-slow mx-4 sm:mx-8 lg:mx-0">
-                            <div className="absolute inset-0 bg-orange-500/20 blur-xl animate-pulse rounded-full z-[-1]" />
-                            <div className="rounded-xl overflow-hidden shadow-2xl relative bg-white">
+                        <div className="order-1 lg:order-1 relative group rounded-lg border border-orange-300/60 p-1 mx-4 sm:mx-8 lg:mx-0">
+                            <div className="rounded-md overflow-hidden shadow-xl relative bg-white">
                                 <img src="/images/school-workshops.png" alt={t('a11y.workshopsAlt')} className="w-full h-80 object-cover" />
-                                <div className="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                                {/* Status chip: one calm "live" cue — a small pulsing dot, nothing else moves */}
+                                <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 text-orange-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-60"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
+                                    </span>
                                     {t('progress.phase2ActiveBadge')}
                                 </div>
                             </div>
@@ -110,7 +114,7 @@ const Progress = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4 sm:px-8 lg:px-0">
 
                             {/* Dorms Blueprint Hover */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-2xl group overflow-hidden relative min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg group overflow-hidden relative min-h-[300px] md:min-h-[400px]">
                                 <img src="/images/dorms.png" alt={t('a11y.dormsRenderAlt')} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" />
                                 <img src="/images/dorms-blueprint.png" alt={t('a11y.dormsBlueprintAlt')} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-coal/90 via-coal/40 to-transparent p-6 flex flex-col justify-end">
@@ -120,7 +124,7 @@ const Progress = () => {
                             </div>
 
                             {/* Video 1: Water */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-2xl relative overflow-hidden min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <video src="/images/water-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.waterTitle')}</h4>
@@ -129,7 +133,7 @@ const Progress = () => {
                             </div>
 
                             {/* Video 2: Solar */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-2xl relative overflow-hidden min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <video src="/images/solar-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.solarTitle')}</h4>
@@ -147,7 +151,7 @@ const Progress = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="mt-24 md:mt-32 bg-teal-900 text-paper p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden"
+                    className="mt-24 md:mt-32 bg-teal-900 text-paper p-8 md:p-12 rounded-lg shadow-2xl relative overflow-hidden"
                 >
                     <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.4) 0%, transparent 40%)' }}></div>
                     <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-start">

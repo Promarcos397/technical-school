@@ -1,7 +1,11 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
 
+// Editorial register: full-bleed documentary image, quiet type hierarchy,
+// a grounding location line, and two purposeful CTAs. Single parallax only.
 const Hero = () => {
     const containerRef = useRef(null);
     const { t } = useTranslation();
@@ -10,179 +14,82 @@ const Hero = () => {
         offset: ["start start", "end start"]
     });
 
-    // Vertical Scroll Parallax
-    const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-    const yText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
     const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-    // 3D Mouse Tracking Setup
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-
-    // Atmospheric Orbs (Opposite Pan)
-    const orbX = useSpring(useTransform(mouseX, [-0.5, 0.5], [40, -40]), { damping: 40, stiffness: 50 });
-    const orbY = useSpring(useTransform(mouseY, [-0.5, 0.5], [40, -40]), { damping: 40, stiffness: 50 });
-
-    const handleMouseMove = (event) => {
-        if (!containerRef.current) return;
-        const rect = containerRef.current.getBoundingClientRect();
-        // Calculate normalized mouse position from -0.5 to 0.5
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-        mouseX.set(x);
-        mouseY.set(y);
-    };
-
-    const handleMouseLeave = () => {
-        // Return to center
-        mouseX.set(0);
-        mouseY.set(0);
-    };
 
     return (
         <section
             ref={containerRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center bg-paper pt-28 md:pt-32 pb-16 md:pb-24"
+            className="min-h-screen relative overflow-hidden flex items-end bg-teal-950"
         >
-            {/* Full-bleed ambient background pulled from the school render */}
-            <motion.div
-                style={{ y: yImage }}
-                className="absolute inset-0 -z-10 scale-110"
-            >
+            {/* Full-bleed image, sharp edges */}
+            <motion.div style={{ y: yImage }} className="absolute inset-0 scale-105">
                 <img
                     src="/images/school-3d-render.jpeg"
-                    alt=""
-                    aria-hidden="true"
-                    className="w-full h-full object-cover object-center opacity-[0.07]"
+                    alt={t('a11y.hero3dAlt')}
+                    className="w-full h-full object-cover object-center"
                 />
+                {/* Legibility gradient anchored to the text side */}
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/95 via-teal-950/45 to-teal-950/15" />
             </motion.div>
-            {/* Vignette so edges fade back to paper */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-paper/60 via-transparent to-paper/80 pointer-events-none" />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-paper/80 via-transparent to-paper/80 pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 relative z-10">
-
-                {/* Left Side (RTL) - Typography & Story */}
+            <motion.div
+                style={{ opacity: opacityText }}
+                className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 md:pb-28 pt-36"
+            >
                 <motion.div
-                    style={{ y: yText, opacity: opacityText }}
-                    className="lg:w-1/2 flex flex-col justify-center text-center lg:text-start order-2 lg:order-1 items-center lg:items-start"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: {},
+                        visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } }
+                    }}
+                    className="max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-start"
                 >
-                    {/* Kinematic Typography Container */}
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: {
-                                opacity: 1,
-                                transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-                            }
-                        }}
+                    {/* Eyebrow: where this is */}
+                    <motion.p
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        className="flex items-center gap-2 text-emerald-300 font-semibold text-xs md:text-sm tracking-widest uppercase mb-5"
                     >
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-teal-950 leading-[1.1] tracking-tight mb-6 flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4">
-                            <motion.span variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } } }}>
-                                {t('hero.school')}
-                            </motion.span>
-                            <br className="hidden lg:block" />
-                            <motion.span variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12 } } }} className="text-emerald-custom font-bold">
-                                {t('hero.technical')}
-                            </motion.span>
-                        </h1>
-                    </motion.div>
+                        <MapPin size={14} strokeWidth={2.25} />
+                        {t('hero.location')}
+                    </motion.p>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-                        className="mb-10 relative max-w-lg w-full flex flex-col items-center lg:items-start"
+                    <motion.h1
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-5"
                     >
-                        {/* Decorative quote line - hidden on mobile for central alignment, visible on md+ */}
-                        <div className="hidden lg:block absolute right-0 top-2 bottom-2 w-1 bg-emerald-custom/30 rounded-full"></div>
-                        <p className="text-lg md:text-xl lg:text-2xl text-coal/70 font-medium leading-relaxed lg:pr-6 text-center lg:text-start">
-                            {t('hero.desc')}
-                        </p>
-                    </motion.div>
+                        {t('hero.school')}{' '}
+                        <span className="text-emerald-400">{t('hero.technical')}</span>
+                    </motion.h1>
 
-                    {/* Magnetic Button */}
+                    <motion.p
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mb-9"
+                    >
+                        {t('hero.desc')}
+                    </motion.p>
+
+                    {/* Two CTAs: donors/partners first, students second */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
-                        className="relative w-max mt-4"
-                        onMouseMove={(e) => {
-                            // Only apply magnetic effect on desktop (using a simple check)
-                            if (window.innerWidth >= 1024) {
-                                const rect = e.currentTarget.getBoundingClientRect();
-                                const x = e.clientX - rect.left - rect.width / 2;
-                                const y = e.clientY - rect.top - rect.height / 2;
-                                e.currentTarget.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                            }
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = `translate(0px, 0px)`;
-                        }}
-                        style={{ transition: 'transform 0.2s cubic-bezier(0.33, 1, 0.68, 1)' }}
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
                     >
                         <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="group inline-flex items-center justify-center gap-3 bg-teal-950 text-paper px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all hover:bg-emerald-custom hover:shadow-[0_8px_30px_rgba(16,185,129,0.3)]"
+                            onClick={() => document.getElementById('support')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="inline-flex items-center justify-center bg-emerald-custom text-white px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:bg-emerald-600"
                         >
-                            <span className="translate-x-0 lg:group-hover:-translate-x-1 transition-transform">{t('hero.explore')}</span>
-                            <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </div>
+                            {t('hero.ctaSupport')}
                         </button>
+                        <Link
+                            to="/programs"
+                            className="inline-flex items-center justify-center border border-white/40 text-white px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:bg-white/10 hover:border-white/60"
+                        >
+                            {t('hero.ctaPrograms')}
+                        </Link>
                     </motion.div>
                 </motion.div>
-
-                {/* Right Side (RTL) - The Gallery Arch */}
-                <div className="lg:w-1/2 flex justify-center order-1 lg:order-2 w-full px-4 sm:px-8 lg:px-0">
-
-                    {/* Base Arch Container */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.5, ease: [0.25, 1, 0.5, 1] }}
-                        className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[520px] aspect-[3/4]"
-                    >
-                        {/* The Arch Frame */}
-                        <div
-                            className="absolute inset-0 rounded-t-[250px] rounded-b-3xl overflow-hidden shadow-2xl shadow-teal-900/10 border-[6px] border-white/50 bg-stone-200"
-                        >
-                            <motion.div
-                                style={{ y: yImage }}
-                                className="w-full h-[120%]" // Extra height for parallax
-                            >
-                                <img
-                                    src="/images/school-3d-render.jpeg"
-                                    alt={t('a11y.hero3dAlt')}
-                                    className="w-full h-full object-cover scale-105" // Slight scale to avoid edge clipping on tilt
-                                />
-                                {/* Soft inner shadow vignette */}
-                                <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.1)] rounded-t-[250px] rounded-b-3xl"></div>
-                            </motion.div>
-                        </div>
-
-                        {/* Atmospheric Orbs (Opposite Parallax panning) */}
-                        <motion.div
-                            style={{ x: orbX, y: orbY, transform: "translateZ(-80px)" }} // Pushed back to create deep depth
-                            className="absolute -bottom-8 -left-8 w-32 h-32 bg-emerald-custom/10 rounded-full blur-2xl pointer-events-none"
-                        />
-                        <motion.div
-                            style={{ x: orbX, y: orbY, transform: "translateZ(-40px)" }}
-                            className="absolute -top-12 -right-12 w-40 h-40 bg-teal-800/10 rounded-full blur-3xl pointer-events-none"
-                        />
-                    </motion.div>
-                </div>
-
-            </div>
+            </motion.div>
         </section>
     );
 };

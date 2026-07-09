@@ -11,7 +11,7 @@ const SupportInvite = () => {
     const { t } = useTranslation();
 
     return (
-        <section className="bg-paper/80 py-8 px-4 sm:px-6 lg:px-8 border-y border-stone-200/50 flex flex-col items-center justify-center gap-4">
+        <section id="support" className="scroll-mt-20 bg-paper/80 py-10 px-4 sm:px-6 lg:px-8 border-y border-stone-200/50 flex flex-col items-center justify-center gap-4">
             <p className="text-coal font-bold text-lg text-center">
                 {t('footer.partnerBannerTitle', 'للمؤسسات والشركاء: تحميل الملف الهندسي والمالي المفصل')}
             </p>

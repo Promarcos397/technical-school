@@ -40,10 +40,10 @@ const Visionary = () => {
                             >
                                 {/* Portrait Area */}
                                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <div className="relative p-2 bg-gradient-to-tr from-emerald-custom/40 to-teal-800/20 rounded-2xl">
-                                        <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-2xl transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
+                                    <div className="relative p-2 bg-gradient-to-tr from-emerald-custom/40 to-teal-800/20 rounded-lg">
+                                        <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
 
-                                        <div className="rounded-xl overflow-hidden relative z-10 border border-teal-800/50 aspect-square flex items-center justify-center bg-coal">
+                                        <div className="rounded-md overflow-hidden relative z-10 border border-teal-800/50 aspect-square flex items-center justify-center bg-coal">
                                             {/* Image rendering with WebGL Depth Map */}
                                             <DepthMapImage
                                                 imageSrc={person.image}

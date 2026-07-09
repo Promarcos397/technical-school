@@ -19,7 +19,7 @@ const News = () => {
                     transition={{ duration: 0.8 }}
                     className="text-start text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">{t('news.title')}</h1>
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('news.title')}</h1>
                     <p className="text-xl text-stone-600 max-w-2xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
                         {t('news.description')}
                     </p>
@@ -31,7 +31,7 @@ const News = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="bg-white rounded-3xl p-8 border border-stone-200/50 shadow-sm"
+                        className="bg-white rounded-lg p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <span className="bg-orange-100 text-orange-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article1Tag')}</span>
@@ -50,7 +50,7 @@ const News = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="bg-white rounded-3xl p-8 border border-stone-200/50 shadow-sm"
+                        className="bg-white rounded-lg p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
                             <span className="bg-emerald-100 text-emerald-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article2Tag')}</span>
@@ -69,7 +69,7 @@ const News = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="md:col-span-2 mt-8 flex flex-col items-center justify-center text-center p-12 bg-white/50 backdrop-blur-sm border border-stone-200/50 rounded-3xl"
+                        className="md:col-span-2 mt-8 flex flex-col items-center justify-center text-center p-12 bg-white/50 backdrop-blur-sm border border-stone-200/50 rounded-lg"
                     >
                         <h3 className="text-2xl font-bold text-teal-950 mb-3">{t('news.moreNewsTitle')}</h3>
                         <p className="text-stone-500 max-w-sm">

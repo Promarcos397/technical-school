@@ -76,7 +76,7 @@ const Loader = () => {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.6 }}
-                                className="text-2xl md:text-3xl font-black text-coal font-arabic tracking-tight"
+                                className="text-2xl md:text-3xl font-extrabold text-coal font-arabic tracking-tight"
                             >
                                 {t('loader.schoolName')}
                             </motion.h1>

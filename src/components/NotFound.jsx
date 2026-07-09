@@ -29,7 +29,7 @@ const NotFound = () => {
                     />
                 </motion.div>
 
-                <h1 className="text-5xl md:text-6xl font-black text-coal mb-6">404</h1>
+                <h1 className="text-5xl md:text-6xl font-extrabold text-coal mb-6">404</h1>
 
                 <p className="text-xl md:text-2xl font-bold text-teal-900 mb-10 leading-relaxed">
                     {t('notFound.desc')}
@@ -39,7 +39,7 @@ const NotFound = () => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-emerald-custom text-white px-8 py-4 rounded-xl font-bold text-lg md:text-xl shadow-lg shadow-emerald-custom/30 transition-shadow hover:shadow-2xl hover:shadow-emerald-custom/50"
+                        className="bg-emerald-custom text-white px-8 py-4 rounded-md font-bold text-lg md:text-xl shadow-lg shadow-emerald-custom/30 transition-shadow hover:shadow-2xl hover:shadow-emerald-custom/50"
                     >
                         {t('notFound.backHome')}
                     </motion.button>

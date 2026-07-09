@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Phone, Mail } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -53,7 +53,7 @@ const Footer = () => {
                     {/* Column 2: Map */}
                     <div className="space-y-4">
                         <h4 className="text-white font-bold text-lg">{t('footer.location', 'الموقع')}</h4>
-                        <div className="w-full h-32 rounded-xl overflow-hidden border border-teal-800/50 relative bg-teal-900/20 group">
+                        <div className="w-full h-32 rounded-md overflow-hidden border border-teal-800/50 relative bg-teal-900/20 group">
                             <div className="absolute inset-0 bg-teal-900/20 group-hover:bg-transparent transition-colors pointer-events-none z-10"></div>
                             <iframe
                                 title={t('footer.mapTitle', 'خريطة موقع المدرسة')}
@@ -77,8 +77,8 @@ const Footer = () => {
                         <h4 className="text-white font-bold text-lg">{t('footer.contactTitle', 'التواصل')}</h4>
                         <div className="text-stone-300 text-sm leading-loose flex flex-col gap-2 items-center md:items-start">
                             <p className="text-white/80">{t('footer.coordinator', 'المنسق الطوعي : حسن محمد حمد تنجلاب')}</p>
-                            <a href="tel:+33616458399" dir="ltr" className="hover:text-emerald-400 hover:underline transition-colors block w-fit">📞 +33 616458399</a>
-                            <a href="mailto:tongilabhassan@gmail.com" className="hover:text-emerald-400 hover:underline transition-colors block w-fit">✉️ tongilabhassan@gmail.com</a>
+                            <a href="tel:+33616458399" dir="ltr" className="hover:text-emerald-400 hover:underline transition-colors flex items-center gap-2 w-fit"><Phone className="w-4 h-4 shrink-0" /> +33 616458399</a>
+                            <a href="mailto:tongilabhassan@gmail.com" className="hover:text-emerald-400 hover:underline transition-colors flex items-center gap-2 w-fit"><Mail className="w-4 h-4 shrink-0" /> tongilabhassan@gmail.com</a>
                         </div>
                     </div>
 

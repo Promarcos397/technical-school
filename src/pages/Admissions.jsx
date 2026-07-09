@@ -66,7 +66,7 @@ const Admissions = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-16 text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">{t('admissions.title')}</h1>
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('admissions.title')}</h1>
                     <p className="text-xl text-stone-600 max-w-3xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
                         {t('admissions.description')}
                     </p>
@@ -81,7 +81,7 @@ const Admissions = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="lg:col-span-4 flex flex-col space-y-8"
                     >
-                        <div className="bg-coal text-paper p-8 rounded-3xl shadow-xl relative overflow-hidden border border-stone-800 text-start">
+                        <div className="bg-coal text-paper p-8 rounded-lg shadow-xl relative overflow-hidden border border-stone-800 text-start">
                             {/* Decorative Grid Lines */}
                             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
@@ -129,9 +129,9 @@ const Admissions = () => {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="lg:col-span-8 bg-white/70 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-stone-200/50 relative text-start"
+                        className="lg:col-span-8 bg-white/70 backdrop-blur-xl p-8 md:p-12 rounded-lg shadow-2xl border border-stone-200/50 relative text-start"
                     >
-                        <h2 className="text-3xl font-black text-coal mb-8">{t('admissions.formTitle')}</h2>
+                        <h2 className="text-3xl font-extrabold text-coal mb-8">{t('admissions.formTitle')}</h2>
 
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
 
@@ -146,7 +146,7 @@ const Admissions = () => {
                                             name="user_name"
                                             required
                                             placeholder={t('admissions.fullNamePlaceholder')}
-                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 rtl:pl-12 rtl:pr-4 ltr:pr-12 ltr:pl-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
+                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 rtl:pl-12 rtl:pr-4 ltr:pr-12 ltr:pl-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
                                         />
                                         <User className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
@@ -203,7 +203,7 @@ const Admissions = () => {
                                             name="user_email"
                                             dir="ltr"
                                             placeholder={t('admissions.emailPlaceholder')}
-                                            className="w-full text-left bg-paper border border-stone-300 rounded-xl py-4 px-4 ltr:pr-12 rtl:pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
+                                            className="w-full text-left bg-paper border border-stone-300 rounded-md py-4 px-4 ltr:pr-12 rtl:pl-12 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all"
                                         />
                                         <Mail className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
@@ -218,7 +218,7 @@ const Admissions = () => {
                                             name="selected_program"
                                             required
                                             defaultValue=""
-                                            className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all rtl:pr-4 ltr:pl-4"
+                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all rtl:pr-4 ltr:pl-4"
                                         >
                                             <option value="" disabled>{t('admissions.programSelect')}</option>
                                             {programsList.map((prog, idx) => (
@@ -238,7 +238,7 @@ const Admissions = () => {
                                     name="message"
                                     rows="4"
                                     placeholder={t('admissions.notesPlaceholder')}
-                                    className="w-full bg-paper border border-stone-300 rounded-xl py-4 px-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all resize-none"
+                                    className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 focus:outline-none focus:ring-2 focus:ring-emerald-custom focus:border-transparent transition-all resize-none"
                                 ></textarea>
                             </div>
 
@@ -246,7 +246,7 @@ const Admissions = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full py-5 rounded-xl font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 origin-center
+                                className={`w-full py-5 rounded-md font-extrabold text-lg flex items-center justify-center gap-3 transition-all duration-300 origin-center
                                     ${isSubmitting ? 'bg-stone-300 text-stone-500 cursor-not-allowed scale-95' : 'bg-emerald-custom text-white hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-500/30 active:scale-95'}`}
                             >
                                 {isSubmitting ? (
@@ -269,7 +269,7 @@ const Admissions = () => {
                                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                                         animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
                                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                                        className="bg-emerald-50 text-emerald-800 p-4 rounded-xl flex items-start gap-3 border border-emerald-200 text-start"
+                                        className="bg-emerald-50 text-emerald-800 p-4 rounded-md flex items-start gap-3 border border-emerald-200 text-start"
                                     >
                                         <CheckCircle2 className="w-6 h-6 flex-shrink-0 text-emerald-600" />
                                         <div>
@@ -284,7 +284,7 @@ const Admissions = () => {
                                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
                                         animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
                                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                                        className="bg-red-50 text-red-800 p-4 rounded-xl flex items-start gap-3 border border-red-200 text-start"
+                                        className="bg-red-50 text-red-800 p-4 rounded-md flex items-start gap-3 border border-red-200 text-start"
                                     >
                                         <AlertCircle className="w-6 h-6 flex-shrink-0 text-red-600" />
                                         <div>

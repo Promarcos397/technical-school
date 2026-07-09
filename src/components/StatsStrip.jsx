@@ -37,21 +37,22 @@ const StatsStrip = () => {
     ];
 
     return (
-        <section className="relative py-10 md:py-14 px-4 sm:px-6 lg:px-8">
+        <section className="relative px-4 sm:px-6 lg:px-8">
+            {/* Editorial: no card chrome — thin rules and whitespace do the work */}
             <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7 }}
-                className="max-w-6xl mx-auto bg-white/40 backdrop-blur-md border border-stone-200/50 rounded-3xl shadow-xl shadow-stone-200/20 px-6 py-8 md:py-10"
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="max-w-6xl mx-auto border-y border-stone-200 py-8 md:py-10"
             >
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center md:divide-x md:divide-stone-200 md:rtl:divide-x-reverse">
                     {stats.map((s, i) => (
-                        <div key={i} className="flex flex-col items-center gap-1">
-                            <span className="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 drop-shadow-sm" dir="ltr">
+                        <div key={i} className="flex flex-col items-center gap-1.5 px-2">
+                            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-teal-950" dir="ltr">
                                 {s.value}
                             </span>
-                            <span className="text-stone-500 font-semibold text-xs sm:text-sm md:text-base max-w-[10rem] leading-snug">
+                            <span className="text-stone-500 font-medium text-xs sm:text-sm tracking-wide max-w-[10rem] leading-snug">
                                 {s.label}
                             </span>
                         </div>

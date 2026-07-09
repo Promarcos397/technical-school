@@ -104,7 +104,7 @@ const Programs = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-20 text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-black text-coal mb-6">{t('programs.title')}</h1>
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('programs.title')}</h1>
                     <p className="text-xl text-stone-600 max-w-3xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
                         {t('programs.description')}
                     </p>
@@ -124,7 +124,7 @@ const Programs = () => {
                             <motion.div
                                 key={program.id}
                                 variants={itemVariants}
-                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-500 flex flex-col items-center text-center p-8"
+                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-500 flex flex-col items-center text-center p-8"
                             >
                                 {/* Static Icon (Moves down on hover) */}
                                 <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transform group-hover:translate-y-4 group-hover:scale-90 transition-all duration-500 ${program.color} bg-opacity-10`}>
@@ -168,11 +168,11 @@ const Programs = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-20 bg-emerald-custom/10 border border-emerald-custom/30 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+                    className="mt-20 bg-emerald-custom/10 border border-emerald-custom/30 rounded-lg p-8 md:p-12 relative overflow-hidden"
                 >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-custom/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8 text-start">
-                        <div className="w-16 h-16 bg-emerald-custom rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <div className="w-16 h-16 bg-emerald-custom rounded-lg flex items-center justify-center flex-shrink-0">
                             <Wheat className="w-8 h-8 text-white" />
                         </div>
                         <div>

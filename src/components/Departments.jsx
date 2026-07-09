@@ -93,7 +93,7 @@ const Departments = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-paper mb-6 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-paper mb-6 tracking-tight">
                             {t('departments.title', 'الأقسام الفنية')}
                         </h2>
                         <p className="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -121,7 +121,7 @@ const Departments = () => {
                                     layout: { type: "spring", stiffness: 300, damping: 25 },
                                     opacity: { duration: 0.4, delay: index * 0.05 }
                                 }}
-                                className={`relative rounded-3xl overflow-hidden cursor-pointer group flex-shrink-0 lg:flex-shrink
+                                className={`relative rounded-lg overflow-hidden cursor-pointer group flex-shrink-0 lg:flex-shrink
                                     ${isActive ? 'flex-[4] lg:flex-[5] shadow-2xl shadow-black/50' : 'flex-[1] lg:flex-[1] hover:bg-stone-800'}
                                     bg-stone-900 border border-stone-800 transition-colors duration-300
                                 `}
@@ -147,7 +147,7 @@ const Departments = () => {
                                 {/* Content Container */}
                                 <div className="absolute inset-0 z-10 p-6 lg:p-8 flex flex-col justify-end">
                                     <div className="flex items-center gap-4 mb-2 lg:mb-4">
-                                        <div className={`p-3 rounded-2xl backdrop-blur-md border transition-all duration-300
+                                        <div className={`p-3 rounded-lg backdrop-blur-md border transition-all duration-300
                                             ${isActive ? 'bg-white/10 border-white/20' : 'bg-black/20 border-white/5'}
                                         `}>
                                             <Icon className={`w-6 h-6 lg:w-8 lg:h-8 transition-colors duration-300

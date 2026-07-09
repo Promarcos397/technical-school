@@ -95,10 +95,10 @@ const About = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
-                            className="bg-white/40 backdrop-blur-md border border-stone-200/50 rounded-3xl p-8 sm:p-10 md:p-14 shadow-xl shadow-stone-200/20 text-center mx-auto max-w-md lg:max-w-none"
+                            className="bg-white/40 backdrop-blur-md border border-stone-200/50 rounded-lg p-8 sm:p-10 md:p-14 shadow-xl shadow-stone-200/20 text-center mx-auto max-w-md lg:max-w-none"
                         >
                             <div className="flex justify-center items-baseline sm:items-center gap-3 md:gap-4 mb-4 md:mb-6 leading-none" dir="ltr">
-                                <span className="text-6xl sm:text-8xl md:text-9xl font-black text-coal drop-shadow-sm">
+                                <span className="text-6xl sm:text-8xl md:text-9xl font-extrabold text-coal drop-shadow-sm">
                                     <CountUp end={90} duration={1} />
                                 </span>
                                 <span className="text-3xl sm:text-4xl text-stone-300 font-light translate-y-[-10px] sm:translate-y-0">{t('about.vs')}</span>
