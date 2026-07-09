@@ -85,7 +85,7 @@ const Navbar = () => {
                             const next = current.startsWith('ar') ? 'en' : (current.startsWith('en') ? 'fr' : 'ar');
                             i18n.changeLanguage(next);
                         }}
-                        className="flex flex-col items-center justify-center gap-0.5 bg-ink-800/60 backdrop-blur-xl border-[0.5px] border-white/10 text-gold-sun font-extrabold w-12 h-12 lg:w-14 lg:h-14 rounded-full hover:bg-white/10 transition-colors tracking-widest text-[9px] lg:text-[10px] ms-2 group"
+                        className="flex flex-col items-center justify-center gap-0.5 bg-ink-800/60 backdrop-blur-xl border-[0.5px] border-white/10 text-gold-sun font-extrabold w-12 h-12 lg:w-14 lg:h-14 rounded-full hover:border-white/25 transition-colors tracking-widest text-[9px] lg:text-[10px] ms-2 group"
                     >
                         <Globe size={15} strokeWidth={2.5} className="opacity-80 group-hover:opacity-100 transition-opacity" />
                         <span>{i18n.language?.startsWith('ar') ? 'EN' : (i18n.language?.startsWith('en') ? 'FR' : 'عربي')}</span>
