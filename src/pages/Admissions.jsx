@@ -61,7 +61,7 @@ const Admissions = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.55 }}
                     className="mb-16 text-center md:text-start"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('admissions.title')}</h1>
@@ -76,7 +76,7 @@ const Admissions = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.55, delay: 0.15 }}
                         className="lg:col-span-4 flex flex-col space-y-8"
                     >
                         <div className="bg-coal text-paper p-8 rounded-lg shadow-xl relative overflow-hidden border border-stone-800 text-start">
@@ -126,7 +126,7 @@ const Admissions = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.55, delay: 0.25 }}
                         className="lg:col-span-8 bg-white/70 backdrop-blur-xl p-8 md:p-12 rounded-lg shadow-2xl border border-stone-200/50 relative text-start"
                     >
                         <h2 className="text-3xl font-extrabold text-coal mb-8">{t('admissions.formTitle')}</h2>

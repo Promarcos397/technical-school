@@ -65,7 +65,7 @@ const Navbar = () => {
                                         <motion.div
                                             layoutId="desktopActivePill"
                                             className="absolute inset-0 bg-white/10 rounded-full"
-                                            transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                                            transition={{ type: "spring", stiffness: 550, damping: 40 }}
                                         />
                                     )}
                                     <span className={`relative z-10 transition-colors duration-300 ${isActive || isCurrent ? 'text-gold-sun' : 'text-stone-300/90 hover:text-paper'}`}>
@@ -117,7 +117,7 @@ const Navbar = () => {
                                     <motion.div
                                         layoutId="mobileActivePill"
                                         className="absolute inset-0 bg-white/10 rounded-full z-[-1]"
-                                        transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                                        transition={{ type: "spring", stiffness: 550, damping: 40 }}
                                     />
                                 )}
                                 <IconComponent size={20} strokeWidth={isActive ? 2.5 : 2} className="relative z-10" />

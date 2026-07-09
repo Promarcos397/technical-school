@@ -8,7 +8,7 @@ const SectionHeader = ({ index, eyebrow, title, subtitle, dark = false }) => (
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
         className="mb-12 md:mb-16 text-start"
     >
         <div className="flex items-center gap-4 mb-4">

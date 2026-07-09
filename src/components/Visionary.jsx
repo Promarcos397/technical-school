@@ -38,13 +38,13 @@ const Visionary = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8 }}
+                                transition={{ duration: 0.55 }}
                                 className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center`}
                             >
                                 {/* Portrait Area */}
                                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                                     <div className="relative p-2 bg-gradient-to-tr from-gold-sun/25 to-ink-800/20 rounded-lg">
-                                        <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
+                                        <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-300 hover:rotate-1`}></div>
 
                                         <div className="rounded-md overflow-hidden relative z-10 border border-ink-700/50 aspect-square flex items-center justify-center bg-coal">
                                             {/* Image rendering with WebGL Depth Map */}

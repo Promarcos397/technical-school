@@ -43,7 +43,7 @@ const StatsStrip = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 className="max-w-6xl mx-auto border-y border-stone-200 py-8 md:py-10"
             >
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center md:divide-x md:divide-stone-200 md:rtl:divide-x-reverse">

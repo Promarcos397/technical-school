@@ -90,7 +90,7 @@ function AppContent() {
       {/* Loader shows until the critical assets above have loaded */}
       {isLoading && <Loader />}
 
-      <div className={`min-h-screen flex flex-col relative transition-opacity duration-700 ease-in-out ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
+      <div className={`min-h-screen flex flex-col relative transition-opacity duration-300 ease-in-out ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
         <ScrollToTop />
         <Navbar />
         <Suspense fallback={null}>

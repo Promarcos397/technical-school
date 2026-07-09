@@ -15,7 +15,7 @@ const NotFound = () => {
                 className="relative z-10 flex flex-col items-center text-center max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.55 }}
             >
                 {/* Typographic 404 in the site register: hairline rules + one gold mark */}
                 <div className="flex items-center gap-4 w-full max-w-md mb-8">

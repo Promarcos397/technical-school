@@ -79,7 +79,7 @@ const Departments = () => {
         <section id="departments" className="py-24 md:py-32 bg-coal relative overflow-hidden">
 
             {/* Ambient Background Glow based on active card */}
-            <div className="absolute inset-0 opacity-20 transition-colors duration-1000 ease-in-out"
+            <div className="absolute inset-0 opacity-20 transition-colors duration-300 ease-in-out"
                 style={{
                     background: `radial-gradient(circle at 50% 50%, var(--tw-gradient-from) 0%, transparent 70%)`
                 }}
@@ -123,7 +123,7 @@ const Departments = () => {
                                     <img
                                         src={dept.image}
                                         alt={dept.title}
-                                        className={`w-full h-full object-cover transition-transform duration-500 ease-out mix-blend-screen
+                                        className={`w-full h-full object-cover transition-transform duration-300 ease-out mix-blend-screen
                                             ${isActive ? 'scale-105 opacity-80' : 'scale-100 opacity-30 group-hover:opacity-50 grayscale'}
                                         `}
                                         onError={(e) => {

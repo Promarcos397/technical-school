@@ -16,7 +16,7 @@ const News = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.55 }}
                     className="text-start text-center md:text-start"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('news.title')}</h1>
@@ -30,7 +30,7 @@ const News = () => {
                     <motion.article
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.55, delay: 0.15 }}
                         className="bg-white rounded-lg p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
@@ -49,7 +49,7 @@ const News = () => {
                     <motion.article
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.55, delay: 0.25 }}
                         className="bg-white rounded-lg p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
@@ -68,7 +68,7 @@ const News = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.55 }}
                         className="md:col-span-2 mt-8 flex flex-col items-center justify-center text-center p-12 bg-white/50 backdrop-blur-sm border border-stone-200/50 rounded-lg"
                     >
                         <h3 className="text-2xl font-bold text-coal mb-3">{t('news.moreNewsTitle')}</h3>

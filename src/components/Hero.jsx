@@ -42,13 +42,13 @@ const Hero = () => {
                     animate="visible"
                     variants={{
                         hidden: {},
-                        visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } }
+                        visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } }
                     }}
                     className="max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-start"
                 >
                     {/* Eyebrow: where this is */}
                     <motion.p
-                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } } }}
                         className="flex items-center gap-2 text-gold-sun font-semibold text-xs md:text-sm tracking-widest uppercase mb-5"
                     >
                         <MapPin size={14} strokeWidth={2.25} />
@@ -56,7 +56,7 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.h1
-                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } } }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-5"
                     >
                         {t('hero.school')}{' '}
@@ -64,7 +64,7 @@ const Hero = () => {
                     </motion.h1>
 
                     <motion.p
-                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } } }}
                         className="text-base md:text-lg text-white/80 font-medium leading-relaxed max-w-2xl mb-9"
                     >
                         {t('hero.desc')}
@@ -72,7 +72,7 @@ const Hero = () => {
 
                     {/* Two CTAs: donors/partners first, students second */}
                     <motion.div
-                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
+                        variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } } }}
                         className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
                     >
                         <button

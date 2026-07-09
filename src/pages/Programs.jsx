@@ -7,13 +7,13 @@ const containerVariants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { staggerChildren: 0.1 }
+        transition: { staggerChildren: 0.07 }
     }
 };
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } }
 };
 
 const Programs = () => {
@@ -101,7 +101,7 @@ const Programs = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.55 }}
                     className="mb-20 text-center md:text-start"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('programs.title')}</h1>
@@ -124,15 +124,15 @@ const Programs = () => {
                             <motion.div
                                 key={program.id}
                                 variants={itemVariants}
-                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-500 flex flex-col items-center text-center p-8"
+                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-300 flex flex-col items-center text-center p-8"
                             >
                                 {/* Static Icon (Moves down on hover) */}
-                                <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transform group-hover:translate-y-4 group-hover:scale-90 transition-all duration-500 ${program.color} bg-opacity-10`}>
+                                <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transform group-hover:translate-y-4 group-hover:scale-90 transition-all duration-300 ${program.color} bg-opacity-10`}>
                                     <Icon className={`w-10 h-10 ${program.textColor}`} />
                                 </div>
 
                                 {/* Title (Moves down on hover) */}
-                                <h3 className="text-2xl font-bold text-coal mb-4 transform group-hover:translate-y-4 transition-all duration-500">
+                                <h3 className="text-2xl font-bold text-coal mb-4 transform group-hover:translate-y-4 transition-all duration-300">
                                     {program.title}
                                 </h3>
 
@@ -142,7 +142,7 @@ const Programs = () => {
                                 </p>
 
                                 {/* Hover Reveal Content */}
-                                <div className="absolute inset-0 bg-coal translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10 flex flex-col items-center justify-center p-8">
+                                <div className="absolute inset-0 bg-coal translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-10 flex flex-col items-center justify-center p-8">
                                     {/* Optional Background Image inside hover state */}
                                     <div
                                         className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
@@ -167,7 +167,7 @@ const Programs = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
+                    transition={{ delay: 0.15, duration: 0.55 }}
                     className="mt-20 bg-white border border-stone-200 rounded-lg p-8 md:p-12 relative overflow-hidden"
                 >
                     <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8 text-start">

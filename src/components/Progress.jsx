@@ -19,7 +19,7 @@ const ProgressSlider = ({ image1, image2 }) => {
                 className="absolute inset-y-0 right-0 overflow-hidden"
                 initial={{ width: "50%" }}
                 animate={{ width: isHovered ? "100%" : "50%" }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: 0.45, ease: "easeInOut" }}
             >
                 <img src={image2} alt={t('a11y.progressAlt')} className="absolute top-0 right-0 w-[200%] h-full object-cover max-w-none" style={{ width: '200%' }} />
             </motion.div>
@@ -29,7 +29,7 @@ const ProgressSlider = ({ image1, image2 }) => {
                 className="absolute inset-y-0 bg-gold-sun w-1 z-10"
                 initial={{ right: "50%" }}
                 animate={{ right: isHovered ? "100%" : "50%" }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: 0.45, ease: "easeInOut" }}
             >
                 <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-gold-sun rounded-full flex items-center justify-center text-coal text-xs">
                     ↔
@@ -117,8 +117,8 @@ const Progress = () => {
 
                             {/* Dorms Blueprint Hover */}
                             <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg group overflow-hidden relative min-h-[300px] md:min-h-[400px]">
-                                <img src="/images/dorms.png" alt={t('a11y.dormsRenderAlt')} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" />
-                                <img src="/images/dorms-blueprint.png" alt={t('a11y.dormsBlueprintAlt')} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" />
+                                <img src="/images/dorms.png" alt={t('a11y.dormsRenderAlt')} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300" />
+                                <img src="/images/dorms-blueprint.png" alt={t('a11y.dormsBlueprintAlt')} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-multiply" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-coal/90 via-coal/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl drop-shadow-md mb-1">{t('progress.dormTitle')}</h4>
                                     <p className="text-white/80 text-sm drop-shadow-md leading-relaxed">{t('progress.dormDesc')}</p>
