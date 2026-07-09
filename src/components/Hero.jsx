@@ -162,7 +162,7 @@ const Hero = () => {
                             >
                                 <img
                                     src="/images/school-3d-render.jpeg"
-                                    alt="المدرسة 3D"
+                                    alt={t('a11y.hero3dAlt')}
                                     className="w-full h-full object-cover scale-105" // Slight scale to avoid edge clipping on tilt
                                 />
                                 {/* Soft inner shadow vignette */}

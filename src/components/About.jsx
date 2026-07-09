@@ -101,7 +101,7 @@ const About = () => {
                                 <span className="text-6xl sm:text-8xl md:text-9xl font-black text-coal drop-shadow-sm">
                                     <CountUp end={90} duration={1} />
                                 </span>
-                                <span className="text-3xl sm:text-4xl text-stone-300 font-light translate-y-[-10px] sm:translate-y-0">vs</span>
+                                <span className="text-3xl sm:text-4xl text-stone-300 font-light translate-y-[-10px] sm:translate-y-0">{t('about.vs')}</span>
                                 <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-emerald-custom drop-shadow-md">
                                     <CountUp end={2} duration={1} delay={0.5} />
                                 </span>

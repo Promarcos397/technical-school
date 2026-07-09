@@ -16,7 +16,8 @@
     "title1": "Nous ne construisons pas que des murs,",
     "title2": "nous bâtissons une génération de main-d'œuvre qualifiée.",
     "desc": "Au nom de Dieu, le Clément, le Miséricordieux. École technique Adeeb Al-Hajri. Shabtot - Localité d'Al-Golid. État du Nord - Soudan. L'école est officiellement enregistrée auprès des autorités gouvernementales sous l'égide du ministère de l'Éducation. Superficie totale : 69 000 mètres carrés. Par la grâce et les conseils de Dieu, la vision du ministère de l'Éducation de l'État du Nord pour la création d'une école technique modèle dans le village a été présentée au généreux bienfaiteur, M. Adeeb Al-Hajri de l'État frère du Koweït. Il a gentiment approuvé le financement du projet à ses propres frais, à condition que la composante locale s'occupe des approbations, des plans techniques et des procédures connexes. Des contrats ont ensuite été signés avec des entreprises de construction pour réaliser le projet.",
-    "stats": "Quatre-vingt-dix écoles académiques dans l'État du Nord, contre seulement deux écoles techniques."
+    "stats": "Quatre-vingt-dix écoles académiques dans l'État du Nord, contre seulement deux écoles techniques.",
+    "vs": "contre"
   },
   "visionary": {
     "title": "Visionnaires",
@@ -159,5 +160,22 @@
   "loader": {
     "schoolName": "École Technique Adeeb Al-Hajri",
     "slogan": "Construire l'Avenir avec des Mains Qualifiées"
+  },
+  "a11y": {
+    "logoAlt": "Logo de l'École Technique Adeeb Al-Hajri",
+    "hero3dAlt": "Rendu 3D du bâtiment principal de l'école",
+    "blueprintAlt": "Plan technique de l'école",
+    "progressAlt": "Avancement des travaux sur le site",
+    "workshopsAlt": "Hangars-ateliers",
+    "dormsRenderAlt": "Rendu du bâtiment d'internat",
+    "dormsBlueprintAlt": "Plan du bâtiment d'internat"
+  },
+  "stats": {
+    "title": "Le projet en chiffres",
+    "areaValue": "69 000",
+    "areaLabel": "m² de superficie totale",
+    "departmentsLabel": "départements techniques",
+    "boardingLabel": "places d'internat",
+    "localitiesLabel": "localités desservies"
   }
 }

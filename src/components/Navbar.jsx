@@ -77,7 +77,6 @@ const generatePillMap = (width, height) => {
 };
 
 const Navbar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
     const { i18n, t } = useTranslation();
 
@@ -100,18 +99,6 @@ const Navbar = () => {
     // Symbiote Effect: squash/stretch based on speed
     const scaleY = useTransform(xVel, [-1500, 0, 1500], [0.35, 1, 0.35], { clamp: true });
     const scaleX = useTransform(xVel, [-1500, 0, 1500], [1.3, 1, 1.3], { clamp: true });
-
-    // Prevent scrolling when mobile menu is open
-    useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-        return () => {
-            document.body.style.overflow = 'unset';
-        }
-    }, [isMobileMenuOpen]);
 
     const navLinks = [
         { id: '/', label: t('nav.home'), href: '/' },
@@ -166,22 +153,7 @@ const Navbar = () => {
         updatePill();
         window.addEventListener('resize', updatePill);
         return () => window.removeEventListener('resize', updatePill);
-    }, [currentIndex, location.pathname, i18n.language]);
-
-    const mobileMenuVariants = {
-        hidden: { opacity: 0, y: -20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.3, staggerChildren: 0.1, delayChildren: 0.1 }
-        },
-        exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
-    };
-
-    const mobileItemVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0 }
-    };
+    }, [currentIndex, location.pathname, i18n.language, activeX, activeWidth]);
 
     return (
         <header className="fixed top-0 w-full z-50 pt-4 md:pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
@@ -190,13 +162,15 @@ const Navbar = () => {
             <svg className="absolute w-0 h-0 pointer-events-none">
                 <defs>
                     <filter id="liquid-pill" colorInterpolationFilters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
-                        <feImage 
-                            href={pillState.mapUrl} 
-                            result="displacement_map" 
-                            width={pillState.width || 100} 
-                            height={pillState.height || 48} 
-                            preserveAspectRatio="none" 
-                        />
+                        {pillState.mapUrl && (
+                            <feImage
+                                href={pillState.mapUrl}
+                                result="displacement_map"
+                                width={pillState.width || 100}
+                                height={pillState.height || 48}
+                                preserveAspectRatio="none"
+                            />
+                        )}
                         <feDisplacementMap 
                             in="SourceGraphic" 
                             in2="displacement_map" 
@@ -220,7 +194,7 @@ const Navbar = () => {
                     <div className="relative overflow-hidden rounded-lg">
                         <img
                             src="/images/logo.svg"
-                            alt="شعار المدرسة"
+                            alt={t('a11y.logoAlt')}
                             className="h-8 lg:h-10 w-auto transform transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>

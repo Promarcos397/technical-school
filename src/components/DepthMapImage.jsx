@@ -40,6 +40,16 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
     const containerRef = useRef(null);
     const canvasRef = useRef(null);
     const [texturesLoaded, setTexturesLoaded] = useState(false);
+    // Probe WebGL support once, before any Three.js setup runs. On GPU-disabled
+    // or sandboxed browsers this fails, and we fall back to the static <img>.
+    const [webglFailed] = useState(() => {
+        try {
+            const probe = document.createElement('canvas');
+            return !(probe.getContext('webgl2') || probe.getContext('webgl'));
+        } catch {
+            return true;
+        }
+    });
 
     // Store refs to cleanup 
     const sceneRef = useRef(null);
@@ -47,7 +57,9 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
     const materialRef = useRef(null);
 
     useEffect(() => {
-        if (!containerRef.current || !canvasRef.current) return;
+        if (webglFailed || !containerRef.current || !canvasRef.current) return;
+        // Snapshot the node so the cleanup below detaches from the same element
+        const container = containerRef.current;
 
         // Setup Three.js Scene
         const scene = new THREE.Scene();
@@ -56,11 +68,19 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
         // Orthographic camera because we're just doing 2D manipulation on a flat plane
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvasRef.current,
-            alpha: true,
-            antialias: true
-        });
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvasRef.current,
+                alpha: true,
+                antialias: true
+            });
+        } catch (err) {
+            // Probe passed but context creation still failed (rare). The static
+            // <img> stays visible because texturesLoaded never flips to true.
+            console.warn('DepthMapImage: WebGL unavailable, using static image fallback.', err);
+            return;
+        }
         rendererRef.current = renderer;
 
         const updateSize = () => {
@@ -133,8 +153,8 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
             targetMouse.set(0, 0);
         };
 
-        containerRef.current.addEventListener('mousemove', onMouseMove);
-        containerRef.current.addEventListener('mouseleave', onMouseLeave);
+        container.addEventListener('mousemove', onMouseMove);
+        container.addEventListener('mouseleave', onMouseLeave);
 
         // Animation Loop for smoothing (Interpolation/Lerp)
         let animationFrameId;
@@ -152,28 +172,28 @@ const DepthMapImage = ({ imageSrc, depthSrc, alt, className }) => {
         // Cleanup
         return () => {
             window.removeEventListener('resize', updateSize);
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('mousemove', onMouseMove);
-                containerRef.current.removeEventListener('mouseleave', onMouseLeave);
-            }
+            container.removeEventListener('mousemove', onMouseMove);
+            container.removeEventListener('mouseleave', onMouseLeave);
             cancelAnimationFrame(animationFrameId);
             geometry.dispose();
             material.dispose();
             renderer.dispose();
         };
-    }, [imageSrc, depthSrc]);
+    }, [imageSrc, depthSrc, webglFailed]);
 
     return (
         <div ref={containerRef} className={`relative w-full h-full overflow-hidden ${className || ''}`}>
             {/* Fallback image shown while textures load or if WebGL fails */}
-            {!texturesLoaded && (
+            {(!texturesLoaded || webglFailed) && (
                 <img
                     src={imageSrc}
                     alt={alt}
                     className="absolute inset-0 w-full h-full object-cover"
                 />
             )}
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: texturesLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
+            {!webglFailed && (
+                <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: texturesLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
+            )}
         </div>
     );
 };

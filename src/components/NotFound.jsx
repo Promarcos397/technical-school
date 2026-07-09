@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NotFound = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="min-h-screen bg-paper flex flex-col items-center justify-center p-4 relative overflow-hidden">
 

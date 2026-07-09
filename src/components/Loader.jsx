@@ -61,7 +61,7 @@ const Loader = () => {
                             <div className="absolute inset-[6px] bg-white rounded-full flex items-center justify-center p-4 shadow-sm border border-stone-100 overflow-hidden z-10">
                                 <motion.img
                                     src="/images/logo.png"
-                                    alt="School Logo"
+                                    alt={t('a11y.logoAlt')}
                                     className="w-full h-full object-contain"
                                     initial={{ opacity: 0, scale: 0.5 }}
                                     animate={{ opacity: 1, scale: 1 }}

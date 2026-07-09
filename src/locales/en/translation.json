@@ -16,7 +16,8 @@
     "title1": "We don't just build walls,",
     "title2": "we build a generation of skilled labor.",
     "desc": "In the Name of Allah, the Most Gracious, the Most Merciful. Adeeb Al-Hajri Technical School. Shabtot – Al-Golid Locality. Northern State – Sudan. The school is officially registered with the government authorities under the Ministry of Education. Total Area: 69,000 square meters. By the grace and guidance of Allah, the vision of the Ministry of Education in the Northern State for establishing a model technical school in the village was presented to the generous benefactor, Mr. Adeeb Al-Hajri from the sister State of Kuwait. He kindly approved financing the project at his own expense, provided that the local component would complete the approvals, engineering drawings, and related procedures. Contracts were subsequently signed with construction companies to implement the project.",
-    "stats": "Ninety academic schools in the Northern State, compared to only two technical schools."
+    "stats": "Ninety academic schools in the Northern State, compared to only two technical schools.",
+    "vs": "vs"
   },
   "visionary": {
     "title": "Visionaries",
@@ -159,5 +160,22 @@
   "loader": {
     "schoolName": "Adeeb Al-Hajri Technical School",
     "slogan": "Building the Future with Skilled Hands"
+  },
+  "a11y": {
+    "logoAlt": "Adeeb Al-Hajri Technical School logo",
+    "hero3dAlt": "3D render of the school main building",
+    "blueprintAlt": "School engineering blueprint",
+    "progressAlt": "Construction progress on site",
+    "workshopsAlt": "Gable workshop hangars",
+    "dormsRenderAlt": "Render of the boarding building",
+    "dormsBlueprintAlt": "Blueprint of the boarding building"
+  },
+  "stats": {
+    "title": "The Project in Numbers",
+    "areaValue": "69,000",
+    "areaLabel": "m² total site area",
+    "departmentsLabel": "technical departments",
+    "boardingLabel": "boarding places",
+    "localitiesLabel": "localities served"
   }
 }

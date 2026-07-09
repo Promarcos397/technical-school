@@ -68,7 +68,7 @@ export const councilMembers = [
     { nameAr: 'وائل حسن عثمان', nameEn: 'Wael Hassan Osman', nameFr: 'Wael Hassan Osman', titleAr: 'نائب لأمين المال', titleEn: 'Deputy Treasurer', titleFr: 'Trésorier Adjoint' },
     { nameAr: 'سيف الدين عثمان محمد إبراهيم', nameEn: 'Seif El Din Osman Mohammed Ibrahim', nameFr: 'Seif El Din Osman Mohammed Ibrahim', titleAr: 'الأمين العام', titleEn: 'Secretary General', titleFr: 'Secrétaire Général' },
     { nameAr: 'سيدة محمد حمد', nameEn: 'Sayyida Mohammed Hamad', nameFr: 'Sayyida Mohammed Hamad', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
-    { nameAr: 'عبدالوهاب أبو', nameEn: 'Abdelwahab Abu', nameFr: 'Abdelwahab Abu', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
+    { nameAr: 'عبدالوهاب أبو السيد (سوري)', nameEn: 'Abdelwahab Abu Al-Sayyid (Suri)', nameFr: 'Abdelwahab Abu Al-Sayyid (Suri)', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'المهدي الطاهر عبيد', nameEn: 'Al-Mahdi Al-Taher Obeid', nameFr: 'Al-Mahdi Al-Taher Obeid', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'بابكر عبدالرحمن بابكر', nameEn: 'Babiker Abdelrahman Babiker', nameFr: 'Babiker Abdelrahman Babiker', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'نوح محي الدين عباس', nameEn: 'Nuh Mohieddin Abbas', nameFr: 'Nuh Mohieddin Abbas', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },

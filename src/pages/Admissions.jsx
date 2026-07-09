@@ -74,7 +74,7 @@ const Admissions = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-                    {/* Right Column: Contact Info & Mascot */}
+                    {/* Right Column: Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -122,15 +122,6 @@ const Admissions = () => {
                             </div>
                         </div>
 
-                        {/* Mascot Graphic */}
-                        <div className="hidden lg:flex justify-center items-center flex-1">
-                            <img
-                                src="/images/mascot-addmission.png"
-                                alt="Mascot Welcome"
-                                className="w-64 h-auto drop-shadow-2xl opacity-90 rtl:scale-x-100 ltr:-scale-x-100"
-                                onError={(e) => { e.target.style.display = 'none'; }}
-                            />
-                        </div>
                     </motion.div>
 
                     {/* Left Column: Form */}

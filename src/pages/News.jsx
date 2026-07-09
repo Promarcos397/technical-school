@@ -63,7 +63,7 @@ const News = () => {
                         </p>
                     </motion.article>
 
-                    {/* Fun Mascot Block for "More news coming" */}
+                    {/* "More news coming" Block */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -71,19 +71,6 @@ const News = () => {
                         transition={{ duration: 0.8 }}
                         className="md:col-span-2 mt-8 flex flex-col items-center justify-center text-center p-12 bg-white/50 backdrop-blur-sm border border-stone-200/50 rounded-3xl"
                     >
-                        <motion.div
-                            className="relative w-64 h-64 md:w-80 md:h-80 mb-6"
-                        >
-                            <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-2xl"></div>
-                            <img
-                                src="/images/mascot-news.png"
-                                alt="Mascot News"
-                                className="relative z-10 w-full h-full object-contain drop-shadow-lg rtl:scale-x-100 ltr:-scale-x-100"
-                                onError={(e) => {
-                                    e.target.src = '/images/charecter-404.png';
-                                }}
-                            />
-                        </motion.div>
                         <h3 className="text-2xl font-bold text-teal-950 mb-3">{t('news.moreNewsTitle')}</h3>
                         <p className="text-stone-500 max-w-sm">
                             {t('news.moreNewsDesc')}

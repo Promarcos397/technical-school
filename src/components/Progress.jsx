@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const ProgressSlider = ({ image1, image2 }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <div
@@ -11,7 +12,7 @@ const ProgressSlider = ({ image1, image2 }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <img src={image1} alt="Blueprint" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={image1} alt={t('a11y.blueprintAlt')} className="absolute inset-0 w-full h-full object-cover" />
 
             <motion.div
                 className="absolute inset-y-0 right-0 overflow-hidden"
@@ -19,7 +20,7 @@ const ProgressSlider = ({ image1, image2 }) => {
                 animate={{ width: isHovered ? "100%" : "50%" }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-                <img src={image2} alt="Progress" className="absolute top-0 right-0 w-[200%] h-full object-cover max-w-none" style={{ width: '200%' }} />
+                <img src={image2} alt={t('a11y.progressAlt')} className="absolute top-0 right-0 w-[200%] h-full object-cover max-w-none" style={{ width: '200%' }} />
             </motion.div>
 
             {/* Divider Line */}
@@ -79,7 +80,7 @@ const Progress = () => {
                         <div className="order-1 lg:order-1 relative group rounded-2xl p-1 bg-gradient-to-br from-amber-400 to-orange-600 animate-pulse-slow mx-4 sm:mx-8 lg:mx-0">
                             <div className="absolute inset-0 bg-orange-500/20 blur-xl animate-pulse rounded-full z-[-1]" />
                             <div className="rounded-xl overflow-hidden shadow-2xl relative bg-white">
-                                <img src="/images/school-workshops.png" alt="Gable Workshops" className="w-full h-80 object-cover" />
+                                <img src="/images/school-workshops.png" alt={t('a11y.workshopsAlt')} className="w-full h-80 object-cover" />
                                 <div className="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
                                     {t('progress.phase2ActiveBadge')}
                                 </div>
@@ -110,8 +111,8 @@ const Progress = () => {
 
                             {/* Dorms Blueprint Hover */}
                             <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-2xl group overflow-hidden relative min-h-[300px] md:min-h-[400px]">
-                                <img src="/images/dorms.png" alt="Dorms Render" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" />
-                                <img src="/images/dorms-blueprint.png" alt="Dorms Blueprint" className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" />
+                                <img src="/images/dorms.png" alt={t('a11y.dormsRenderAlt')} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" />
+                                <img src="/images/dorms-blueprint.png" alt={t('a11y.dormsBlueprintAlt')} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-coal/90 via-coal/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl drop-shadow-md mb-1">{t('progress.dormTitle')}</h4>
                                     <p className="text-white/80 text-sm drop-shadow-md leading-relaxed">{t('progress.dormDesc')}</p>

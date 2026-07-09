@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FileText, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -34,17 +34,6 @@ const Footer = () => {
 
     return (
         <footer className="mt-24 border-t border-stone-200/50">
-
-            {/* Decoupled Utility Banner for Institutions */}
-            <div className="bg-paper/80 py-8 px-4 sm:px-6 lg:px-8 border-b border-stone-200/50 flex flex-col items-center justify-center gap-4">
-                <p className="text-coal font-bold text-lg text-center">
-                    {t('footer.partnerBannerTitle', 'للمؤسسات والشركاء: تحميل الملف الهندسي والمالي المفصل')}
-                </p>
-                <button className="flex items-center gap-2 bg-stone-800 text-white hover:bg-coal px-6 py-3 rounded-lg font-bold text-sm transition-colors shadow-md">
-                    <FileText className="w-5 h-5" />
-                    <span>{t('footer.downloadPdf', 'تنزيل الملف (PDF)')}</span>
-                </button>
-            </div>
 
             {/* Meta & Contact Grid */}
             <div className="bg-teal-950 text-paper py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
