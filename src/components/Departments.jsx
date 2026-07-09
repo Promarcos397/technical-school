@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Wrench, Settings, Snowflake, Wheat, Ruler, Droplets, Monitor } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import SectionHeader from './SectionHeader';
 
 const Departments = () => {
@@ -76,7 +77,7 @@ const Departments = () => {
     ];
 
     return (
-        <section id="departments" className="py-14 md:py-24 md:py-32 bg-coal relative overflow-hidden">
+        <section id="departments" className="py-14 md:py-24 bg-coal relative overflow-hidden">
 
             {/* Ambient Background Glow based on active card */}
             <div className="absolute inset-0 opacity-20 transition-colors duration-300 ease-in-out"
@@ -94,8 +95,39 @@ const Departments = () => {
                     subtitle={t('departments.description', 'مسارات مهنية رفيعة المستوى، صُممت لتلبي احتياجات سوق العمل بأعلى معايير الجودة الهندسية والميكانيكية.')}
                 />
 
-                {/* The Expanding Gallery */}
-                <div className="flex flex-col lg:flex-row h-[560px] lg:h-[600px] gap-2 lg:gap-4 w-full">
+                {/* Mobile: compact 2-col grid — every department visible at once, tap goes to /programs */}
+                <div className="grid grid-cols-2 gap-3 lg:hidden">
+                    {departmentsData.map((dept, index) => {
+                        const Icon = dept.icon;
+                        return (
+                            <motion.div
+                                key={dept.id}
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-40px" }}
+                                transition={{ duration: 0.4, delay: index * 0.04, ease: "easeOut" }}
+                            >
+                                <Link to="/programs" className="relative block aspect-[4/3] rounded-lg overflow-hidden border border-stone-800 bg-stone-900">
+                                    <img
+                                        src={dept.image}
+                                        alt={dept.title}
+                                        loading="lazy"
+                                        className="absolute inset-0 w-full h-full object-cover opacity-60"
+                                        onError={(e) => { e.target.style.display = 'none'; }}
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/40 to-transparent" />
+                                    <div className="absolute inset-x-0 bottom-0 p-3 flex items-center gap-2">
+                                        <Icon className="w-4 h-4 text-gold-sun shrink-0" />
+                                        <span className="text-paper font-bold text-sm leading-tight">{dept.title}</span>
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        );
+                    })}
+                </div>
+
+                {/* Desktop: the expanding hover gallery */}
+                <div className="hidden lg:flex lg:flex-row lg:h-[600px] gap-4 w-full">
                     {departmentsData.map((dept, index) => {
                         const isActive = hoveredIndex === index;
                         const Icon = dept.icon;
@@ -149,7 +181,7 @@ const Departments = () => {
 
                                         {/* Horizontal Title - Only visible when Active or Mobile */}
                                         <AnimatePresence>
-                                            {(isActive || window.innerWidth < 1024) && (
+                                            {isActive && (
                                                 <motion.h3
                                                     initial={{ opacity: 0, x: -20 }}
                                                     animate={{ opacity: 1, x: 0 }}
