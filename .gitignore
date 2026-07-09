@@ -30,3 +30,6 @@ dist-ssr
 process_images.py
 prompt.md
 whatsapp-message.md
+
+# local env (EmailJS keys are client-public but keep the habit)
+.env

@@ -15,10 +15,14 @@ const SupportInvite = () => {
             <p className="text-coal font-bold text-lg text-center">
                 {t('footer.partnerBannerTitle', 'للمؤسسات والشركاء: تحميل الملف الهندسي والمالي المفصل')}
             </p>
-            <button className="flex items-center gap-2 bg-stone-800 text-white hover:bg-coal px-6 py-3 rounded-lg font-bold text-sm transition-colors shadow-md">
+            <a
+                href="/files/school-profile.pdf"
+                download="Adeeb-Al-Hajri-Technical-School-Profile.pdf"
+                className="flex items-center gap-2 bg-stone-800 text-white hover:bg-coal px-6 py-3 rounded-lg font-bold text-sm transition-colors shadow-md"
+            >
                 <FileText className="w-5 h-5" />
                 <span>{t('footer.downloadPdf', 'تنزيل الملف (PDF)')}</span>
-            </button>
+            </a>
         </section>
     );
 };
