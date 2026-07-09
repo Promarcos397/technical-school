@@ -90,9 +90,9 @@ const Visionary = () => {
                         <h3 className="text-3xl font-bold text-white mb-4">{t('visionary.council')}</h3>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-stone-200/80 text-lg">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-2.5 md:gap-y-4 text-stone-200/80 text-xs sm:text-sm md:text-lg">
                         {councilMembers.map((member, idx) => (
-                            <div key={idx} className="flex items-center gap-3">
+                            <div key={idx} className="flex items-center gap-2 md:gap-3">
                                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/10 flex items-center justify-center text-gold-sun">
                                     <Check size={12} strokeWidth={3} />
                                 </div>

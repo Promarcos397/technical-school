@@ -163,9 +163,9 @@ const Progress = () => {
                         <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
                             {t('missingFacilities.desc')}
                         </h3>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 pt-6">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5 md:gap-y-4 pt-5">
                             {(t('missingFacilities.list', { returnObjects: true }) || []).map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-stone-200 text-base md:text-lg">
+                                <li key={idx} className="flex items-start gap-3 text-stone-200 text-sm md:text-lg">
                                     <span className="mt-2.5 h-1.5 w-1.5 rotate-45 bg-gold-sun shrink-0"></span>
                                     <span className="flex-1">{item}</span>
                                 </li>

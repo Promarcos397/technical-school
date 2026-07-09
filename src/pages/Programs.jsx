@@ -116,7 +116,7 @@ const Programs = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6"
                 >
                     {programsData.map((program) => {
                         const Icon = program.icon;
@@ -124,20 +124,20 @@ const Programs = () => {
                             <motion.div
                                 key={program.id}
                                 variants={itemVariants}
-                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-300 flex flex-col items-center text-center p-8"
+                                className="group relative bg-white/50 backdrop-blur-md border border-stone-200/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-stone-200/50 transition-all duration-300 flex flex-col items-center text-center p-4 md:p-8"
                             >
                                 {/* Static Icon (Moves down on hover) */}
-                                <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 transform group-hover:translate-y-4 group-hover:scale-90 transition-all duration-300 ${program.color} bg-opacity-10`}>
-                                    <Icon className={`w-10 h-10 ${program.textColor}`} />
+                                <div className={`w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-3 md:mb-6 transform group-hover:translate-y-4 group-hover:scale-90 transition-all duration-300 ${program.color} bg-opacity-10`}>
+                                    <Icon className={`w-6 h-6 md:w-10 md:h-10 ${program.textColor}`} />
                                 </div>
 
                                 {/* Title (Moves down on hover) */}
-                                <h3 className="text-2xl font-bold text-coal mb-4 transform group-hover:translate-y-4 transition-all duration-300">
+                                <h3 className="text-base md:text-2xl font-bold text-coal mb-2 md:mb-4 transform group-hover:translate-y-4 transition-all duration-300">
                                     {program.title}
                                 </h3>
 
                                 {/* Description (Fades out on hover) */}
-                                <p className="text-stone-600 leading-relaxed opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                                <p className="text-xs md:text-base text-stone-600 leading-relaxed opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                                     {program.description}
                                 </p>
 
