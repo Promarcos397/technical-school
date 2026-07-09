@@ -62,17 +62,15 @@ const About = () => {
 
                     {/* Narrative (Left side in RTL, so Col span 7) */}
                     <div className="lg:col-span-7 space-y-5 md:space-y-6 text-center lg:text-start">
-                        {/* Basmala as a standalone mark — kept in Arabic script in every locale */}
+                        {/* Basmala as a standalone opening mark, translated per locale */}
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.55, ease: "easeOut" }}
-                            lang="ar"
-                            dir="rtl"
                             className="text-gold-deep text-lg md:text-xl font-semibold tracking-wide"
                         >
-                            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                            {t('about.basmala')}
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
