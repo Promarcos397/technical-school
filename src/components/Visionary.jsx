@@ -17,7 +17,7 @@ const Visionary = () => {
     };
 
     return (
-        <section id="visionary" className="py-20 md:py-28 bg-ink-900 text-paper relative overflow-hidden">
+        <section id="visionary" className="py-14 md:py-28 bg-ink-900 text-paper relative overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <SectionHeader
@@ -27,7 +27,7 @@ const Visionary = () => {
                     subtitle={t('visionary.subtitle')}
                 />
 
-                <div className="space-y-32">
+                <div className="space-y-14 md:space-y-32">
                     {visionaries.map((person, index) => {
                         // Alternate layout direction based on index
                         const isEven = index % 2 === 0;
@@ -46,7 +46,7 @@ const Visionary = () => {
                                     <div className="relative p-2 bg-gradient-to-tr from-gold-sun/25 to-ink-800/20 rounded-lg">
                                         <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-300 hover:rotate-1`}></div>
 
-                                        <div className="rounded-md overflow-hidden relative z-10 border border-ink-700/50 aspect-square flex items-center justify-center bg-coal">
+                                        <div className="rounded-md overflow-hidden relative z-10 border border-ink-700/50 aspect-square w-full max-w-[280px] mx-auto lg:max-w-none flex items-center justify-center bg-coal">
                                             {/* Image rendering with WebGL Depth Map */}
                                             <DepthMapImage
                                                 imageSrc={person.image}
@@ -73,7 +73,7 @@ const Visionary = () => {
                                         {getProp(person, 'name')}
                                     </h3>
                                     
-                                    <div className="space-y-4 text-stone-200/80 leading-relaxed text-lg">
+                                    <div className="space-y-4 text-stone-200/80 leading-relaxed text-base md:text-lg">
                                         {getProp(person, 'bio')?.map((paragraph, pIdx) => (
                                             <p key={pIdx}>{paragraph}</p>
                                         ))}

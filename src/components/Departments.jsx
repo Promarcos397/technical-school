@@ -76,7 +76,7 @@ const Departments = () => {
     ];
 
     return (
-        <section id="departments" className="py-24 md:py-32 bg-coal relative overflow-hidden">
+        <section id="departments" className="py-14 md:py-24 md:py-32 bg-coal relative overflow-hidden">
 
             {/* Ambient Background Glow based on active card */}
             <div className="absolute inset-0 opacity-20 transition-colors duration-300 ease-in-out"
@@ -95,7 +95,7 @@ const Departments = () => {
                 />
 
                 {/* The Expanding Gallery */}
-                <div className="flex flex-col lg:flex-row h-[800px] lg:h-[600px] gap-2 lg:gap-4 w-full">
+                <div className="flex flex-col lg:flex-row h-[560px] lg:h-[600px] gap-2 lg:gap-4 w-full">
                     {departmentsData.map((dept, index) => {
                         const isActive = hoveredIndex === index;
                         const Icon = dept.icon;

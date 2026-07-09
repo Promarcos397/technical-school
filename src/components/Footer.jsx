@@ -33,12 +33,12 @@ const Footer = () => {
     };
 
     return (
-        <footer className="mt-24 border-t border-stone-200/50">
+        <footer className="mt-14 md:mt-24 border-t border-stone-200/50">
 
             {/* Meta & Contact Grid */}
-            <div className="bg-ink-900 text-paper py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div className="bg-ink-900 text-paper py-10 md:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10 text-center md:text-start">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 text-center md:text-start">
 
                     {/* Column 1: About */}
                     <div className="space-y-4">

@@ -53,7 +53,7 @@ const Admissions = () => {
     };
 
     return (
-        <section className="pt-32 pb-24 min-h-screen bg-paper relative overflow-hidden">
+        <section className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-screen bg-paper relative overflow-hidden">
             {/* Background noise/accents */}
                         
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -64,7 +64,7 @@ const Admissions = () => {
                     transition={{ duration: 0.55 }}
                     className="mb-16 text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('admissions.title')}</h1>
+                    <h1 className="text-4xl md:text-7xl font-extrabold text-coal mb-6">{t('admissions.title')}</h1>
                     <p className="text-xl text-stone-600 max-w-3xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
                         {t('admissions.description')}
                     </p>

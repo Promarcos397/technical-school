@@ -9,7 +9,7 @@ const SectionHeader = ({ index, eyebrow, title, subtitle, dark = false }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="mb-12 md:mb-16 text-start"
+        className="mb-8 md:mb-16 text-start"
     >
         <div className="flex items-center gap-4 mb-4">
             <span className={`text-xs font-bold tracking-widest ${dark ? 'text-gold-sun' : 'text-gold-deep'}`} dir="ltr">

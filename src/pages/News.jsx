@@ -11,7 +11,7 @@ const News = () => {
     }, []);
 
     return (
-        <section className="pt-32 pb-24 min-h-screen bg-paper">
+        <section className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-screen bg-paper">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ const News = () => {
                     transition={{ duration: 0.55 }}
                     className="text-start text-center md:text-start"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-coal mb-6">{t('news.title')}</h1>
+                    <h1 className="text-4xl md:text-7xl font-extrabold text-coal mb-6">{t('news.title')}</h1>
                     <p className="text-xl text-stone-600 max-w-2xl font-medium leading-relaxed ltr:mx-auto ltr:md:ml-0 rtl:mx-auto rtl:md:mr-0">
                         {t('news.description')}
                     </p>

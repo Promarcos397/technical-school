@@ -9,7 +9,7 @@ const ProgressSlider = ({ image1, image2 }) => {
 
     return (
         <div
-            className="relative w-full h-80 rounded-lg overflow-hidden cursor-ew-resize group shadow-lg"
+            className="relative w-full h-56 sm:h-80 rounded-lg overflow-hidden cursor-ew-resize group shadow-lg"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -42,7 +42,7 @@ const ProgressSlider = ({ image1, image2 }) => {
 const Progress = () => {
     const { t } = useTranslation();
     return (
-        <section id="progress" className="py-20 md:py-28 bg-paper/50 relative">
+        <section id="progress" className="py-14 md:py-28 bg-paper/50 relative">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <SectionHeader
@@ -51,14 +51,14 @@ const Progress = () => {
                     subtitle={t('progress.subtitle')}
                 />
 
-                <div className="space-y-24 md:space-y-32">
+                <div className="space-y-14 md:space-y-32">
 
                     {/* Phase 1 */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center lg:text-start"
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center text-center lg:text-start"
                     >
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
                             <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/10 px-3 py-1 rounded-full">{t('progress.phase1Badge')}</span>
@@ -77,11 +77,11 @@ const Progress = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:flex-row-reverse text-center lg:text-start"
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center lg:flex-row-reverse text-center lg:text-start"
                     >
                         <div className="order-1 lg:order-1 relative group rounded-lg border border-gold-sun/50 p-1 mx-4 sm:mx-8 lg:mx-0">
                             <div className="rounded-md overflow-hidden shadow-xl relative bg-white">
-                                <img src="/images/school-workshops.png" alt={t('a11y.workshopsAlt')} className="w-full h-80 object-cover" />
+                                <img src="/images/school-workshops.png" alt={t('a11y.workshopsAlt')} className="w-full h-56 sm:h-80 object-cover" />
                                 {/* Status chip: one calm "live" cue — a small pulsing dot, nothing else moves */}
                                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 text-gold-deep px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
                                     <span className="relative flex h-2 w-2">
@@ -116,7 +116,7 @@ const Progress = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4 sm:px-8 lg:px-0">
 
                             {/* Dorms Blueprint Hover */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg group overflow-hidden relative min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg group overflow-hidden relative min-h-[210px] md:min-h-[400px]">
                                 <img src="/images/dorms.png" alt={t('a11y.dormsRenderAlt')} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300" />
                                 <img src="/images/dorms-blueprint.png" alt={t('a11y.dormsBlueprintAlt')} className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-multiply" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-coal/90 via-coal/40 to-transparent p-6 flex flex-col justify-end">
@@ -126,7 +126,7 @@ const Progress = () => {
                             </div>
 
                             {/* Video 1: Water */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[210px] md:min-h-[400px]">
                                 <video src="/images/water-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-ink-900/90 via-ink-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.waterTitle')}</h4>
@@ -135,7 +135,7 @@ const Progress = () => {
                             </div>
 
                             {/* Video 2: Solar */}
-                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
+                            <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[210px] md:min-h-[400px]">
                                 <video src="/images/solar-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
                                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-ink-900/90 via-ink-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.solarTitle')}</h4>

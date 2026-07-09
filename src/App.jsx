@@ -13,6 +13,7 @@ import Loader from './components/Loader';
 import ScrollToTop from './components/ScrollToTop';
 import StatsStrip from './components/StatsStrip';
 import SupportInvite from './components/SupportInvite';
+import ProfileFab from './components/ProfileFab';
 
 // Code-split the secondary pages so the homepage bundle stays lean
 const Programs = lazy(() => import('./pages/Programs'));
@@ -93,6 +94,7 @@ function AppContent() {
       <div className={`min-h-screen flex flex-col relative transition-opacity duration-300 ease-in-out ${isRtl ? 'text-start' : 'text-left'} ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`} dir={isRtl ? "rtl" : "ltr"}>
         <ScrollToTop />
         <Navbar />
+        <ProfileFab />
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<><MainLayout /><Footer /></>} />
