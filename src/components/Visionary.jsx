@@ -40,7 +40,7 @@ const Visionary = () => {
                             >
                                 {/* Portrait Area */}
                                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <div className="relative p-2 bg-gradient-to-tr from-emerald-custom/40 to-teal-800/20 rounded-lg">
+                                    <div className="relative p-2 bg-gradient-to-tr from-gold-sun/40 to-teal-800/20 rounded-lg">
                                         <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
 
                                         <div className="rounded-md overflow-hidden relative z-10 border border-teal-800/50 aspect-square flex items-center justify-center bg-coal">
@@ -60,7 +60,7 @@ const Visionary = () => {
 
                                 {/* Bio Text Area */}
                                 <div className={`lg:col-span-7 space-y-6 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div className="inline-block border-b-2 border-emerald-custom pb-2 mb-2">
+                                    <div className="inline-block border-b-2 border-gold-sun pb-2 mb-2">
                                         <span className="text-teal-400 font-bold tracking-widest uppercase text-sm">
                                             {getProp(person, 'title')}
                                         </span>
@@ -90,7 +90,7 @@ const Visionary = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-teal-100/80 text-lg">
                         {councilMembers.map((member, idx) => (
                             <div key={idx} className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-custom/20 flex items-center justify-center text-emerald-400 text-xs">
+                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/20 flex items-center justify-center text-gold-sun text-xs">
                                     ✅
                                 </div>
                                 <span>{getProp(member, 'name')} ({getProp(member, 'title')})</span>

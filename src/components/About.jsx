@@ -61,7 +61,7 @@ const About = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="inline-block border-b-2 border-emerald-custom pb-2 mb-2 md:mb-4"
+                            className="inline-block border-b-2 border-gold-sun pb-2 mb-2 md:mb-4"
                         >
                             <span className="text-teal-800 font-bold tracking-widest uppercase text-xs md:text-sm">{t('about.subtitle')}</span>
                         </motion.div>
@@ -102,7 +102,7 @@ const About = () => {
                                     <CountUp end={90} duration={1} />
                                 </span>
                                 <span className="text-3xl sm:text-4xl text-stone-300 font-light translate-y-[-10px] sm:translate-y-0">{t('about.vs')}</span>
-                                <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-emerald-custom drop-shadow-md">
+                                <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-gold-deep drop-shadow-md">
                                     <CountUp end={2} duration={1} delay={0.5} />
                                 </span>
                             </div>

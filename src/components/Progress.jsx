@@ -25,12 +25,12 @@ const ProgressSlider = ({ image1, image2 }) => {
 
             {/* Divider Line */}
             <motion.div
-                className="absolute inset-y-0 bg-emerald-custom w-1 z-10"
+                className="absolute inset-y-0 bg-gold-sun w-1 z-10"
                 initial={{ right: "50%" }}
                 animate={{ right: isHovered ? "100%" : "50%" }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-emerald-custom rounded-full flex items-center justify-center text-white text-xs">
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-gold-sun rounded-full flex items-center justify-center text-teal-950 text-xs">
                     ↔
                 </div>
             </motion.div>
@@ -59,7 +59,7 @@ const Progress = () => {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center text-center lg:text-start"
                     >
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
-                            <span className="text-emerald-custom font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-emerald-custom/10 px-3 py-1 rounded-full">{t('progress.phase1Badge')}</span>
+                            <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/10 px-3 py-1 rounded-full">{t('progress.phase1Badge')}</span>
                             <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase1Title')}</h3>
                             <p className="text-base md:text-lg text-stone-600 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
                                 {t('progress.phase1Desc')}
@@ -155,7 +155,7 @@ const Progress = () => {
                 >
                     <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.4) 0%, transparent 40%)' }}></div>
                     <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-start">
-                        <span className="text-emerald-400 font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-emerald-custom/10 px-3 py-1 rounded-full">
+                        <span className="text-gold-sun font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/10 px-3 py-1 rounded-full">
                             {t('missingFacilities.title')}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
@@ -164,7 +164,7 @@ const Progress = () => {
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 pt-6">
                             {(t('missingFacilities.list', { returnObjects: true }) || []).map((item, idx) => (
                                 <li key={idx} className="flex items-start gap-3 text-teal-100 text-base md:text-lg">
-                                    <span className="text-emerald-400 mt-1">🔹</span>
+                                    <span className="text-gold-sun mt-1">🔹</span>
                                     <span className="flex-1">{item}</span>
                                 </li>
                             ))}

@@ -39,7 +39,7 @@ const NotFound = () => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-emerald-custom text-white px-8 py-4 rounded-md font-bold text-lg md:text-xl shadow-lg shadow-emerald-custom/30 transition-shadow hover:shadow-2xl hover:shadow-emerald-custom/50"
+                        className="bg-gold-sun text-teal-950 px-8 py-4 rounded-md font-bold text-lg md:text-xl shadow-lg shadow-gold-sun/30 transition-shadow hover:shadow-2xl hover:shadow-gold-sun/50"
                     >
                         {t('notFound.backHome')}
                     </motion.button>

@@ -61,8 +61,8 @@ const Programs = () => {
             title: t('programs.architectureTitle'),
             description: t('programs.architectureDesc'),
             icon: Home,
-            color: 'bg-emerald-600',
-            textColor: 'text-emerald-700',
+            color: 'bg-gold-sun',
+            textColor: 'text-gold-deep',
             bgImage: '/images/architecture-bg.png'
         },
         {
@@ -168,11 +168,11 @@ const Programs = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-20 bg-emerald-custom/10 border border-emerald-custom/30 rounded-lg p-8 md:p-12 relative overflow-hidden"
+                    className="mt-20 bg-gold-sun/10 border border-gold-sun/30 rounded-lg p-8 md:p-12 relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-custom/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gold-sun/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8 text-start">
-                        <div className="w-16 h-16 bg-emerald-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-16 h-16 bg-gold-sun rounded-lg flex items-center justify-center flex-shrink-0">
                             <Wheat className="w-8 h-8 text-white" />
                         </div>
                         <div>

@@ -49,7 +49,7 @@ const Hero = () => {
                     {/* Eyebrow: where this is */}
                     <motion.p
                         variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } }}
-                        className="flex items-center gap-2 text-emerald-300 font-semibold text-xs md:text-sm tracking-widest uppercase mb-5"
+                        className="flex items-center gap-2 text-gold-sun font-semibold text-xs md:text-sm tracking-widest uppercase mb-5"
                     >
                         <MapPin size={14} strokeWidth={2.25} />
                         {t('hero.location')}
@@ -60,7 +60,7 @@ const Hero = () => {
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight mb-5"
                     >
                         {t('hero.school')}{' '}
-                        <span className="text-emerald-400">{t('hero.technical')}</span>
+                        <span className="text-gold-sun">{t('hero.technical')}</span>
                     </motion.h1>
 
                     <motion.p
@@ -77,7 +77,7 @@ const Hero = () => {
                     >
                         <button
                             onClick={() => document.getElementById('support')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="inline-flex items-center justify-center bg-emerald-custom text-white px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:bg-emerald-600"
+                            className="inline-flex items-center justify-center bg-gold-sun text-teal-950 px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:brightness-95"
                         >
                             {t('hero.ctaSupport')}
                         </button>

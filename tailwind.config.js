@@ -14,7 +14,12 @@ export default {
           900: '#0A2527',
         },
         emerald: {
-          custom: '#10B981', // Muted emerald green
+          custom: '#10B981', // Muted emerald green (kept for semantic/legacy uses)
+        },
+        // Logo rising-sun gold as THE brand accent (experiment branch)
+        gold: {
+          sun: '#F1DB50',
+          deep: '#A16207',
         },
       },
       fontFamily: {

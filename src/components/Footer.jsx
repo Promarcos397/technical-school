@@ -38,14 +38,14 @@ const Footer = () => {
             {/* Meta & Contact Grid */}
             <div className="bg-teal-950 text-paper py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                 {/* Background Decor */}
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-custom/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-sun/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10 text-center md:text-start">
 
                     {/* Column 1: About */}
                     <div className="space-y-4">
-                        <h4 className="text-emerald-custom font-bold text-xl drop-shadow-sm">{t('hero.school')}</h4>
-                        <p className="text-stone-300 text-sm leading-relaxed md:pr-2 md:border-r-2 md:ltr:pr-0 md:ltr:pl-2 md:ltr:border-r-0 md:ltr:border-l-2 border-emerald-custom/30 mx-auto md:mx-0">
+                        <h4 className="text-gold-sun font-bold text-xl drop-shadow-sm">{t('hero.school')}</h4>
+                        <p className="text-stone-300 text-sm leading-relaxed md:pr-2 md:border-r-2 md:ltr:pr-0 md:ltr:pl-2 md:ltr:border-r-0 md:ltr:border-l-2 border-gold-sun/30 mx-auto md:mx-0">
                             {t('hero.desc')}
                         </p>
                     </div>
@@ -77,8 +77,8 @@ const Footer = () => {
                         <h4 className="text-white font-bold text-lg">{t('footer.contactTitle', 'التواصل')}</h4>
                         <div className="text-stone-300 text-sm leading-loose flex flex-col gap-2 items-center md:items-start">
                             <p className="text-white/80">{t('footer.coordinator', 'المنسق الطوعي : حسن محمد حمد تنجلاب')}</p>
-                            <a href="tel:+33616458399" dir="ltr" className="hover:text-emerald-400 hover:underline transition-colors flex items-center gap-2 w-fit"><Phone className="w-4 h-4 shrink-0" /> +33 616458399</a>
-                            <a href="mailto:tongilabhassan@gmail.com" className="hover:text-emerald-400 hover:underline transition-colors flex items-center gap-2 w-fit"><Mail className="w-4 h-4 shrink-0" /> tongilabhassan@gmail.com</a>
+                            <a href="tel:+33616458399" dir="ltr" className="hover:text-gold-sun hover:underline transition-colors flex items-center gap-2 w-fit"><Phone className="w-4 h-4 shrink-0" /> +33 616458399</a>
+                            <a href="mailto:tongilabhassan@gmail.com" className="hover:text-gold-sun hover:underline transition-colors flex items-center gap-2 w-fit"><Mail className="w-4 h-4 shrink-0" /> tongilabhassan@gmail.com</a>
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@ const Footer = () => {
                                 name="user_name"
                                 required
                                 placeholder={t('admissions.fullNamePlaceholder', 'الاسم')}
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-custom transition-all"
+                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all"
                             />
                             <input
                                 type="email"
@@ -99,21 +99,21 @@ const Footer = () => {
                                 required
                                 placeholder={t('admissions.emailPlaceholder', 'البريد الإلكتروني')}
                                 dir="ltr"
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-custom transition-all md:text-left text-center"
+                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all md:text-left text-center"
                             />
                             <textarea
                                 name="message"
                                 required
                                 placeholder={t('admissions.notesPlaceholder', 'رسالتك...')}
                                 rows="2"
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-custom transition-all resize-none"
+                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all resize-none"
                             ></textarea>
 
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
                                 className={`w-full py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all
-                                    ${isSubmitting ? 'bg-teal-800 text-stone-400 cursor-not-allowed' : 'bg-emerald-custom text-teal-950 hover:bg-emerald-400 active:scale-95'}`}
+                                    ${isSubmitting ? 'bg-teal-800 text-stone-400 cursor-not-allowed' : 'bg-gold-sun text-teal-950 hover:brightness-95 active:scale-95'}`}
                             >
                                 {isSubmitting ? t('admissions.submitting', 'جاري الإرسال...') : (
                                     <>
@@ -125,7 +125,7 @@ const Footer = () => {
                             {/* Status Messages for Quick Form */}
                             <AnimatePresence>
                                 {submitStatus === 'success' && (
-                                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-emerald-400 text-xs flex items-center gap-1 mt-1 justify-center md:justify-start">
+                                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-gold-sun text-xs flex items-center gap-1 mt-1 justify-center md:justify-start">
                                         <CheckCircle2 className="w-4 h-4" /> {t('footer.successMessage', 'تم الإرسال بنجاح!')}
                                     </motion.div>
                                 )}

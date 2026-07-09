@@ -38,7 +38,7 @@ const Navbar = () => {
                         <span className="text-teal-950 font-extrabold text-sm lg:text-base tracking-tight leading-none mb-0.5 whitespace-nowrap">
                             {t('hero.school')}
                         </span>
-                        <span className="text-emerald-custom font-bold text-[9px] lg:text-[10px] tracking-widest uppercase">
+                        <span className="text-gold-sun font-bold text-[9px] lg:text-[10px] tracking-widest uppercase">
                             {t('hero.technical')}
                         </span>
                     </div>
@@ -87,7 +87,7 @@ const Navbar = () => {
                             const next = current.startsWith('ar') ? 'en' : (current.startsWith('en') ? 'fr' : 'ar');
                             i18n.changeLanguage(next);
                         }}
-                        className="flex flex-col items-center justify-center gap-0.5 bg-white/10 backdrop-blur-[40px] backdrop-brightness-75 backdrop-saturate-150 border-[0.5px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] text-emerald-custom font-extrabold w-12 h-12 lg:w-14 lg:h-14 rounded-full hover:bg-white/20 transition-colors tracking-widest text-[9px] lg:text-[10px] ms-2 group"
+                        className="flex flex-col items-center justify-center gap-0.5 bg-white/10 backdrop-blur-[40px] backdrop-brightness-75 backdrop-saturate-150 border-[0.5px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] text-gold-sun font-extrabold w-12 h-12 lg:w-14 lg:h-14 rounded-full hover:bg-white/20 transition-colors tracking-widest text-[9px] lg:text-[10px] ms-2 group"
                     >
                         <Globe size={15} strokeWidth={2.5} className="opacity-80 group-hover:opacity-100 transition-opacity" />
                         <span>{i18n.language?.startsWith('ar') ? 'EN' : (i18n.language?.startsWith('en') ? 'FR' : 'عربي')}</span>
