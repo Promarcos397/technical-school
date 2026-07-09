@@ -17,19 +17,14 @@ const NotFound = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <motion.div
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="mb-8"
-                >
-                    <img
-                        src="/images/charecter-404.png"
-                        alt={t('notFound.imageAlt')}
-                        className="w-64 h-auto drop-shadow-2xl"
-                    />
-                </motion.div>
+                {/* Typographic 404 in the site register: hairline rules + one gold mark */}
+                <div className="flex items-center gap-4 w-full max-w-md mb-8">
+                    <span className="h-px flex-1 bg-stone-200" />
+                    <span className="h-2 w-2 rotate-45 bg-gold-sun" />
+                    <span className="h-px flex-1 bg-stone-200" />
+                </div>
 
-                <h1 className="text-5xl md:text-6xl font-extrabold text-coal mb-6">404</h1>
+                <h1 className="text-7xl md:text-8xl font-extrabold text-coal mb-6 tracking-tight" dir="ltr">404</h1>
 
                 <p className="text-xl md:text-2xl font-bold text-coal mb-10 leading-relaxed">
                     {t('notFound.desc')}
