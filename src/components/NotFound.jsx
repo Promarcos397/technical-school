@@ -31,7 +31,7 @@ const NotFound = () => {
 
                 <h1 className="text-5xl md:text-6xl font-extrabold text-coal mb-6">404</h1>
 
-                <p className="text-xl md:text-2xl font-bold text-teal-900 mb-10 leading-relaxed">
+                <p className="text-xl md:text-2xl font-bold text-coal mb-10 leading-relaxed">
                     {t('notFound.desc')}
                 </p>
 
@@ -39,7 +39,7 @@ const NotFound = () => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gold-sun text-teal-950 px-8 py-4 rounded-md font-bold text-lg md:text-xl shadow-lg shadow-gold-sun/30 transition-shadow hover:shadow-2xl hover:shadow-gold-sun/50"
+                        className="bg-gold-sun text-coal px-8 py-4 rounded-md font-bold text-lg md:text-xl shadow-lg shadow-gold-sun/30 transition-shadow hover:shadow-2xl hover:shadow-gold-sun/50"
                     >
                         {t('notFound.backHome')}
                     </motion.button>
@@ -47,7 +47,7 @@ const NotFound = () => {
             </motion.div>
 
             {/* Decorative elements behind the character */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-900/5 rounded-full blur-3xl z-0 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ink-800/5 rounded-full blur-3xl z-0 pointer-events-none" />
         </div>
     );
 };

@@ -56,7 +56,7 @@ const Admissions = () => {
         <section className="pt-32 pb-24 min-h-screen bg-paper relative overflow-hidden">
             {/* Background noise/accents */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold-sun/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-900/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-ink-800/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
@@ -89,11 +89,11 @@ const Admissions = () => {
 
                             <div className="space-y-6 relative z-10">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-teal-900/50 p-3 rounded-full flex-shrink-0">
+                                    <div className="bg-ink-800/50 p-3 rounded-full flex-shrink-0">
                                         <MapPin className="w-6 h-6 text-gold-deep" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.location')}</h4>
+                                        <h4 className="font-bold text-stone-200 mb-1">{t('admissions.location')}</h4>
                                         <p className="text-sm text-stone-400 leading-relaxed whitespace-pre-line">
                                             {t('admissions.locationDesc')}
                                         </p>
@@ -101,21 +101,21 @@ const Admissions = () => {
                                 </div>
 
                                 <div className="flex items-center gap-4">
-                                    <div className="bg-teal-900/50 p-3 rounded-full flex-shrink-0">
+                                    <div className="bg-ink-800/50 p-3 rounded-full flex-shrink-0">
                                         <Phone className="w-6 h-6 text-gold-deep" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.inquiries')}</h4>
+                                        <h4 className="font-bold text-stone-200 mb-1">{t('admissions.inquiries')}</h4>
                                         <a href="tel:+33616458399" className="text-sm text-stone-400 hover:text-gold-deep hover:underline transition-all block" dir="ltr">+33 616458399</a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center gap-4">
-                                    <div className="bg-teal-900/50 p-3 rounded-full flex-shrink-0">
+                                    <div className="bg-ink-800/50 p-3 rounded-full flex-shrink-0">
                                         <Mail className="w-6 h-6 text-gold-deep" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-teal-100 mb-1">{t('admissions.email')}</h4>
+                                        <h4 className="font-bold text-stone-200 mb-1">{t('admissions.email')}</h4>
                                         <a href="mailto:tongilabhassan@gmail.com" className="text-sm text-stone-400 hover:text-gold-deep hover:underline transition-all block">tongilabhassan@gmail.com</a>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@ const Admissions = () => {
                                             name="user_name"
                                             required
                                             placeholder={t('admissions.fullNamePlaceholder')}
-                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 rtl:pl-12 rtl:pr-4 ltr:pr-12 ltr:pl-4 focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all"
+                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 rtl:pl-12 rtl:pr-4 ltr:pr-12 ltr:pl-4 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all"
                                         />
                                         <User className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
@@ -161,7 +161,7 @@ const Admissions = () => {
                                             <select
                                                 value={countryCode}
                                                 onChange={(e) => setCountryCode(e.target.value)}
-                                                className="h-full py-4 pl-4 pr-10 bg-stone-100 border border-stone-300 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all font-bold text-coal appearance-none cursor-pointer"
+                                                className="h-full py-4 pl-4 pr-10 bg-stone-100 border border-stone-300 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all font-bold text-coal appearance-none cursor-pointer"
                                             >
                                                 <option value="+249">🇸🇩 +249</option>
                                                 <option value="+966">🇸🇦 +966</option>
@@ -182,7 +182,7 @@ const Admissions = () => {
                                                 value={phoneNumber}
                                                 onChange={(e) => setPhoneNumber(toEnglishDigits(e.target.value).replace(/\D/g, ''))}
                                                 placeholder={t('admissions.phonePlaceholder')}
-                                                className="w-full h-full bg-paper border border-stone-300 rounded-r-xl py-4 px-4 pl-12 focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all tracking-wider relative z-0 focus:z-20 text-left"
+                                                className="w-full h-full bg-paper border border-stone-300 rounded-r-xl py-4 px-4 pl-12 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all tracking-wider relative z-0 focus:z-20 text-left"
                                             />
                                             <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 z-10" />
                                         </div>
@@ -203,7 +203,7 @@ const Admissions = () => {
                                             name="user_email"
                                             dir="ltr"
                                             placeholder={t('admissions.emailPlaceholder')}
-                                            className="w-full text-left bg-paper border border-stone-300 rounded-md py-4 px-4 ltr:pr-12 rtl:pl-12 focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all"
+                                            className="w-full text-left bg-paper border border-stone-300 rounded-md py-4 px-4 ltr:pr-12 rtl:pl-12 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all"
                                         />
                                         <Mail className="absolute rtl:left-4 ltr:right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                                     </div>
@@ -218,7 +218,7 @@ const Admissions = () => {
                                             name="selected_program"
                                             required
                                             defaultValue=""
-                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all rtl:pr-4 ltr:pl-4"
+                                            className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all rtl:pr-4 ltr:pl-4"
                                         >
                                             <option value="" disabled>{t('admissions.programSelect')}</option>
                                             {programsList.map((prog, idx) => (
@@ -238,7 +238,7 @@ const Admissions = () => {
                                     name="message"
                                     rows="4"
                                     placeholder={t('admissions.notesPlaceholder')}
-                                    className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 focus:outline-none focus:ring-2 focus:ring-gold-sun focus:border-transparent transition-all resize-none"
+                                    className="w-full bg-paper border border-stone-300 rounded-md py-4 px-4 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent transition-all resize-none"
                                 ></textarea>
                             </div>
 
@@ -247,7 +247,7 @@ const Admissions = () => {
                                 type="submit"
                                 disabled={isSubmitting}
                                 className={`w-full py-5 rounded-md font-extrabold text-lg flex items-center justify-center gap-3 transition-all duration-300 origin-center
-                                    ${isSubmitting ? 'bg-stone-300 text-stone-500 cursor-not-allowed scale-95' : 'bg-gold-sun text-teal-950 hover:brightness-95 hover:shadow-lg hover:shadow-emerald-500/30 active:scale-95'}`}
+                                    ${isSubmitting ? 'bg-stone-300 text-stone-500 cursor-not-allowed scale-95' : 'bg-gold-sun text-coal hover:brightness-95 hover:shadow-lg hover:shadow-emerald-500/30 active:scale-95'}`}
                             >
                                 {isSubmitting ? (
                                     <>

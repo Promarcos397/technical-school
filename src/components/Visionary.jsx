@@ -16,13 +16,13 @@ const Visionary = () => {
     };
 
     return (
-        <section id="visionary" className="py-24 bg-teal-950 text-paper relative overflow-hidden">
+        <section id="visionary" className="py-24 bg-ink-900 text-paper relative overflow-hidden">
             <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.4) 0%, transparent 40%)' }}></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">{t('visionary.title')}</h2>
-                    <p className="text-xl text-teal-200/80 font-medium">{t('visionary.subtitle')}</p>
+                    <p className="text-xl text-stone-300/90 font-medium">{t('visionary.subtitle')}</p>
                 </div>
 
                 <div className="space-y-32">
@@ -41,10 +41,10 @@ const Visionary = () => {
                             >
                                 {/* Portrait Area */}
                                 <div className={`lg:col-span-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <div className="relative p-2 bg-gradient-to-tr from-gold-sun/40 to-teal-800/20 rounded-lg">
+                                    <div className="relative p-2 bg-gradient-to-tr from-gold-sun/40 to-ink-800/20 rounded-lg">
                                         <div className={`absolute inset-0 bg-paper/5 backdrop-blur-sm rounded-lg transform ${isEven ? 'rotate-3' : '-rotate-3'} scale-105 z-0 transition-transform duration-500 hover:rotate-1`}></div>
 
-                                        <div className="rounded-md overflow-hidden relative z-10 border border-teal-800/50 aspect-square flex items-center justify-center bg-coal">
+                                        <div className="rounded-md overflow-hidden relative z-10 border border-ink-700/50 aspect-square flex items-center justify-center bg-coal">
                                             {/* Image rendering with WebGL Depth Map */}
                                             <DepthMapImage
                                                 imageSrc={person.image}
@@ -52,7 +52,7 @@ const Visionary = () => {
                                                 alt={getProp(person, 'name')}
                                                 className="w-full h-full object-cover z-10"
                                             />
-                                            <div className="absolute inset-0 flex items-center justify-center text-teal-800/50 -z-10 font-bold text-xl text-center px-6 leading-relaxed">
+                                            <div className="absolute inset-0 flex items-center justify-center text-coal/50 -z-10 font-bold text-xl text-center px-6 leading-relaxed">
                                                 [يرجى وضع الصورة باسم {person.image.split('/').pop()} في مجلد images]
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@ const Visionary = () => {
                                 {/* Bio Text Area */}
                                 <div className={`lg:col-span-7 space-y-6 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                                     <div className="inline-block border-b-2 border-gold-sun pb-2 mb-2">
-                                        <span className="text-teal-400 font-bold tracking-widest uppercase text-sm">
+                                        <span className="text-gold-sun font-bold tracking-widest uppercase text-sm">
                                             {getProp(person, 'title')}
                                         </span>
                                     </div>
@@ -71,7 +71,7 @@ const Visionary = () => {
                                         {getProp(person, 'name')}
                                     </h3>
                                     
-                                    <div className="space-y-4 text-teal-100/80 leading-relaxed text-lg">
+                                    <div className="space-y-4 text-stone-200/80 leading-relaxed text-lg">
                                         {getProp(person, 'bio')?.map((paragraph, pIdx) => (
                                             <p key={pIdx}>{paragraph}</p>
                                         ))}
@@ -83,12 +83,12 @@ const Visionary = () => {
                 </div>
 
                 {/* Contributors & Council Section */}
-                <div className="mt-32 pt-16 border-t border-teal-800/30">
+                <div className="mt-32 pt-16 border-t border-ink-700/30">
                     <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-white mb-4">{t('visionary.council')}</h3>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-teal-100/80 text-lg">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-stone-200/80 text-lg">
                         {councilMembers.map((member, idx) => (
                             <div key={idx} className="flex items-center gap-3">
                                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/20 flex items-center justify-center text-gold-sun">

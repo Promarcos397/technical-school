@@ -41,7 +41,7 @@ const Loader = () => {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="3"
-                                    className="text-teal-900/10"
+                                    className="text-coal/10"
                                 />
                                 {/* Rotating sweeping tail */}
                                 <circle
@@ -52,7 +52,7 @@ const Loader = () => {
                                     stroke="currentColor"
                                     strokeWidth="3"
                                     strokeLinecap="round"
-                                    className="text-teal-900"
+                                    className="text-coal"
                                     strokeDasharray="90 289.026"
                                 />
                             </motion.svg>

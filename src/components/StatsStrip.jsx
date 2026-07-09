@@ -49,7 +49,7 @@ const StatsStrip = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center md:divide-x md:divide-stone-200 md:rtl:divide-x-reverse">
                     {stats.map((s, i) => (
                         <div key={i} className="flex flex-col items-center gap-1.5 px-2">
-                            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-teal-950" dir="ltr">
+                            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-coal" dir="ltr">
                                 {s.value}
                             </span>
                             <span className="text-stone-500 font-medium text-xs sm:text-sm tracking-wide max-w-[10rem] leading-snug">

@@ -30,7 +30,7 @@ const ProgressSlider = ({ image1, image2 }) => {
                 animate={{ right: isHovered ? "100%" : "50%" }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-gold-sun rounded-full flex items-center justify-center text-teal-950 text-xs">
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-gold-sun rounded-full flex items-center justify-center text-coal text-xs">
                     ↔
                 </div>
             </motion.div>
@@ -60,7 +60,7 @@ const Progress = () => {
                     >
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
                             <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/10 px-3 py-1 rounded-full">{t('progress.phase1Badge')}</span>
-                            <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase1Title')}</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold text-coal">{t('progress.phase1Title')}</h3>
                             <p className="text-base md:text-lg text-stone-600 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
                                 {t('progress.phase1Desc')}
                             </p>
@@ -92,7 +92,7 @@ const Progress = () => {
                         </div>
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-2">
                             <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/15 px-3 py-1 rounded-full">{t('progress.phase2Badge')}</span>
-                            <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase2Title')}</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold text-coal">{t('progress.phase2Title')}</h3>
                             <p className="text-base md:text-lg text-stone-600 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
                                 {t('progress.phase2Desc')}
                             </p>
@@ -108,7 +108,7 @@ const Progress = () => {
                     >
                         <div className="text-center max-w-2xl mx-auto space-y-4 px-4">
                             <span className="text-stone-500 font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-stone-500/10 px-3 py-1 rounded-full">{t('progress.phase3Badge')}</span>
-                            <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase3Title')}</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold text-coal">{t('progress.phase3Title')}</h3>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4 sm:px-8 lg:px-0">
@@ -126,18 +126,18 @@ const Progress = () => {
                             {/* Video 1: Water */}
                             <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <video src="/images/water-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
-                                <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent p-6 flex flex-col justify-end">
+                                <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-ink-900/90 via-ink-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.waterTitle')}</h4>
-                                    <p className="text-teal-100 text-xs md:text-sm">{t('progress.waterDesc')}</p>
+                                    <p className="text-stone-200 text-xs md:text-sm">{t('progress.waterDesc')}</p>
                                 </div>
                             </div>
 
                             {/* Video 2: Solar */}
                             <div className="col-span-1 border border-stone-200/50 bg-white/30 backdrop-blur p-4 rounded-lg relative overflow-hidden min-h-[300px] md:min-h-[400px]">
                                 <video src="/images/solar-station.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
-                                <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent p-6 flex flex-col justify-end">
+                                <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-ink-900/90 via-ink-900/40 to-transparent p-6 flex flex-col justify-end">
                                     <h4 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{t('progress.solarTitle')}</h4>
-                                    <p className="text-teal-100 text-xs md:text-sm">{t('progress.solarDesc')}</p>
+                                    <p className="text-stone-200 text-xs md:text-sm">{t('progress.solarDesc')}</p>
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@ const Progress = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="mt-24 md:mt-32 bg-teal-900 text-paper p-8 md:p-12 rounded-lg shadow-2xl relative overflow-hidden"
+                    className="mt-24 md:mt-32 bg-ink-800 text-paper p-8 md:p-12 rounded-lg shadow-2xl relative overflow-hidden"
                 >
                     <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.4) 0%, transparent 40%)' }}></div>
                     <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-start">
@@ -163,7 +163,7 @@ const Progress = () => {
                         </h3>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 pt-6">
                             {(t('missingFacilities.list', { returnObjects: true }) || []).map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-teal-100 text-base md:text-lg">
+                                <li key={idx} className="flex items-start gap-3 text-stone-200 text-base md:text-lg">
                                     <span className="mt-2.5 h-1.5 w-1.5 rotate-45 bg-gold-sun shrink-0"></span>
                                     <span className="flex-1">{item}</span>
                                 </li>

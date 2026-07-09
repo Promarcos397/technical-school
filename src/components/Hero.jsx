@@ -20,7 +20,7 @@ const Hero = () => {
     return (
         <section
             ref={containerRef}
-            className="min-h-screen relative overflow-hidden flex items-end bg-teal-950"
+            className="min-h-screen relative overflow-hidden flex items-end bg-ink-900"
         >
             {/* Full-bleed image, sharp edges */}
             <motion.div style={{ y: yImage }} className="absolute inset-0 scale-105">
@@ -30,7 +30,7 @@ const Hero = () => {
                     className="w-full h-full object-cover object-center"
                 />
                 {/* Legibility gradient anchored to the text side */}
-                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/95 via-teal-950/45 to-teal-950/15" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/95 via-ink-900/45 to-ink-950/15" />
             </motion.div>
 
             <motion.div
@@ -77,7 +77,7 @@ const Hero = () => {
                     >
                         <button
                             onClick={() => document.getElementById('support')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="inline-flex items-center justify-center bg-gold-sun text-teal-950 px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:brightness-95"
+                            className="inline-flex items-center justify-center bg-gold-sun text-coal px-6 py-3 rounded-md font-bold text-sm md:text-base transition-colors hover:brightness-95"
                         >
                             {t('hero.ctaSupport')}
                         </button>

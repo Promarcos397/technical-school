@@ -36,7 +36,7 @@ const Footer = () => {
         <footer className="mt-24 border-t border-stone-200/50">
 
             {/* Meta & Contact Grid */}
-            <div className="bg-teal-950 text-paper py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div className="bg-ink-900 text-paper py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
                 {/* Background Decor */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-sun/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
@@ -53,8 +53,8 @@ const Footer = () => {
                     {/* Column 2: Map */}
                     <div className="space-y-4">
                         <h4 className="text-white font-bold text-lg">{t('footer.location', 'الموقع')}</h4>
-                        <div className="w-full h-32 rounded-md overflow-hidden border border-teal-800/50 relative bg-teal-900/20 group">
-                            <div className="absolute inset-0 bg-teal-900/20 group-hover:bg-transparent transition-colors pointer-events-none z-10"></div>
+                        <div className="w-full h-32 rounded-md overflow-hidden border border-ink-700/50 relative bg-ink-800/20 group">
+                            <div className="absolute inset-0 bg-ink-800/20 group-hover:bg-transparent transition-colors pointer-events-none z-10"></div>
                             <iframe
                                 title={t('footer.mapTitle', 'خريطة موقع المدرسة')}
                                 src={`https://maps.google.com/maps?q=18.5777582,30.5585055&output=embed&z=17&hl=${i18n.language}`}
@@ -91,7 +91,7 @@ const Footer = () => {
                                 name="user_name"
                                 required
                                 placeholder={t('admissions.fullNamePlaceholder', 'الاسم')}
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all"
+                                className="w-full bg-ink-800/30 border border-ink-700 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 transition-all"
                             />
                             <input
                                 type="email"
@@ -99,21 +99,21 @@ const Footer = () => {
                                 required
                                 placeholder={t('admissions.emailPlaceholder', 'البريد الإلكتروني')}
                                 dir="ltr"
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all md:text-left text-center"
+                                className="w-full bg-ink-800/30 border border-ink-700 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 transition-all md:text-left text-center"
                             />
                             <textarea
                                 name="message"
                                 required
                                 placeholder={t('admissions.notesPlaceholder', 'رسالتك...')}
                                 rows="2"
-                                className="w-full bg-teal-900/30 border border-teal-800 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold-sun transition-all resize-none"
+                                className="w-full bg-ink-800/30 border border-ink-700 text-white placeholder-stone-400 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-stone-400 transition-all resize-none"
                             ></textarea>
 
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
                                 className={`w-full py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all
-                                    ${isSubmitting ? 'bg-teal-800 text-stone-400 cursor-not-allowed' : 'bg-gold-sun text-teal-950 hover:brightness-95 active:scale-95'}`}
+                                    ${isSubmitting ? 'bg-ink-800 text-stone-400 cursor-not-allowed' : 'bg-gold-sun text-coal hover:brightness-95 active:scale-95'}`}
                             >
                                 {isSubmitting ? t('admissions.submitting', 'جاري الإرسال...') : (
                                     <>
@@ -140,7 +140,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className="mt-16 pt-8 border-t border-teal-900/50 flex flex-col md:flex-row items-center justify-between text-stone-400 text-sm gap-4 relative z-10 text-center">
+                <div className="mt-16 pt-8 border-t border-ink-700/50 flex flex-col md:flex-row items-center justify-between text-stone-400 text-sm gap-4 relative z-10 text-center">
                     <p>{t('footer.copyright', '© 2026 مدرسة أديب الهاجري الفنية. جميع الحقوق محفوظة.')}</p>
                     <p className="opacity-60 text-xs tracking-wide">{t('footer.credits', 'تصميم وتطوير بكل فخر لدعم التعليم الفني')}</p>
                 </div>

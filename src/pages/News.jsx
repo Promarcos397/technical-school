@@ -37,7 +37,7 @@ const News = () => {
                             <span className="bg-gold-sun/20 text-gold-deep font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article1Tag')}</span>
                             <span className="text-stone-400 text-sm">{t('news.article1Status')}</span>
                         </div>
-                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">{t('news.article1Title')}</h2>
+                        <h2 className="text-3xl font-bold text-coal mb-4 leading-tight">{t('news.article1Title')}</h2>
                         <p className="text-stone-600 leading-relaxed font-medium mb-6 text-lg">
                             {t('news.article1P1')}
                             <br /><br />
@@ -55,7 +55,7 @@ const News = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <span className="bg-gold-sun/20 text-gold-deep font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article2Tag')}</span>
                         </div>
-                        <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">{t('news.article2Title')}</h2>
+                        <h2 className="text-3xl font-bold text-coal mb-4 leading-tight">{t('news.article2Title')}</h2>
                         <p className="text-stone-600 leading-relaxed font-medium text-lg">
                             {t('news.article2P1')}
                             <br /><br />
@@ -71,7 +71,7 @@ const News = () => {
                         transition={{ duration: 0.8 }}
                         className="md:col-span-2 mt-8 flex flex-col items-center justify-center text-center p-12 bg-white/50 backdrop-blur-sm border border-stone-200/50 rounded-lg"
                     >
-                        <h3 className="text-2xl font-bold text-teal-950 mb-3">{t('news.moreNewsTitle')}</h3>
+                        <h3 className="text-2xl font-bold text-coal mb-3">{t('news.moreNewsTitle')}</h3>
                         <p className="text-stone-500 max-w-sm">
                             {t('news.moreNewsDesc')}
                         </p>

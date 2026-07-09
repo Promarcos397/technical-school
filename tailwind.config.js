@@ -16,10 +16,17 @@ export default {
         emerald: {
           custom: '#10B981', // Muted emerald green (kept for semantic/legacy uses)
         },
-        // Logo rising-sun gold as THE brand accent (experiment branch)
+        // Calmer honey gold, derived from the logo sun
         gold: {
-          sun: '#F1DB50',
-          deep: '#A16207',
+          sun: '#E2C144',
+          deep: '#8F6B12',
+        },
+        // Warm olive-charcoal darks, straight from the logo marks
+        ink: {
+          700: '#3E4237',
+          800: '#31342B',
+          900: '#24271F',
+          950: '#191B15',
         },
       },
       fontFamily: {

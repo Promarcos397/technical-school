@@ -63,7 +63,7 @@ const About = () => {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="inline-block border-b-2 border-gold-sun pb-2 mb-2 md:mb-4"
                         >
-                            <span className="text-teal-800 font-bold tracking-widest uppercase text-xs md:text-sm">{t('about.subtitle')}</span>
+                            <span className="text-coal font-bold tracking-widest uppercase text-xs md:text-sm">{t('about.subtitle')}</span>
                         </motion.div>
 
                         <motion.h2
@@ -74,7 +74,7 @@ const About = () => {
                             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-coal leading-tight"
                         >
                             {t('about.title1')} <br className="hidden sm:block" />
-                            <span className="text-teal-900 block mt-2 sm:mt-0 sm:inline">{t('about.title2')}</span>
+                            <span className="text-coal block mt-2 sm:mt-0 sm:inline">{t('about.title2')}</span>
                         </motion.h2>
 
                         <motion.p
@@ -115,8 +115,8 @@ const About = () => {
                         </motion.div>
 
                         {/* Decorative Blueprint Lines - Hidden on smallest mobile */}
-                        <div className="hidden sm:block absolute -z-10 -top-8 -right-8 w-24 md:w-32 h-24 md:h-32 border-t-2 border-r-2 border-teal-900/10 rounded-tr-3xl"></div>
-                        <div className="hidden sm:block absolute -z-10 -bottom-8 -left-8 w-24 md:w-32 h-24 md:h-32 border-b-2 border-l-2 border-teal-900/10 rounded-bl-3xl"></div>
+                        <div className="hidden sm:block absolute -z-10 -top-8 -right-8 w-24 md:w-32 h-24 md:h-32 border-t-2 border-r-2 border-ink-700/10 rounded-tr-3xl"></div>
+                        <div className="hidden sm:block absolute -z-10 -bottom-8 -left-8 w-24 md:w-32 h-24 md:h-32 border-b-2 border-l-2 border-ink-700/10 rounded-bl-3xl"></div>
                     </div>
 
                 </div>

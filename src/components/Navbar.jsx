@@ -35,7 +35,7 @@ const Navbar = () => {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-teal-950 font-extrabold text-sm lg:text-base tracking-tight leading-none mb-0.5 whitespace-nowrap">
+                        <span className="text-coal font-extrabold text-sm lg:text-base tracking-tight leading-none mb-0.5 whitespace-nowrap">
                             {t('hero.school')}
                         </span>
                         <span className="text-gold-sun font-bold text-[9px] lg:text-[10px] tracking-widest uppercase">
@@ -70,7 +70,7 @@ const Navbar = () => {
                                             <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]" />
                                         </motion.div>
                                     )}
-                                    <span className={`relative z-10 transition-colors duration-300 ${isActive || isCurrent ? 'text-teal-950' : 'text-white/70'}`}>
+                                    <span className={`relative z-10 transition-colors duration-300 ${isActive || isCurrent ? 'text-coal' : 'text-white/70'}`}>
                                         {link.label}
                                     </span>
                                 </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
                             <Link
                                 key={link.id}
                                 to={link.href}
-                                className={`relative flex flex-col items-center justify-center flex-1 py-2 transition-all z-10 ${isActive ? 'text-teal-950' : 'text-white/70 hover:text-teal-950'}`}
+                                className={`relative flex flex-col items-center justify-center flex-1 py-2 transition-all z-10 ${isActive ? 'text-coal' : 'text-white/70 hover:text-coal'}`}
                             >
                                 {isActive && (
                                     <motion.div

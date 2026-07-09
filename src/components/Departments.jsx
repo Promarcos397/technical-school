@@ -14,7 +14,7 @@ const Departments = () => {
             subtitle: t('programs.electricitySubtitle', 'التمديدات والأنظمة الكهربائية'),
             icon: Zap,
             image: '/images/electrical-bg.jpeg',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 2,
@@ -22,7 +22,7 @@ const Departments = () => {
             subtitle: t('programs.autoMechanicsSubtitle', 'صيانة وتشخيص أعطال السيارات'),
             icon: Wrench,
             image: '/images/auto-bg.jpeg',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 3,
@@ -30,7 +30,7 @@ const Departments = () => {
             subtitle: t('programs.productionMechanicsSubtitle', 'تشغيل المعادن والمخارط'),
             icon: Settings,
             image: '/images/production-bg.jpeg',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 4,
@@ -38,7 +38,7 @@ const Departments = () => {
             subtitle: t('programs.hvacSubtitle', 'تركيب وصيانة التكييف والتبريد'),
             icon: Snowflake,
             image: '/images/hvac-bg.png',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 5,
@@ -46,7 +46,7 @@ const Departments = () => {
             subtitle: t('programs.architectureSubtitle', 'التصميم والرسم الهندسي'),
             icon: Ruler,
             image: '/images/school-blueprint.png',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 6,
@@ -54,7 +54,7 @@ const Departments = () => {
             subtitle: t('programs.plumbingSubtitle', 'تمديدات المياه والصرف الصحي'),
             icon: Droplets,
             image: '/images/sanitary-bg.png', 
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 7,
@@ -62,7 +62,7 @@ const Departments = () => {
             subtitle: t('programs.computerSubtitle', 'تقنية المعلومات وعلوم الشبكات'),
             icon: Monitor,
             image: '/images/computer-bg.png', 
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
         {
             id: 8,
@@ -70,7 +70,7 @@ const Departments = () => {
             subtitle: t('programs.foodProcessingSubtitle', 'تغليف التمور وحفظ المنتجات الزراعية'),
             icon: Wheat,
             image: '/images/food-bg.png',
-            color: 'from-teal-700/80 to-teal-950/90'
+            color: 'from-ink-800/80 to-ink-950/90'
         },
     ];
 
