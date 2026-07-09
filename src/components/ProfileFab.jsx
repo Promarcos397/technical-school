@@ -50,7 +50,7 @@ const ProfileFab = () => {
                     href="/files/school-profile.pdf"
                     download="Adeeb-Al-Hajri-Technical-School-Profile.pdf"
                     aria-label={t('footer.downloadPdf', 'تنزيل الملف (PDF)')}
-                    className="group fixed z-40 right-[max(9%,calc((100%-400px)/2))] bottom-[100px] lg:right-8 lg:bottom-8 flex items-center rounded-full bg-ink-800/80 backdrop-blur-xl border border-white/10 text-gold-sun shadow-lg shadow-black/10 hover:border-white/25 transition-colors"
+                    className="group fixed z-40 right-[calc(max(9%,(100%-400px)/2)+10px)] bottom-[100px] lg:right-8 lg:bottom-8 flex items-center rounded-full bg-ink-800/80 backdrop-blur-xl border border-white/10 text-gold-sun shadow-lg shadow-black/10 hover:border-white/25 transition-colors"
                 >
                     <span className="w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center shrink-0">
                         <FileDown size={20} strokeWidth={2.25} />
