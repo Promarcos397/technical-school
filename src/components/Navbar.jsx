@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Home, BookOpen, GraduationCap, Newspaper, Globe } from 'lucide-react';
 
-// Editorial register: one flat header bar, active route marked by a thin
-// sliding underline. No glass, no floating bubbles, no physics.
 const Navbar = () => {
     const location = useLocation();
     const { i18n, t } = useTranslation();
+    const [hoverIndex, setHoverIndex] = useState(null);
 
     const navLinks = [
         { id: '/', label: t('nav.home'), href: '/' },
@@ -17,67 +16,95 @@ const Navbar = () => {
         { id: '/news', label: t('nav.news'), href: '/news' },
     ];
 
-    return (
-        <header className="fixed top-0 w-full z-50 bg-paper/95 backdrop-blur-sm border-b border-stone-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 lg:h-16 flex items-center justify-between gap-4">
+    const activeIndex = navLinks.findIndex(link => location.pathname === link.href);
+    // Hover takes precedence; otherwise highlight the active route
+    const currentIndex = hoverIndex !== null ? hoverIndex : (activeIndex >= 0 ? activeIndex : null);
 
-                {/* Brand */}
-                <Link to="/" className="flex items-center gap-3 shrink-0">
-                    <img
-                        src="/images/logo.svg"
-                        alt={t('a11y.logoAlt')}
-                        className="h-8 lg:h-9 w-auto"
-                    />
+    return (
+        <header className="fixed top-0 w-full z-50 pt-4 md:pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
+
+            <div className="max-w-7xl mx-auto flex justify-between items-center relative">
+
+                {/* Independent Floating Logo Section (Right side in RTL) */}
+                <Link to="/" className="pointer-events-auto flex items-center gap-3 group cursor-pointer bg-white/10 backdrop-blur-[40px] backdrop-brightness-75 backdrop-saturate-150 px-5 h-12 lg:h-14 rounded-full border-[0.5px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]">
+                    <div className="relative overflow-hidden rounded-lg">
+                        <img
+                            src="/images/logo.svg"
+                            alt={t('a11y.logoAlt')}
+                            className="h-7 lg:h-8 w-auto"
+                        />
+                    </div>
                     <div className="flex flex-col">
-                        <span className="text-teal-950 font-bold text-sm lg:text-base tracking-tight leading-none whitespace-nowrap">
+                        <span className="text-teal-950 font-extrabold text-sm lg:text-base tracking-tight leading-none mb-0.5 whitespace-nowrap">
                             {t('hero.school')}
                         </span>
-                        <span className="text-stone-500 font-semibold text-[9px] lg:text-[10px] tracking-widest uppercase">
+                        <span className="text-emerald-custom font-bold text-[9px] lg:text-[10px] tracking-widest uppercase">
                             {t('hero.technical')}
                         </span>
                     </div>
                 </Link>
 
-                {/* Desktop links */}
-                <nav className="hidden lg:flex items-center h-full">
-                    {navLinks.map((link) => {
-                        const isActive = location.pathname === link.href;
-                        return (
-                            <Link
-                                key={link.id}
-                                to={link.href}
-                                className={`relative flex items-center h-full px-5 font-semibold text-sm transition-colors ${isActive ? 'text-teal-950' : 'text-stone-500 hover:text-teal-950'}`}
-                            >
-                                {link.label}
-                                {isActive && (
-                                    <motion.div
-                                        layoutId="navUnderline"
-                                        className="absolute bottom-0 inset-x-3 h-[2px] bg-emerald-custom"
-                                        transition={{ type: "spring", stiffness: 500, damping: 40 }}
-                                    />
-                                )}
-                            </Link>
-                        );
-                    })}
+
+                {/* Glass Pill Navigation (Desktop) — calm sliding indicator, no liquid physics */}
+                <nav
+                    onMouseLeave={() => setHoverIndex(null)}
+                    className="pointer-events-auto hidden lg:flex relative items-center h-12 lg:h-14 px-2 bg-white/10 backdrop-blur-[40px] backdrop-brightness-75 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full"
+                >
+                    <div className="relative z-10 flex items-center gap-1 px-2">
+                        {navLinks.map((link, i) => {
+                            const isCurrent = currentIndex === i;
+                            const isActive = location.pathname === link.href;
+                            return (
+                                <Link
+                                    key={link.id}
+                                    to={link.href}
+                                    onMouseEnter={() => setHoverIndex(i)}
+                                    className="relative flex items-center justify-center px-5 py-2 font-bold text-base tracking-widest rounded-full cursor-pointer"
+                                >
+                                    {isCurrent && (
+                                        <motion.div
+                                            layoutId="desktopActivePill"
+                                            className="absolute inset-0 bg-white/25 rounded-full"
+                                            transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                                        >
+                                            <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]" />
+                                        </motion.div>
+                                    )}
+                                    <span className={`relative z-10 transition-colors duration-300 ${isActive || isCurrent ? 'text-teal-950' : 'text-white/70'}`}>
+                                        {link.label}
+                                    </span>
+                                </Link>
+                            );
+                        })}
+                    </div>
                 </nav>
 
-                {/* Language switch — text button, same height as the bar content */}
-                <button
-                    onClick={() => {
-                        const current = i18n.language || 'ar';
-                        const next = current.startsWith('ar') ? 'en' : (current.startsWith('en') ? 'fr' : 'ar');
-                        i18n.changeLanguage(next);
-                    }}
-                    className="flex items-center gap-1.5 text-stone-600 hover:text-teal-950 font-semibold text-xs lg:text-sm border border-stone-300 hover:border-stone-400 rounded-md px-3 py-1.5 transition-colors shrink-0"
-                >
-                    <Globe size={14} strokeWidth={2.25} />
-                    <span>{i18n.language?.startsWith('ar') ? 'EN' : (i18n.language?.startsWith('en') ? 'FR' : 'عربي')}</span>
-                </button>
+                {/* Language Toggle Button (Responsive Component) */}
+                <div className="pointer-events-auto flex items-center">
+                    <button
+                        onClick={() => {
+                            const current = i18n.language || 'ar';
+                            const next = current.startsWith('ar') ? 'en' : (current.startsWith('en') ? 'fr' : 'ar');
+                            i18n.changeLanguage(next);
+                        }}
+                        className="flex flex-col items-center justify-center gap-0.5 bg-white/10 backdrop-blur-[40px] backdrop-brightness-75 backdrop-saturate-150 border-[0.5px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] text-emerald-custom font-extrabold w-12 h-12 lg:w-14 lg:h-14 rounded-full hover:bg-white/20 transition-colors tracking-widest text-[9px] lg:text-[10px] ms-2 group"
+                    >
+                        <Globe size={15} strokeWidth={2.5} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span>{i18n.language?.startsWith('ar') ? 'EN' : (i18n.language?.startsWith('en') ? 'FR' : 'عربي')}</span>
+                    </button>
+                </div>
+
             </div>
 
-            {/* Mobile bottom tabs — flat, solid, thin top rule */}
-            <nav className="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-paper/95 backdrop-blur-sm border-t border-stone-200" dir={i18n.language?.startsWith('ar') ? 'rtl' : 'ltr'}>
-                <div className="flex items-stretch justify-between max-w-md mx-auto">
+            {/* Mobile Bottom Tab Navigation */}
+            <nav className="lg:hidden fixed bottom-4 w-[82%] max-w-[400px] left-1/2 -translate-x-1/2 z-50 pointer-events-auto" dir={i18n.language?.startsWith('ar') ? 'rtl' : 'ltr'}>
+                {/* The Glass Bubble Background — same properties as desktop pill */}
+                <div className="absolute inset-0 z-0 pointer-events-none rounded-full overflow-hidden bg-white/10 backdrop-blur-[7px] backdrop-brightness-75 backdrop-saturate-150 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]">
+                    <div className="absolute inset-0 rounded-full border-[0.5px] border-white/20 mix-blend-overlay" />
+                    <div className="absolute inset-0 rounded-full opacity-40 shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)]" />
+                </div>
+
+                <div className="relative z-10 flex items-center justify-between p-1.5">
                     {navLinks.map((link) => {
                         const isActive = location.pathname === link.href;
                         let IconComponent = Home;
@@ -89,17 +116,19 @@ const Navbar = () => {
                             <Link
                                 key={link.id}
                                 to={link.href}
-                                className={`relative flex flex-col items-center justify-center flex-1 pt-2.5 pb-2 transition-colors ${isActive ? 'text-teal-950' : 'text-stone-400 hover:text-teal-950'}`}
+                                className={`relative flex flex-col items-center justify-center flex-1 py-2 transition-all z-10 ${isActive ? 'text-teal-950' : 'text-white/70 hover:text-teal-950'}`}
                             >
                                 {isActive && (
                                     <motion.div
-                                        layoutId="mobileNavMark"
-                                        className="absolute top-0 inset-x-4 h-[2px] bg-emerald-custom"
-                                        transition={{ type: "spring", stiffness: 500, damping: 40 }}
-                                    />
+                                        layoutId="mobileActivePill"
+                                        className="absolute inset-0 bg-white/20 rounded-full z-[-1] overflow-hidden"
+                                        transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                                    >
+                                        <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]" />
+                                    </motion.div>
                                 )}
-                                <IconComponent size={19} strokeWidth={isActive ? 2.5 : 2} />
-                                <span className="text-[9px] font-semibold mt-0.5 tracking-wide">{link.label}</span>
+                                <IconComponent size={20} strokeWidth={isActive ? 2.5 : 2} className="relative z-10" />
+                                <span className="text-[9px] font-bold mt-0.5 tracking-wider relative z-10">{link.label}</span>
                             </Link>
                         );
                     })}

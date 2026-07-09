@@ -63,9 +63,9 @@ const Loader = () => {
                                     src="/images/logo.png"
                                     alt={t('a11y.logoAlt')}
                                     className="w-full h-full object-contain"
-                                    initial={{ opacity: 0, scale: 0.5 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.2, duration: 0.8, type: "spring", bounce: 0.4 }}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
                                 />
                             </div>
                         </div>
