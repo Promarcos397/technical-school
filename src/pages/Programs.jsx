@@ -168,11 +168,11 @@ const Programs = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="mt-20 bg-gold-sun/10 border border-gold-sun/30 rounded-lg p-8 md:p-12 relative overflow-hidden"
+                    className="mt-20 bg-white border border-stone-200 rounded-lg p-8 md:p-12 relative overflow-hidden"
                 >
                     <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-8 text-start">
-                        <div className="w-16 h-16 bg-gold-sun rounded-lg flex items-center justify-center flex-shrink-0">
-                            <Wheat className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 bg-gold-sun/15 border border-gold-sun/40 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Wheat className="w-8 h-8 text-gold-deep" />
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold text-coal mb-2">{t('programs.communityService')}</h3>

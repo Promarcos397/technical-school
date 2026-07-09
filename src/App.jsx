@@ -56,6 +56,14 @@ function AppContent() {
   const currentLang = i18n.language || 'ar';
   const isRtl = currentLang.startsWith('ar');
 
+  // Keep <html dir/lang> in sync with the active language. Tailwind's rtl:/ltr:
+  // variants match on ancestors, so the hardcoded dir="rtl" in index.html made
+  // RTL rules apply even in English (e.g. paragraphs hugging the right).
+  useEffect(() => {
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLang.split('-')[0];
+  }, [isRtl, currentLang]);
+
   useEffect(() => {
     // REAL LOADING: wait for critical images + webfonts, with a hard cap so a
     // slow network can never trap users on the loader screen.
