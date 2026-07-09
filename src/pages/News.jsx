@@ -34,7 +34,7 @@ const News = () => {
                         className="bg-white rounded-lg p-8 border border-stone-200/50 shadow-sm"
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="bg-orange-100 text-orange-700 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article1Tag')}</span>
+                            <span className="bg-gold-sun/20 text-gold-deep font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">{t('news.article1Tag')}</span>
                             <span className="text-stone-400 text-sm">{t('news.article1Status')}</span>
                         </div>
                         <h2 className="text-3xl font-bold text-teal-950 mb-4 leading-tight">{t('news.article1Title')}</h2>

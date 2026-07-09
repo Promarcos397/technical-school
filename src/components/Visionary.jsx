@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -90,8 +91,8 @@ const Visionary = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-teal-100/80 text-lg">
                         {councilMembers.map((member, idx) => (
                             <div key={idx} className="flex items-center gap-3">
-                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/20 flex items-center justify-center text-gold-sun text-xs">
-                                    ✅
+                                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gold-sun/20 flex items-center justify-center text-gold-sun">
+                                    <Check size={12} strokeWidth={3} />
                                 </div>
                                 <span>{getProp(member, 'name')} ({getProp(member, 'title')})</span>
                             </div>

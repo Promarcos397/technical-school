@@ -77,21 +77,21 @@ const Progress = () => {
                         viewport={{ once: true, margin: "-100px" }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:flex-row-reverse text-center lg:text-start"
                     >
-                        <div className="order-1 lg:order-1 relative group rounded-lg border border-orange-300/60 p-1 mx-4 sm:mx-8 lg:mx-0">
+                        <div className="order-1 lg:order-1 relative group rounded-lg border border-gold-sun/50 p-1 mx-4 sm:mx-8 lg:mx-0">
                             <div className="rounded-md overflow-hidden shadow-xl relative bg-white">
                                 <img src="/images/school-workshops.png" alt={t('a11y.workshopsAlt')} className="w-full h-80 object-cover" />
                                 {/* Status chip: one calm "live" cue — a small pulsing dot, nothing else moves */}
-                                <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 text-orange-700 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
+                                <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 text-gold-deep px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-60"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-sun opacity-70"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-deep"></span>
                                     </span>
                                     {t('progress.phase2ActiveBadge')}
                                 </div>
                             </div>
                         </div>
                         <div className="space-y-4 md:space-y-6 order-2 lg:order-2">
-                            <span className="text-orange-600 font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-orange-600/10 px-3 py-1 rounded-full">{t('progress.phase2Badge')}</span>
+                            <span className="text-gold-deep font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-gold-sun/15 px-3 py-1 rounded-full">{t('progress.phase2Badge')}</span>
                             <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase2Title')}</h3>
                             <p className="text-base md:text-lg text-stone-600 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
                                 {t('progress.phase2Desc')}
@@ -107,7 +107,7 @@ const Progress = () => {
                         className="space-y-12 md:space-y-16"
                     >
                         <div className="text-center max-w-2xl mx-auto space-y-4 px-4">
-                            <span className="text-teal-600 font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-teal-600/10 px-3 py-1 rounded-full">{t('progress.phase3Badge')}</span>
+                            <span className="text-stone-500 font-bold tracking-widest text-xs md:text-sm uppercase inline-block bg-stone-500/10 px-3 py-1 rounded-full">{t('progress.phase3Badge')}</span>
                             <h3 className="text-2xl md:text-3xl font-bold text-teal-900">{t('progress.phase3Title')}</h3>
                         </div>
 
@@ -164,7 +164,7 @@ const Progress = () => {
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 pt-6">
                             {(t('missingFacilities.list', { returnObjects: true }) || []).map((item, idx) => (
                                 <li key={idx} className="flex items-start gap-3 text-teal-100 text-base md:text-lg">
-                                    <span className="text-gold-sun mt-1">🔹</span>
+                                    <span className="mt-2.5 h-1.5 w-1.5 rotate-45 bg-gold-sun shrink-0"></span>
                                     <span className="flex-1">{item}</span>
                                 </li>
                             ))}

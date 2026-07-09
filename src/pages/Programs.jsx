@@ -25,8 +25,8 @@ const Programs = () => {
             title: t('programs.electricityTitle'),
             description: t('programs.electricityDesc'),
             icon: Settings,
-            color: 'bg-amber-500',
-            textColor: 'text-amber-600',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/electrical-bg.png'
         },
         {
@@ -34,8 +34,8 @@ const Programs = () => {
             title: t('programs.autoMechanicsTitle'),
             description: t('programs.autoMechanicsDesc'),
             icon: Car,
-            color: 'bg-blue-600',
-            textColor: 'text-blue-700',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/auto-bg.png'
         },
         {
@@ -43,8 +43,8 @@ const Programs = () => {
             title: t('programs.productionMechanicsTitle'),
             description: t('programs.productionMechanicsDesc'),
             icon: PenTool,
-            color: 'bg-slate-600',
-            textColor: 'text-slate-700',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/production-bg.jpg'
         },
         {
@@ -52,8 +52,8 @@ const Programs = () => {
             title: t('programs.hvacTitle'),
             description: t('programs.hvacDesc'),
             icon: Snowflake,
-            color: 'bg-cyan-500',
-            textColor: 'text-cyan-600',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/hvac-bg.png'
         },
         {
@@ -61,8 +61,8 @@ const Programs = () => {
             title: t('programs.architectureTitle'),
             description: t('programs.architectureDesc'),
             icon: Home,
-            color: 'bg-gold-sun',
-            textColor: 'text-gold-deep',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/architecture-bg.png'
         },
         {
@@ -70,8 +70,8 @@ const Programs = () => {
             title: t('programs.plumbingTitle'),
             description: t('programs.plumbingDesc'),
             icon: Waves,
-            color: 'bg-teal-500',
-            textColor: 'text-teal-600',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/sanitary-bg.png'
         },
         {
@@ -79,8 +79,8 @@ const Programs = () => {
             title: t('programs.computerTitle'),
             description: t('programs.computerDesc'),
             icon: Monitor,
-            color: 'bg-indigo-500',
-            textColor: 'text-indigo-600',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/computer-bg.png'
         },
         {
@@ -88,8 +88,8 @@ const Programs = () => {
             title: t('programs.foodProcessingTitle'),
             description: t('programs.foodProcessingDesc'),
             icon: Wheat,
-            color: 'bg-orange-500',
-            textColor: 'text-orange-600',
+            color: 'bg-teal-700',
+            textColor: 'text-teal-700',
             bgImage: '/images/food-bg.png'
         }
     ];
