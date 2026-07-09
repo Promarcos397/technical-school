@@ -19,20 +19,25 @@ const ProfileFab = () => {
     const [hint, setHint] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => setVisible(window.scrollY > 600);
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        let hintTimer;
+        const check = () => {
+            const show = window.scrollY > 600;
+            setVisible(show);
+            // One-time reminder: expand the label for a few seconds on first appearance
+            if (show && !sessionStorage.getItem('pdfFabHintShown')) {
+                sessionStorage.setItem('pdfFabHintShown', '1');
+                setHint(true);
+                hintTimer = setTimeout(() => setHint(false), 3500);
+            }
+        };
+        const raf = requestAnimationFrame(check); // initial check, async to avoid a sync set-state render
+        window.addEventListener('scroll', check, { passive: true });
+        return () => {
+            cancelAnimationFrame(raf);
+            window.removeEventListener('scroll', check);
+            clearTimeout(hintTimer);
+        };
     }, []);
-
-    // One-time reminder: expand the label for a few seconds on first appearance
-    useEffect(() => {
-        if (!visible || sessionStorage.getItem('pdfFabHintShown')) return;
-        sessionStorage.setItem('pdfFabHintShown', '1');
-        setHint(true);
-        const timer = setTimeout(() => setHint(false), 3500);
-        return () => clearTimeout(timer);
-    }, [visible]);
 
     return (
         <AnimatePresence>
