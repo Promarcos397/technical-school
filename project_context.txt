@@ -1,0 +1,93 @@
+Project Architecture:
+=====================
+school-website/
+├── images
+│   ├── dorms-blueprint.png
+│   ├── dorms.png
+│   ├── logo.svg
+│   ├── school-3d-render.jpeg
+│   ├── school-blueprint.png
+│   ├── school-workshops.png
+│   ├── solar-station.mp4
+│   ├── water-station.mp4
+│   ├── workers-progress.png
+│   └── workshop-blueprint.png
+├── public
+│   ├── images
+│   │   ├── adib-depth.png
+│   │   ├── adib-portrait.png
+│   │   ├── auto-bg.jpeg
+│   │   ├── charecter-404.png
+│   │   ├── computer-bg.png
+│   │   ├── dorms-blueprint.png
+│   │   ├── dorms.png
+│   │   ├── electrical-bg.jpeg
+│   │   ├── food-bg.png
+│   │   ├── hassan-depth.png
+│   │   ├── hassan-portrait.png
+│   │   ├── hvac-bg.png
+│   │   ├── logo.png
+│   │   ├── logo.svg
+│   │   ├── production-bg.jpeg
+│   │   ├── sanitary-bg.png
+│   │   ├── school-3d-render.jpeg
+│   │   ├── school-blueprint.png
+│   │   ├── school-workshops.png
+│   │   ├── solar-station.mp4
+│   │   ├── water-station.mp4
+│   │   ├── workers-progress.png
+│   │   └── workshop-blueprint.png
+│   ├── _redirects
+│   ├── favicon.svg
+│   └── vite.svg
+├── src
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   ├── About.jsx
+│   │   ├── Departments.jsx
+│   │   ├── DepthMapImage.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Loader.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── NotFound.jsx
+│   │   ├── Progress.jsx
+│   │   ├── ScrollToTop.jsx
+│   │   ├── SectionHeader.jsx
+│   │   ├── SmoothScroll.jsx
+│   │   ├── StatsStrip.jsx
+│   │   ├── SupportInvite.jsx
+│   │   └── Visionary.jsx
+│   ├── data
+│   │   └── peopleData.js
+│   ├── locales
+│   │   ├── ar
+│   │   │   └── translation.json
+│   │   ├── en
+│   │   │   └── translation.json
+│   │   └── fr
+│   │       └── translation.json
+│   ├── pages
+│   │   ├── Admissions.jsx
+│   │   ├── News.jsx
+│   │   └── Programs.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── i18n.js
+│   ├── index.css
+│   └── main.jsx
+├── .env
+├── .gitignore
+├── eslint.config.js
+├── file-tree.py
+├── fix-alignment.cjs
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── prompt.md
+├── README.md
+├── tailwind.config.js
+├── update-translations.js
+└── vite.config.js
