@@ -30,8 +30,8 @@ export const visionaries = [
     {
         id: 'hassan',
         nameAr: 'حسن محمد حمد تنجلاب (حسن بردو)',
-        nameEn: 'Hassan Mohammed Hamad Tongelab (Hassan Bardo)',
-        nameFr: 'Hassan Mohammed Hamad Tongelab (Hassan Bardo)',
+        nameEn: 'Hassan Mohammed Hamad Tongilab (Hassan Bordo)',
+        nameFr: 'Hassan Mohammed Hamad Tongilab (Hassan Bordo)',
         titleAr: 'المنسق الطوعي للمشروع',
         titleEn: 'Project Volunteer Coordinator',
         titleFr: 'Coordinateur Bénévole du Projet',
