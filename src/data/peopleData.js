@@ -30,8 +30,8 @@ export const visionaries = [
     {
         id: 'hassan',
         nameAr: 'حسن محمد حمد تنجلاب (حسن بردو)',
-        nameEn: 'Hassan Mohammed Hamed Tongilab (Hassan Bordo)',
-        nameFr: 'Hassan Mohammed Hamed Tongilab (Hassan Bordo)',
+        nameEn: 'Hassan Mohamed Hamed Tongilab (Hassan Bordo)',
+        nameFr: 'Hassan Mohamed Hamed Tongilab (Hassan Bordo)',
         titleAr: 'المنسق الطوعي للمشروع',
         titleEn: 'Project Volunteer Coordinator',
         titleFr: 'Coordinateur Bénévole du Projet',
@@ -61,13 +61,13 @@ export const visionaries = [
 ];
 
 export const councilMembers = [
-    { nameAr: 'عثمان محمد عثمان خيري', nameEn: 'Osman Mohammed Osman Kheiry', nameFr: 'Osman Mohammed Osman Kheiry', titleAr: 'رئيس', titleEn: 'President', titleFr: 'Président' },
+    { nameAr: 'عثمان محمد عثمان خيري', nameEn: 'Osman Mohamed Osman Kheiry', nameFr: 'Osman Mohamed Osman Kheiry', titleAr: 'رئيس', titleEn: 'President', titleFr: 'Président' },
     { nameAr: 'عوض عبدالله الماحي', nameEn: 'Awad Abdallah Almahi', nameFr: 'Awad Abdallah Almahi', titleAr: 'نائب للرئيس', titleEn: 'Vice President', titleFr: 'Vice-président' },
     { nameAr: 'آدم ميرغني', nameEn: 'Adam Mirghani', nameFr: 'Adam Mirghani', titleAr: 'مقرراً', titleEn: 'Rapporteur', titleFr: 'Rapporteur' },
-    { nameAr: 'طارق محمد إبراهيم', nameEn: 'Tarig Mohammed Ibrahim', nameFr: 'Tarig Mohammed Ibrahim', titleAr: 'أميناً للمال', titleEn: 'Treasurer', titleFr: 'Trésorier' },
+    { nameAr: 'طارق محمد إبراهيم', nameEn: 'Tarig Mohamed Ibrahim', nameFr: 'Tarig Mohamed Ibrahim', titleAr: 'أميناً للمال', titleEn: 'Treasurer', titleFr: 'Trésorier' },
     { nameAr: 'وائل حسن عثمان', nameEn: 'Wael Hassan Osman', nameFr: 'Wael Hassan Osman', titleAr: 'نائب لأمين المال', titleEn: 'Deputy Treasurer', titleFr: 'Trésorier Adjoint' },
-    { nameAr: 'سيف الدين عثمان محمد إبراهيم', nameEn: 'Seif El Din Osman Mohammed Ibrahim', nameFr: 'Seif El Din Osman Mohammed Ibrahim', titleAr: 'الأمين العام', titleEn: 'Secretary General', titleFr: 'Secrétaire Général' },
-    { nameAr: 'سيدة محمد حمد', nameEn: 'Sayyida Mohammed Hamad', nameFr: 'Sayyida Mohammed Hamad', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
+    { nameAr: 'سيف الدين عثمان محمد إبراهيم', nameEn: 'Saif El Din Osman Mohamed Ibrahim', nameFr: 'Saif El Din Osman Mohamed Ibrahim', titleAr: 'الأمين العام', titleEn: 'Secretary General', titleFr: 'Secrétaire Général' },
+    { nameAr: 'سيدة محمد حمد', nameEn: 'Sayyida Mohamed Hamad', nameFr: 'Sayyida Mohamed Hamad', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'عبدالوهاب أبو السيد (سوري)', nameEn: 'Abdelwahab Abu Al-Sayyid (Suri)', nameFr: 'Abdelwahab Abu Al-Sayyid (Suri)', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'المهدي الطاهر عبيد', nameEn: 'Al-Mahdi Al-Taher Obeid', nameFr: 'Al-Mahdi Al-Taher Obeid', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
     { nameAr: 'بابكر عبدالرحمن بابكر', nameEn: 'Babiker Abdelrahman Babiker', nameFr: 'Babiker Abdelrahman Babiker', titleAr: 'عضواً', titleEn: 'Member', titleFr: 'Membre' },
