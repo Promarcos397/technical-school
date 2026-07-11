@@ -2,8 +2,8 @@ export const visionaries = [
     {
         id: 'adib',
         nameAr: 'أديب إبراهيم الناصر الهاجري',
-        nameEn: 'Adib Ibrahim Al-Nasser Al-Hajri',
-        nameFr: 'Adib Ibrahim Al-Nasser Al-Hajri',
+        nameEn: 'Adeeb Ibrahim Al-Nasser Al-Hajri',
+        nameFr: 'Adeeb Ibrahim Al-Nasser Al-Hajri',
         titleAr: 'مؤسس المدرسة وصاحب المبادرة',
         titleEn: 'School Founder and Initiative Owner',
         titleFr: 'Fondateur de l\'école et Initiateur',

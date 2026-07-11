@@ -114,7 +114,7 @@ const Admissions = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-stone-200 mb-1">{t('admissions.email')}</h4>
-                                        <a href="mailto:tongilabhassan@gmail.com" className="text-sm text-stone-400 hover:text-gold-deep hover:underline transition-all block">tongilabhassan@gmail.com</a>
+                                        <a href="mailto:info@alhajrischool.org" className="text-sm text-stone-400 hover:text-gold-deep hover:underline transition-all block">info@alhajrischool.org</a>
                                     </div>
                                 </div>
                             </div>

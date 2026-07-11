@@ -76,7 +76,7 @@ const Footer = () => {
                         <div className="text-stone-300 text-sm leading-loose flex flex-col gap-2 items-center md:items-start">
                             <p className="text-white/80">{t('footer.coordinator', 'المنسق الطوعي : حسن محمد حمد تنجلاب')}</p>
                             <a href="tel:+33616458399" dir="ltr" className="hover:text-gold-sun hover:underline transition-colors flex items-center gap-2 w-fit"><Phone className="w-4 h-4 shrink-0" /> +33 616458399</a>
-                            <a href="mailto:tongilabhassan@gmail.com" className="hover:text-gold-sun hover:underline transition-colors flex items-center gap-2 w-fit"><Mail className="w-4 h-4 shrink-0" /> tongilabhassan@gmail.com</a>
+                            <a href="mailto:info@alhajrischool.org" className="hover:text-gold-sun hover:underline transition-colors flex items-center gap-2 w-fit"><Mail className="w-4 h-4 shrink-0" /> info@alhajrischool.org</a>
                         </div>
                     </div>
 
